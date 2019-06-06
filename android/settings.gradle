@@ -1,0 +1,3 @@
+rootProject.name = 'monkiriSpring2019'
+
+include ':app'
