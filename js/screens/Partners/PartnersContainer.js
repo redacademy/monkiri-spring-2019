@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { View, Text } from "react-native";
-class PartnersContianer extends Component {
+class PartnersContainer extends Component {
   static navigationOptions = {
     title: "PARTNERS"
   };
@@ -13,4 +13,4 @@ class PartnersContianer extends Component {
   }
 }
 
-export default PartnersContianer;
+export default PartnersContainer;
