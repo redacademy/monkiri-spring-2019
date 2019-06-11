@@ -7,6 +7,6 @@ type User @model {
   email: String! @isUnique
   password: String!
   name: String
-  image: String
-  xp: Int
+  image: String  @defaultValue(value: "https://loremflickr.com/320/240")
+  xp: Int  @defaultValue(value: 0)
 }
