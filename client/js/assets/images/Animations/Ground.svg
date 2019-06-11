@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="242px" height="46px" viewBox="0 0 242 46" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.1 (78136) - https://sketchapp.com -->
+    <title>Ground A</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Progress/Intro-Complete" transform="translate(-59.000000, -371.000000)">
+            <g id="Ground-A" transform="translate(59.000000, 371.000000)">
+                <rect fill="#B67649" x="0" y="29" width="242" height="17"></rect>
+                <path d="M9,0 L233,0 C237.970563,-9.13077564e-16 242,4.02943725 242,9 L242,29 L0,29 L0,9 C-6.08718376e-16,4.02943725 4.02943725,9.13077564e-16 9,0 Z" id="Grass-A" fill="#459E54"></path>
+            </g>
+        </g>
+    </g>
+</svg>
