@@ -11,7 +11,7 @@ import ProfileScreen from "../screens/Profile";
 import QuestScreen from "../screens/Quests";
 
 const LessonsStack = createStackNavigator(
-  { Lesson: LessonsScreen },
+  { LESSON: LessonsScreen },
   {
     defaultNavigationOptions: ({ navigation }) => ({
       ...sharedNavigationOptions(navigation)
@@ -19,7 +19,7 @@ const LessonsStack = createStackNavigator(
   }
 );
 const PartnersStack = createStackNavigator(
-  { Partners: PartnersScreen },
+  { PARTNERS: PartnersScreen },
   {
     defaultNavigationOptions: ({ navigation }) => ({
       ...sharedNavigationOptions(navigation)
@@ -27,7 +27,7 @@ const PartnersStack = createStackNavigator(
   }
 );
 const ProfileStack = createStackNavigator(
-  { Profile: ProfileScreen },
+  { PROFILE: ProfileScreen },
   {
     defaultNavigationOptions: ({ navigation }) => ({
       ...sharedNavigationOptions(navigation)
@@ -35,7 +35,7 @@ const ProfileStack = createStackNavigator(
   }
 );
 const QuestStack = createStackNavigator(
-  { Quest: QuestScreen },
+  { QUEST: QuestScreen },
   {
     defaultNavigationOptions: ({ navigation }) => ({
       ...sharedNavigationOptions(navigation)
@@ -45,10 +45,10 @@ const QuestStack = createStackNavigator(
 
 export default createBottomTabNavigator(
   {
-    Lesson: LessonsStack,
-    Quests: QuestStack,
-    Partners: PartnersStack,
-    Profile: ProfileStack
+    LESSON: LessonsStack,
+    QUESTS: QuestStack,
+    PARTNERS: PartnersStack,
+    PROFILE: ProfileStack
   },
   {
     defaultNavigationOptions: ({ navigation }) => ({
@@ -56,16 +56,16 @@ export default createBottomTabNavigator(
         const { routeName } = navigation.state;
         let IconComponent = Ionicons;
         let iconName;
-        if (routeName === "Lesson") {
+        if (routeName === "LESSON") {
           iconName = `ios-book`;
         }
-        if (routeName === "Quests") {
+        if (routeName === "QUESTS") {
           iconName = `ios-trophy`;
         }
-        if (routeName === "Partners") {
+        if (routeName === "PARTNERS") {
           iconName = `ios-people`;
         }
-        if (routeName === "Profile") {
+        if (routeName === "PROFILE") {
           iconName = `ios-contact`;
         }
         return <IconComponent name={iconName} size={25} color={tintColor} />;
