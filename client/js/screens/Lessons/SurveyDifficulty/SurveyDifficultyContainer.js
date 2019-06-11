@@ -9,6 +9,11 @@ class SurveyDifficultyContainer extends Component {
     return (
       <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
         <Text>What's your level of financial knowledge?</Text>
+        <View style={{ paddingg: 70}}>
+          <Text>sdfghjk</Text>
+        </View>
+
+    
       </View>
     );
   }
