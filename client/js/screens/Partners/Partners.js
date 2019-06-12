@@ -24,6 +24,7 @@ const Partners = ({ InitailData }) => {
       <View style={styles.PartnersContainer}>
         {Partners.map(data => (
           <TouchableOpacity
+            key={data.id}
             style={styles.PartnersCard}
             onPress={() => handleToggle(data.id)}
           >

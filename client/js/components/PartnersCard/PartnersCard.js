@@ -9,6 +9,12 @@ const PartnersCard = ({ data }) => {
     >
       <Image style={styles.PartnersCardIcon} source={data.icon} />
       <Text style={styles.PartnersCardText}>{data.name}</Text>
+      {data.isOpen ? (
+        <Image
+          style={styles.arrow}
+          source={require("../../assets/images/arrow.png")}
+        />
+      ) : null}
     </View>
   );
 };
