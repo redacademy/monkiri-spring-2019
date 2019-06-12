@@ -67,6 +67,14 @@ const InitailData = [
       require(`../../assets/images/pi-pay.png`)
     ],
     isOpen: false
+  },
+  {
+    id: 4,
+    name: "International Money",
+    color: "#c77fe9",
+    lightColor: "#c798dc",
+    icon: require(`../../assets/images/internationmoney.png`),
+    isOpen: false
   }
 ];
 
