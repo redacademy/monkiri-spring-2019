@@ -54,6 +54,19 @@ const InitailData = [
       require(`../../assets/images/pi-pay.png`)
     ],
     isOpen: false
+  },
+  {
+    id: 5,
+    name: "Insurance",
+    color: "#f1984e",
+    lightColor: "#eab68a",
+    icon: require(`../../assets/images/insurance.png`),
+    partnersIcon: [
+      require(`../../assets/images/pi-pay.png`),
+      require(`../../assets/images/pi-pay.png`),
+      require(`../../assets/images/pi-pay.png`)
+    ],
+    isOpen: false
   }
 ];
 
