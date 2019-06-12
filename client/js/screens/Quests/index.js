@@ -1,3 +1,3 @@
-import QuestContainer from "./QuestContainer";
+import QuestsContainer from "./QuestsContainer";
 
-export default QuestContainer;
+export default QuestsContainer;
