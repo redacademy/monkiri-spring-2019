@@ -1,13 +1,14 @@
 import React, { Component } from "react";
-import { View, Text } from "react-native";
+import { View } from "react-native";
+import Partners from "./Partners";
 class PartnersContainer extends Component {
   static navigationOptions = {
     title: "PARTNERS"
   };
   render() {
     return (
-      <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-        <Text>Partners Screen</Text>
+      <View>
+        <Partners />
       </View>
     );
   }
