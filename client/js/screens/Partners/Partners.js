@@ -8,20 +8,29 @@ import {
 import PartnersCard from "../../components/PartnersCard";
 import PartnersCardExpand from "../../components/PartnersCardExpand";
 import { styles } from "./styles";
-const Partners = () => {
-  const [isOpen, setIsOpen] = useState(false);
 
-  const handleToggle = () => {
+const Partners = ({ InitailData }) => {
+  const [Partners, setPartners] = useState(InitailData);
+
+  const handleToggle = id => {
     LayoutAnimation.easeInEaseOut();
-    setIsOpen(!isOpen);
+    const Toggle = Partners.map(data =>
+      data.id === id ? { ...data, isOpen: !data.isOpen } : data
+    );
+    setPartners(Toggle);
   };
   return (
     <ScrollView>
       <View style={styles.PartnersContainer}>
-        <TouchableOpacity style={styles.PartnersCard} onPress={handleToggle}>
-          <PartnersCard />
-          <PartnersCardExpand isOpen={isOpen} />
-        </TouchableOpacity>
+        {Partners.map(data => (
+          <TouchableOpacity
+            style={styles.PartnersCard}
+            onPress={() => handleToggle(data.id)}
+          >
+            <PartnersCard data={data} />
+            <PartnersCardExpand isOpen={data.isOpen} data={data} />
+          </TouchableOpacity>
+        ))}
       </View>
     </ScrollView>
   );

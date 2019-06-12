@@ -4,7 +4,6 @@ export const styles = StyleSheet.create({
   PartnersCardTop: {
     flexDirection: "row",
     alignItems: "center",
-    backgroundColor: "#f2c249",
     height: 90,
     borderRadius: 10,
     marginTop: 20,
@@ -12,7 +11,12 @@ export const styles = StyleSheet.create({
     shadowOpacity: 0.4,
     shadowRadius: 2
   },
-  PartnersCardIcon: { width: 65, height: 60, marginLeft: 20 },
+  PartnersCardIcon: {
+    width: 65,
+    height: 60,
+    marginLeft: 20,
+    resizeMode: "contain"
+  },
   PartnersCardText: {
     fontSize: 20,
     fontWeight: "600",
