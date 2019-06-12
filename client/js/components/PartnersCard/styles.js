@@ -22,7 +22,8 @@ export const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: "600",
     padding: 10,
-    color: "#ffffff"
+    color: "#ffffff",
+    width: "50%"
   },
   arrow: {
     position: "absolute",
@@ -31,5 +32,16 @@ export const styles = StyleSheet.create({
     width: 20,
     height: 20,
     zIndex: 9999
+  },
+  triangle: {
+    position: "absolute",
+    width: 0,
+    height: 0,
+    borderTopColor: "transparent",
+    borderTopWidth: 70,
+    borderRightWidth: 120,
+    borderRightColor: "#f9f6f63d",
+    right: 0,
+    bottom: 0
   }
 });

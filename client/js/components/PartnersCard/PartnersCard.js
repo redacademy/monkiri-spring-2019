@@ -15,6 +15,7 @@ const PartnersCard = ({ data }) => {
           source={require("../../assets/images/arrow.png")}
         />
       ) : null}
+      <View style={styles.triangle} />
     </View>
   );
 };
