@@ -10,9 +10,6 @@ export const styles = StyleSheet.create({
     marginTop: 20,
     shadowColor: "#000000",
     shadowOpacity: 0.4,
-    shadowRadius: 2,
-    shadowColor: "#000000",
-    shadowOpacity: 0.8,
     shadowRadius: 2
   },
   PartnersCardIcon: { width: 65, height: 60, marginLeft: 20 },
