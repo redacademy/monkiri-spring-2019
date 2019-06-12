@@ -20,7 +20,7 @@ class SurveyDifficultyContainer extends Component {
 
           <Image
             style={styles.treePic}
-            source={require("../../../assets/images/illustrations/PNG/Tree_oranges.png")}
+            source={require("../../../assets/images/illustrations/PNG/sprout.png")}
           />
           <TouchableOpacity style={styles.beginnerButton}>
             <Text style={styles.buttonColor}>Beginner</Text>
