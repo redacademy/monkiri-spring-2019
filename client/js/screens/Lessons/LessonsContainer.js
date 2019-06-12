@@ -41,11 +41,14 @@ class LessonsContainer extends Component {
         <View>
           {this.state.tabIndex == 0 ? <Text>test 1</Text> : <Text>test2</Text>}
         </View>
-        <View style={styles.iconContainer}>
-          <Image
-            style={{ width: "70%", height: "70%" }}
-            source={require(`../../assets/images/Icons - White/taxes.png`)}
-          />
+        <View style={styles.container}>
+          <View style={[{ backgroundColor: "red" }, styles.iconContainer]}>
+            <Image
+              style={{ width: 45, height: 45, resizeMode: "contain" }}
+              source={require(`../../assets/images/IconsWhite/taxes.png`)}
+            />
+          </View>
+          <Text style={styles.name}> </Text>
         </View>
       </View>
     );
