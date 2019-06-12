@@ -1,10 +1,10 @@
 import React from "react";
 import { View, Text, Button } from "react-native";
-
-const SignIn = () => {
+import { styles } from "./styles";
+const SignIn = ({ navigation }) => {
   return (
-    <View>
-      <Button title="Sign In" />
+    <View style={styles.SignInContainer}>
+      <Button title="Sign In" onPress={() => navigation.navigate("Layout")} />
     </View>
   );
 };
