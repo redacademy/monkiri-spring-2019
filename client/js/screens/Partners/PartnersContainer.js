@@ -74,6 +74,11 @@ const InitailData = [
     color: "#c77fe9",
     lightColor: "#c798dc",
     icon: require(`../../assets/images/internationmoney.png`),
+    partnersIcon: [
+      require(`../../assets/images/pi-pay.png`),
+      require(`../../assets/images/pi-pay.png`),
+      require(`../../assets/images/pi-pay.png`)
+    ],
     isOpen: false
   }
 ];
