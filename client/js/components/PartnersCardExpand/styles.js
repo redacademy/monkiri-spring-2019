@@ -6,6 +6,13 @@ export const styles = StyleSheet.create({
     height: 150,
     top: -20,
     zIndex: -1,
-    borderRadius: 10
+    borderRadius: 10,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-around"
+  },
+  icon: {
+    width: 50,
+    height: 50
   }
 });

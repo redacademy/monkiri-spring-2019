@@ -9,7 +9,11 @@ const InitailData = [
     color: "#f2c249",
     lightColor: "#f8e0a4",
     icon: require(`../../assets/images/mobilewallet.png`),
-
+    partnersIcon: [
+      require(`../../assets/images/pi-pay.png`),
+      require(`../../assets/images/pi-pay.png`),
+      require(`../../assets/images/pi-pay.png`)
+    ],
     isOpen: false
   },
   {
@@ -18,6 +22,11 @@ const InitailData = [
     color: "#8cc63f",
     lightColor: "#c1ed85",
     icon: require(`../../assets/images/saving.png`),
+    partnersIcon: [
+      require(`../../assets/images/pi-pay.png`),
+      require(`../../assets/images/pi-pay.png`),
+      require(`../../assets/images/pi-pay.png`)
+    ],
     isOpen: false
   },
   {
@@ -26,6 +35,11 @@ const InitailData = [
     color: "#5ec9c9",
     lightColor: "#80d0cf",
     icon: require(`../../assets/images/investment.png`),
+    partnersIcon: [
+      require(`../../assets/images/pi-pay.png`),
+      require(`../../assets/images/pi-pay.png`),
+      require(`../../assets/images/pi-pay.png`)
+    ],
     isOpen: false
   },
   {
@@ -34,6 +48,11 @@ const InitailData = [
     color: "#c77fe9",
     lightColor: "#c798dc",
     icon: require(`../../assets/images/internationmoney.png`),
+    partnersIcon: [
+      require(`../../assets/images/pi-pay.png`),
+      require(`../../assets/images/pi-pay.png`),
+      require(`../../assets/images/pi-pay.png`)
+    ],
     isOpen: false
   }
 ];
