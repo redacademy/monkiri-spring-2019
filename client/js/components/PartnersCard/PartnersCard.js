@@ -8,7 +8,7 @@ const PartnersCard = ({ data }) => {
       style={[styles.PartnersCardTop, { backgroundColor: `${data.color}` }]}
     >
       <Image style={styles.PartnersCardIcon} source={data.icon} />
-      <Text style={styles.PartnersCardText}>Mobile Wallet</Text>
+      <Text style={styles.PartnersCardText}>{data.name}</Text>
     </View>
   );
 };

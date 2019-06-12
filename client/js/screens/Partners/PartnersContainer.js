@@ -27,6 +27,14 @@ const InitailData = [
     lightColor: "#80d0cf",
     icon: require(`../../assets/images/investment.png`),
     isOpen: false
+  },
+  {
+    id: 4,
+    name: "International Money",
+    color: "#c77fe9",
+    lightColor: "#c798dc",
+    icon: require(`../../assets/images/internationmoney.png`),
+    isOpen: false
   }
 ];
 
