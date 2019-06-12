@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { View, Text, TouchableOpacity } from "react-native";
+import { View, Text, TouchableOpacity, Image } from "react-native";
+import styles from "./styles";
 
 class LessonsContainer extends Component {
   constructor(props) {
@@ -15,10 +16,11 @@ class LessonsContainer extends Component {
   render() {
     return (
       <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-        <View
+        <View 
           style={{
             flexDirection: "row",
-            flex: 1
+            flex: 1,
+            height: 20
           }}
         >
           <TouchableOpacity
@@ -26,18 +28,27 @@ class LessonsContainer extends Component {
               this.setState({ tabIndex: 0 });
             }}
           >
-            <Text>Lessons</Text>
+            <Text>My Lessons</Text>
           </TouchableOpacity>
           <TouchableOpacity
             onPress={() => {
               this.setState({ tabIndex: 1 });
             }}
           >
-            <Text>Lfdgf</Text>
+            <Text>Library</Text>
           </TouchableOpacity>
         </View>
         <View>
-          <Text>fdgf</Text>
+          {this.state.tabIndex == 0 ? <Text>test 1</Text> : <Text>test2</Text>}
+        </View>
+        <View>
+        <Image
+            style={{
+              width: 100,
+              height: 150
+            }}
+            source={require("../../assets/images/illustrations/PNG/Tree_oranges.png")}
+          />
         </View>
       </View>
     );
