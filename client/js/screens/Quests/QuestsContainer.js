@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { View, Text } from "react-native";
 
-class QuestContainer extends Component {
+class QuestsContainer extends Component {
   static navigationOptions = {
     title: "QUESTS"
   };
@@ -14,4 +14,4 @@ class QuestContainer extends Component {
   }
 }
 
-export default QuestContainer;
+export default QuestsContainer;
