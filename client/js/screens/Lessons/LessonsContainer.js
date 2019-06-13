@@ -42,13 +42,30 @@ class LessonsContainer extends Component {
           {this.state.tabIndex == 0 ? <Text>test 1</Text> : <Text>test2</Text>}
         </View>
         <View style={styles.container}>
-          <View style={[{ backgroundColor: "red" }, styles.iconContainer]}>
+          <View style={[{ backgroundColor: "#99C355" }, styles.iconContainer]}>
             <Image
               style={{ width: 45, height: 45, resizeMode: "contain" }}
-              source={require(`../../assets/images/IconsWhite/taxes.png`)}
+              source={require(`../../assets/images/IconsWhite/saving.png`)}
             />
           </View>
-          <Text style={styles.name}> </Text>
+          <View style={styles.cardContainer}>
+            <Text style={styles.name}>Saving</Text>
+            <View />
+          </View>
+        </View>
+        <View style={styles.container}>
+          <View style={[{ backgroundColor: "#50A255" }, styles.iconContainer]}>
+            <Image
+              style={{ width: 45, height: 45, resizeMode: "contain" }}
+              source={require(`../../assets/images/IconsWhite/budgeting.png`)}
+            />
+          </View>
+          <View style={styles.cardContainer}>
+            <Text style={styles.name}>Budgeting</Text>
+            <View>
+              
+            </View>
+          </View>
         </View>
       </View>
     );
