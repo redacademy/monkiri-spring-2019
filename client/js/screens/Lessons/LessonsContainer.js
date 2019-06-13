@@ -16,19 +16,19 @@ class LessonsContainer extends Component {
   render() {
     return (
       <View style={styles.screenContainer}>
-        <View
-          style={{
-            flexDirection: "row",
-            // flex: 1,
-            // height: 20
-          }}
-        >
+        <View style={styles.title}>
           <TouchableOpacity
             onPress={() => {
               this.setState({ tabIndex: 0 });
             }}
           >
-            <Text>My Lessons</Text>
+            <Text
+              style={[
+                this.state.tabIndex == 0 ? { backgroundColor: "#fff" } : null
+              ]}
+            >
+              My Lessons
+            </Text>
           </TouchableOpacity>
           <TouchableOpacity
             onPress={() => {
@@ -41,16 +41,23 @@ class LessonsContainer extends Component {
         <View>
           {this.state.tabIndex == 0 ? <Text>test 1</Text> : <Text>test2</Text>}
         </View>
+
         <View style={styles.container}>
-          <View style={[{ backgroundColor: "#99C355" }, styles.iconContainer]}>
-            <Image style={styles.whiteIcon}
+          <View style={[{ backgroundColor: "#99c355" }, styles.iconContainer]}>
+            <Image
+              style={styles.whiteIcon}
               source={require(`../../assets/images/IconsWhite/saving.png`)}
             />
           </View>
           <View style={styles.cardContainer}>
-            <Text style={styles.name}>Saving</Text>
-
-            <View />
+            <Text style={styles.name}>Budgeting</Text>
+            <View style={styles.bar} />
+          </View>
+          <View style={styles.button}>
+            <Image
+              style={styles.playButton}
+              source={require(`../../assets/images/Buttons/play_button.png`)}
+            />
           </View>
         </View>
         <View style={styles.container}>
@@ -67,9 +74,15 @@ class LessonsContainer extends Component {
           <View style={styles.button}>
             <Image
               style={styles.playButton}
-              source={require(`../../assets/images/PlayButton/play_button.png`)}
+              source={require(`../../assets/images/Buttons/play_button.png`)}
             />
           </View>
+        </View>
+        <View style={styles.addButtonContainer}>
+          <Image
+            style={styles.addButton}
+            source={require(`../../assets/images/Buttons/add.png`)}
+          />
         </View>
       </View>
     );
