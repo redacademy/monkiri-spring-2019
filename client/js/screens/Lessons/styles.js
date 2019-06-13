@@ -54,7 +54,42 @@ export const styles = StyleSheet.create({
     height: 45,
     resizeMode: "contain"
   },
-screenContainer: {
-  flex: 1, alignItems: "center"
-}
+  screenContainer: {
+    flex: 1,
+    alignItems: "center"
+  },
+  addButton: {
+    width: 20,
+    height: 20
+  },
+  addButtonContainer: {
+    backgroundColor: "#f07216",
+    height: 50,
+    width: 50,
+    borderRadius: 100,
+    justifyContent: "center",
+    alignItems: "center",
+    position: "absolute",
+    right: 15,
+    bottom: 30,
+    shadowColor: "grey",
+    shadowRadius: 2,
+    shadowOffset: { height: 0, width: 0 },
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 3 },
+    shadowOpacity: 0.2,
+    shadowRadius: 3,
+    elevation: 212
+  },
+  title: {
+    flexDirection: "row",
+    width: '100%', 
+    height: 50,
+    padding: 10,
+    backgroundColor: "#f07216",
+    top: 10,
+    alignItems: 'center',
+    borderRadius: 5,
+    color: 'white'
+  }
 });
