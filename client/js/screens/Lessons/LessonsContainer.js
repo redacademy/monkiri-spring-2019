@@ -15,12 +15,12 @@ class LessonsContainer extends Component {
   };
   render() {
     return (
-      <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+      <View style={styles.screenContainer}>
         <View
           style={{
             flexDirection: "row",
-            flex: 1,
-            height: 20
+            // flex: 1,
+            // height: 20
           }}
         >
           <TouchableOpacity
@@ -43,28 +43,32 @@ class LessonsContainer extends Component {
         </View>
         <View style={styles.container}>
           <View style={[{ backgroundColor: "#99C355" }, styles.iconContainer]}>
-            <Image
-              style={{ width: 45, height: 45, resizeMode: "contain" }}
+            <Image style={styles.whiteIcon}
               source={require(`../../assets/images/IconsWhite/saving.png`)}
             />
           </View>
           <View style={styles.cardContainer}>
             <Text style={styles.name}>Saving</Text>
+
             <View />
           </View>
         </View>
         <View style={styles.container}>
           <View style={[{ backgroundColor: "#50A255" }, styles.iconContainer]}>
             <Image
-              style={{ width: 45, height: 45, resizeMode: "contain" }}
+              style={styles.whiteIcon}
               source={require(`../../assets/images/IconsWhite/budgeting.png`)}
             />
           </View>
           <View style={styles.cardContainer}>
             <Text style={styles.name}>Budgeting</Text>
-            <View>
-              
-            </View>
+            <View style={styles.bar} />
+          </View>
+          <View style={styles.button}>
+            <Image
+              style={styles.playButton}
+              source={require(`../../assets/images/PlayButton/play_button.png`)}
+            />
           </View>
         </View>
       </View>
