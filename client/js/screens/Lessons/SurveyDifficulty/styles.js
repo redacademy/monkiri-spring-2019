@@ -6,14 +6,11 @@ const styles = StyleSheet.create({
     justifyContent: "center"
   },
   title: {
-    paddingBottom: 40,
     textAlign: "center",
-    fontSize: 18
+    fontSize: 18,
   },
   beginnerContainer: {
     backgroundColor: "#F2C249",
-    width: 270,
-    height: 220,
     justifyContent: "center",
     alignItems: "center",
     borderRadius: 10,
@@ -33,19 +30,18 @@ const styles = StyleSheet.create({
   },
   beginnerButton: {
     backgroundColor: "#25BDD8",
-    height: 35,
-    width: 130,
+    width: "50%",
     alignItems: "center",
     justifyContent: "center",
-    borderRadius: 80
+    borderRadius: 80,
+    paddingTop: 10,
+    paddingBottom: 10
   },
   buttonColor: {
     color: "white"
   },
   advancedContainer: {
     backgroundColor: "#59c9c9",
-    width: 270,
-    height: 220,
     justifyContent: "center",
     alignItems: "center",
     borderRadius: 10
@@ -63,8 +59,9 @@ const styles = StyleSheet.create({
     position: "absolute"
   },
   treePic: {
-    width: 100,
-    height: 150
+    width: "40%",
+    height: "40%",
+    resizeMode: "contain"
   },
   advancedButton: {
     backgroundColor: "#25BDD8",
