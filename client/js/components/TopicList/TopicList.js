@@ -8,7 +8,7 @@ class TopicList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedTopics: { Saving: true }
+      selectedTopics: {}
     };
   }
   toggle(topic) {
