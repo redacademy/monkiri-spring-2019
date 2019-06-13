@@ -14,6 +14,11 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.4,
     shadowRadius: 10
   },
+  icon: {
+    width: "70%",
+    height: "70%",
+    resizeMode: "contain"
+  },
   name: {
     textAlign: "center",
     padding: 10
@@ -23,7 +28,7 @@ const styles = StyleSheet.create({
     borderWidth: 5,
     borderColor: "#59C9C9"
   },
-  triangleBackground:{
+  triangleBackground: {
     right: 0,
     bottom: 0,
     backgroundColor: "transparent",

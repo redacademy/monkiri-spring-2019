@@ -12,10 +12,7 @@ const TopicItem = ({ topic, selected }) => {
           selected ? styles.outlineContainer : null
         ]}
       >
-        <Image
-          style={{ width: "70%", height: "70%", resizeMode: "contain" }}
-          source={topic.icon}
-        />
+        <Image style={styles.icon} source={topic.icon} />
         <View style={styles.triangleBackground} />
       </View>
       <Text style={styles.name}> {topic.name} </Text>
