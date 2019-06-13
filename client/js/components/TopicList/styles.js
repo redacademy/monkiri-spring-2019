@@ -8,7 +8,8 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
   },
   eachItem: {
-     
+     width:"28%",
+     paddingBottom: 30,
   }
 });
 export default styles;
