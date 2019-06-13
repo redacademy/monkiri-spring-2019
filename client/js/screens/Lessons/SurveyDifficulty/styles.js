@@ -2,19 +2,27 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    marginVertical: 40,
     alignItems: "center",
-    justifyContent: "center"
+    justifyContent: "space-between"
   },
   title: {
     textAlign: "center",
-    fontSize: 18,
+    fontSize: 38
   },
   beginnerContainer: {
     backgroundColor: "#F2C249",
     justifyContent: "center",
     alignItems: "center",
     borderRadius: 10,
-    marginBottom: 20
+    width: "70%"
+  },
+  advancedContainer: {
+    backgroundColor: "#59c9c9",
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 10,
+    width: "70%"
   },
   triangleShadowYellow: {
     right: 0,
@@ -33,18 +41,10 @@ const styles = StyleSheet.create({
     width: "50%",
     alignItems: "center",
     justifyContent: "center",
-    borderRadius: 80,
-    paddingTop: 10,
-    paddingBottom: 10
+    borderRadius: 80
   },
   buttonColor: {
     color: "white"
-  },
-  advancedContainer: {
-    backgroundColor: "#59c9c9",
-    justifyContent: "center",
-    alignItems: "center",
-    borderRadius: 10
   },
   triangleShadowBlue: {
     right: 0,
@@ -74,8 +74,7 @@ const styles = StyleSheet.create({
   skipText: {
     textAlign: "center",
     fontSize: 18,
-    textDecorationLine: "underline",
-    paddingTop: 40
+    textDecorationLine: "underline"
   }
 });
 export default styles;

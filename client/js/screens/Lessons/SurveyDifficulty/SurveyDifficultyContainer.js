@@ -10,35 +10,42 @@ class SurveyDifficultyContainer extends Component {
     return (
       <View style={styles.container}>
         <View style={styles.title}>
-          <Text style={{ height: 60 }}>
+          <Text>
             What's your level of
             {"\n"}
             financial knowledge?
           </Text>
         </View>
-        <View style={{ flex: 0.8, width: "70%" }}>
-          <View style={styles.beginnerContainer}>
-            <View style={styles.triangleShadowYellow} />
+        {/* <View
+          style={
+            {
+              // flex: 0.2,
+              // width: "70%"
+            }
+          }
+        > */}
+        <View style={styles.beginnerContainer}>
+          <View style={styles.triangleShadowYellow} />
 
-            <Image
-              style={styles.treePic}
-              source={require("../../../assets/images/illustrations/PNG/sprout.png")}
-            />
-            <TouchableOpacity style={styles.beginnerButton}>
-              <Text style={styles.buttonColor}>Beginner</Text>
-            </TouchableOpacity>
-          </View>
-          <View style={styles.advancedContainer}>
-            <View style={styles.triangleShadowBlue} />
+          <Image
+            style={styles.treePic}
+            source={require("../../../assets/images/illustrations/PNG/sprout.png")}
+          />
+          <TouchableOpacity style={styles.beginnerButton}>
+            <Text style={styles.buttonColor}>Beginner</Text>
+          </TouchableOpacity>
+        </View>
+        {/* </View> */}
+        <View style={styles.advancedContainer}>
+          <View style={styles.triangleShadowBlue} />
 
-            <Image
-              style={styles.treePic}
-              source={require("../../../assets/images/illustrations/PNG/Tree_oranges.png")}
-            />
-            <TouchableOpacity style={styles.advancedButton}>
-              <Text style={styles.buttonColor}>Advanced</Text>
-            </TouchableOpacity>
-          </View>
+          <Image
+            style={styles.treePic}
+            source={require("../../../assets/images/illustrations/PNG/Tree_oranges.png")}
+          />
+          <TouchableOpacity style={styles.advancedButton}>
+            <Text style={styles.buttonColor}>Advanced</Text>
+          </TouchableOpacity>
         </View>
 
         <View>
