@@ -13,12 +13,33 @@ const theme = {
     lavender: "#C77FE9"
   },
   fonts: {
-    heading: "bold 20px Quicksand, sans-serif",
-    subheading: "bold 18px Quicksand, sans-serif",
-    subheading2: "18px Quicksand, sans-serif",
-    subheading3: "bold 15px Quicksand, sans-serif",
-    bodytext: "15px Quicksand, sans-serif",
-    bodytext2: "13px Quicksand, sans-serif"
+    heading: {
+      fontWeight: "bold",
+      fontSize: 20,
+      fontFamily: "Quicksand"
+    },
+    subheading: {
+      fontWeight: "bold",
+      fontSize: 18,
+      fontFamily: "Quicksand"
+    },
+    subheading2: {
+      fontSize: 18,
+      fontFamily: "Quicksand"
+    },
+    subheading3: {
+      fontWeight: "bold",
+      fontSize: 15,
+      fontFamily: "Quicksand"
+    },
+    bodytext: {
+      fontSize: 15,
+      fontFamily: "Quicksand"
+    },
+    bodytext2: {
+      fontSize: 13,
+      fontFamily: "Quicksand"
+    }
   }
 };
 export default theme;
