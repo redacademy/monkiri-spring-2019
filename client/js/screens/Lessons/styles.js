@@ -92,23 +92,35 @@ export const styles = StyleSheet.create({
     borderRadius: 5,
     color: "white"
   },
-  editButton: {
+  // editButton: {
+  //   marginBottom: 20,
+  //   marginTop: 20,
+  //   paddingTop: 5,
+  //   paddingBottom: 5,
+  //   paddingLeft: 10,
+  //   paddingRight: 10,
+  //   // justifyContent: "right",
+  //   // alignItems: "right",
+  //   // backgroundColor: theme.colors.monikOrange,
+  //   borderRadius: 20
+  // },
+  // btnText: {
+  //   textTransform: "capitalize",
+  //   color: "white",
+  //   textAlign: "center",
+  //   width: 100
+  // },
+  advancedButton: {
+    backgroundColor: "#25BDD8",
     marginBottom: 20,
     marginTop: 20,
-    paddingTop: 5,
-    paddingBottom: 5,
-    paddingLeft: 10,
-    paddingRight: 10,
-    // justifyContent: "right",
-    // alignItems: "right",
+    paddingTop: 8,
+    paddingBottom: 8,
+    paddingLeft: 18,
+    paddingRight: 18,
+    justifyContent: "center",
+    alignItems: "center",
     // backgroundColor: theme.colors.monikOrange,
-    borderRadius: 20,
-    color: "red"
-  },
-  btnText: {
-    textTransform: "capitalize",
-    color: "white",
-    textAlign: "center",
-    width: 100
+    borderRadius: 20
   }
 });
