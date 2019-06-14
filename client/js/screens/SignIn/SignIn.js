@@ -10,17 +10,7 @@ import {
 import { styles } from "./styles";
 import PropTypes from "prop-types";
 import { Form, Field } from "react-final-form";
-
-const validate = values => {
-  const errors = {};
-  if (!values.email) {
-    errors.email = "Required";
-  }
-  if (!values.password) {
-    errors.password = "Required";
-  }
-  return errors;
-};
+import validate from "./helpers/validate";
 
 const SignIn = ({ navigation }) => {
   return (
