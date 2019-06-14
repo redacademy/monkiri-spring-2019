@@ -46,4 +46,3 @@ export default (topics = [
     background: theme.colors.lavender
   }
 ]);
-ßß;
