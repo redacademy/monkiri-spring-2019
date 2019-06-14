@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, Image } from "react-native";
-import styles from "./styles";
-const OnboadrdingTwo = () => {
+import { styles } from "./styles";
+const OnboardingTwo = () => {
   return (
     <View>
       <Text>Onboarding 02</Text>
@@ -9,4 +9,4 @@ const OnboadrdingTwo = () => {
   );
 };
 
-export default OnboadrdingTwo;
+export default OnboardingTwo;
