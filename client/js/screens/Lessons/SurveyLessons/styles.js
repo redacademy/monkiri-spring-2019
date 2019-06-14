@@ -3,10 +3,10 @@ import theme from "../../../config/styles";
 export default (styles = StyleSheet.create({
   root: {
     width: "100%",
-    height: "100%",
+   
   },
   titleContainer: {
-    height:"20%",
+    height:180,
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -18,13 +18,12 @@ export default (styles = StyleSheet.create({
     fontWeight:"300"
   },
   topicListContainer: {
-    height:"auto",
     width:"96%",
     marginLeft: "auto",
     marginRight:"auto"
   },
   buttonContainer: {
-    height:"auto",
+    height:150,
     alignItems: 'center',
     justifyContent: "center",
   },
