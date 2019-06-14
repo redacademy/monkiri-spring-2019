@@ -83,14 +83,51 @@ export const styles = StyleSheet.create({
   },
   title: {
     flexDirection: "row",
+    justifyContent: "center",
     width: "100%",
     height: 50,
-    padding: 10,
-    backgroundColor: "#f07216",
-    top: 10,
-    alignItems: "center",
+   
+    backgroundColor: "#fff",
+    alignItems: "flex-end",
     borderRadius: 5,
-    color: "white"
+
+    color: "white",
+ 
+    backgroundColor: "#bbb"
+  },
+  buttonClicked: {
+    backgroundColor: "#f07216",
+    color: "#fff",
+    height: "92%",
+    width: "100%",
+    textAlign: "center",
+    alignItems: "center",
+    justifyContent: "center",
+    borderWidth: 1,
+    borderColor: "#f07216",
+    borderTopLeftRadius: 10,
+    borderTopRightRadius: 10
+  
+  },
+  buttonNotClicked: {
+    backgroundColor: "#ffffff",
+    color: "#fff",
+    height: "78%",
+    width: "100%",
+    textAlign: "center",
+    alignItems: "center",
+    justifyContent: "center",
+    borderWidth: 1,
+    borderColor: "#f07216"
+  },
+  btnLesson: {
+    alignItems: "center",
+    justifyContent: "center"
+  },
+  myLesson: {
+    backgroundColor: "#f07216",
+    width: "100%",
+    height: "100%"
   },
   editButton: {
     alignItems: "flex-end",
@@ -104,7 +141,6 @@ export const styles = StyleSheet.create({
     paddingTop: 8,
     paddingBottom: 8,
     width: "20%",
-    // backgroundColor: theme.colors.monikOrange,
     borderRadius: 20
   },
   buttonColor: {
@@ -112,5 +148,21 @@ export const styles = StyleSheet.create({
     color: "white",
     textAlign: "center",
     width: 80
+  },
+  head: {
+    zIndex: 40,
+    backgroundColor: "#f07216",
+    flex: 0.3,
+    width: "100%",
+    borderTopLeftRadius: 20,
+    borderTopRightRadius: 20
+  },
+  notHead: {
+    zIndex: 40,
+    backgroundColor: "#fff",
+    flex: 0.3,
+    width: "100%",
+    borderTopLeftRadius: 20,
+    borderTopRightRadius: 20
   }
 });
