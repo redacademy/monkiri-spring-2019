@@ -23,14 +23,18 @@ export const styles = StyleSheet.create({
     marginBottom: 10,
     width: "90%"
   },
-  input: {
-    padding: 5,
-    height: 40,
+  inputBackground: {
+    paddingHorizontal: 10,
     backgroundColor: "rgba(243, 152, 78, 0.5)",
     borderRadius: 10
   },
+  input: {
+    height: 40
+  },
   error: {
-    color: "red"
+    color: "red",
+    marginVertical: 5,
+    marginLeft: 10
   },
   logInButton: {
     height: "25%",

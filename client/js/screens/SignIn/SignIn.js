@@ -41,13 +41,15 @@ const SignIn = ({ navigation }) => {
                 name="email"
                 render={({ input, meta }) => (
                   <View style={styles.field}>
-                    <TextInput
-                      style={styles.input}
-                      {...input}
-                      placeholder="E-mail"
-                      keyboardType="default"
-                      value={input.value}
-                    />
+                    <View style={styles.inputBackground}>
+                      <TextInput
+                        style={styles.input}
+                        {...input}
+                        placeholder="E-mail"
+                        keyboardType="default"
+                        value={input.value}
+                      />
+                    </View>
                     <View>
                       {meta.error && meta.touched && (
                         <Text style={styles.error}>{meta.error}</Text>
@@ -60,14 +62,16 @@ const SignIn = ({ navigation }) => {
                 name="password"
                 render={({ input, meta }) => (
                   <View style={styles.field}>
-                    <TextInput
-                      style={styles.input}
-                      {...input}
-                      placeholder="Password"
-                      keyboardType="default"
-                      secureTextEntry={true}
-                      value={input.value}
-                    />
+                    <View style={styles.inputBackground}>
+                      <TextInput
+                        style={styles.input}
+                        {...input}
+                        placeholder="Password"
+                        keyboardType="default"
+                        secureTextEntry={true}
+                        value={input.value}
+                      />
+                    </View>
                     <View>
                       {meta.error && meta.touched && (
                         <Text style={styles.error}>{meta.error}</Text>
