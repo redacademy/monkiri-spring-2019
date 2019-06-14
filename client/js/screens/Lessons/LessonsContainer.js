@@ -42,17 +42,8 @@ class LessonsContainer extends Component {
           {this.state.tabIndex == 0 ? <Text>test 1</Text> : <Text>test2</Text>}
         </View>
         <View style={styles.editButton}>
-          <TouchableOpacity>
-            <Text
-              style={{
-                textAlign: "right",
-                fontSize: 18,
-                width: "100%",
-                textTransform: "capitalize"
-              }}
-            >
-              Edit
-            </Text>
+          <TouchableOpacity style={styles.advancedButton}>
+            <Text style={styles.buttonColor}>Edit</Text>
           </TouchableOpacity>
         </View>
 
@@ -69,10 +60,12 @@ class LessonsContainer extends Component {
             <View style={styles.bar} />
           </View>
           <View style={styles.button}>
-            <Image
-              style={styles.playButton}
-              source={require(`../../assets/images/Buttons/play_button.png`)}
-            />
+            <TouchableOpacity>
+              <Image
+                style={styles.playButton}
+                source={require(`../../assets/images/Buttons/play_button.png`)}
+              />
+            </TouchableOpacity>
           </View>
         </View>
         <View style={styles.container}>
@@ -87,17 +80,21 @@ class LessonsContainer extends Component {
             <View style={styles.bar} />
           </View>
           <View style={styles.button}>
-            <Image
-              style={styles.playButton}
-              source={require(`../../assets/images/Buttons/play_button.png`)}
-            />
+            <TouchableOpacity>
+              <Image
+                style={styles.playButton}
+                source={require(`../../assets/images/Buttons/play_button.png`)}
+              />
+            </TouchableOpacity>
           </View>
         </View>
         <View style={styles.addButtonContainer}>
-          <Image
-            style={styles.addButton}
-            source={require(`../../assets/images/Buttons/add.png`)}
-          />
+          <TouchableOpacity>
+            <Image
+              style={styles.addButton}
+              source={require(`../../assets/images/Buttons/add.png`)}
+            />
+          </TouchableOpacity>
         </View>
       </View>
     );
