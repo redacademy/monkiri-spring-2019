@@ -1,9 +1,17 @@
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
-  SignInContainer: {
+  root: {
     flex: 1,
-    justifyContent: "center",
+    justifyContent: "flex-start",
     alignItems: "center"
+  },
+  logo: {
+    height: 80,
+    width: 80
+  },
+  icon: {
+    height: 70,
+    width: 70
   }
 });
