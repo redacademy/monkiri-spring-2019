@@ -3,7 +3,7 @@ import theme from "../../../config/styles";
 export default (styles = StyleSheet.create({
   root: {
     width: "100%",
-    height: "100%"
+    height: "100%",
   },
   titleContainer: {
     height:"20%",
@@ -15,29 +15,35 @@ export default (styles = StyleSheet.create({
     fontSize:20,
     width:"60%",
     textAlign:"center",
-    fontWeight:"200"
-
+    fontWeight:"300"
   },
   topicListContainer: {
-    height:"60%",
+    height:"auto",
     width:"96%",
     marginLeft: "auto",
     marginRight:"auto"
   },
   buttonContainer: {
-    height:"20%",
+    height:"auto",
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: "center",
   },
   button:{
       backgroundColor:theme.colors.monikOrange,
-      borderRadius:50
+      borderRadius:50,
+
   },
   buttonText:{
       color:"#fff",
       padding:10,
       paddingLeft:50,
       paddingRight:50,
-      fontSize:20
+      fontSize:20,
+  },
+  skipButton:{
+    padding:20
+  },
+  skipText:{
+    textDecorationLine: 'underline',
   }
 }));
