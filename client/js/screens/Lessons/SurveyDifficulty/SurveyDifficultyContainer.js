@@ -16,14 +16,7 @@ class SurveyDifficultyContainer extends Component {
             financial knowledge?
           </Text>
         </View>
-        {/* <View
-          style={
-            {
-              // flex: 0.2,
-              // width: "70%"
-            }
-          }
-        > */}
+
         <View style={styles.beginnerContainer}>
           <View style={styles.triangleShadowYellow} />
 
@@ -31,7 +24,7 @@ class SurveyDifficultyContainer extends Component {
             style={styles.treePic}
             source={require("../../../assets/images/illustrations/PNG/sprout.png")}
           />
-          <TouchableOpacity style={styles.beginnerButton}>
+          <TouchableOpacity style={styles.advancedButton}>
             <Text style={styles.buttonColor}>Beginner</Text>
           </TouchableOpacity>
         </View>

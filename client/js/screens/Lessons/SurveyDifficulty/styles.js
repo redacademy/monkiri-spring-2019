@@ -2,7 +2,7 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginVertical: 40,
+    marginVertical: 50,
     alignItems: "center",
     justifyContent: "space-between"
   },
@@ -15,14 +15,16 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     borderRadius: 10,
-    width: "70%"
+    width: "80%",
+    height: '37%'
   },
   advancedContainer: {
     backgroundColor: "#59c9c9",
     justifyContent: "center",
     alignItems: "center",
     borderRadius: 10,
-    width: "70%"
+    width: "80%",
+    height: '37%'
   },
   triangleShadowYellow: {
     right: 0,
@@ -30,21 +32,18 @@ const styles = StyleSheet.create({
     backgroundColor: "transparent",
     borderStyle: "solid",
     borderLeftWidth: 170,
-    borderBottomWidth: 210,
+    borderBottomWidth: 260,
     borderBottomColor: "transparent",
     borderLeftColor: "#edcc74",
     transform: [{ rotate: "180deg" }],
-    position: "absolute"
-  },
-  beginnerButton: {
-    backgroundColor: "#25BDD8",
-    width: "50%",
-    alignItems: "center",
-    justifyContent: "center",
-    borderRadius: 80
+    position: "absolute",
+    borderRadius: 10
   },
   buttonColor: {
-    color: "white"
+    textTransform: "capitalize",
+    color: "white",
+    textAlign: "center",
+    width: 100
   },
   triangleShadowBlue: {
     right: 0,
@@ -52,7 +51,7 @@ const styles = StyleSheet.create({
     backgroundColor: "transparent",
     borderStyle: "solid",
     borderLeftWidth: 170,
-    borderBottomWidth: 210,
+    borderBottomWidth: 260,
     borderBottomColor: "transparent",
     borderLeftColor: "#98CBD3",
     transform: [{ rotate: "180deg" }],
@@ -65,11 +64,16 @@ const styles = StyleSheet.create({
   },
   advancedButton: {
     backgroundColor: "#25BDD8",
-    height: 35,
-    width: 130,
-    alignItems: "center",
+    marginBottom: 20,
+    marginTop: 20,
+    paddingTop: 8,
+    paddingBottom: 8,
+    paddingLeft: 18,
+    paddingRight: 18,
     justifyContent: "center",
-    borderRadius: 80
+    alignItems: "center",
+    // backgroundColor: theme.colors.monikOrange,
+    borderRadius: 20
   },
   skipText: {
     textAlign: "center",
