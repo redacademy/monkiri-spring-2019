@@ -1,19 +1,19 @@
 import { StyleSheet, Dimensions } from "react-native";
 import theme from "../../config/styles";
+const { width, height } = Dimensions.get("window");
 
 export const styles = StyleSheet.create({
   root: {
     flex: 1,
-    justifyContent: "center",
+    justifyContent: "space-evenly",
     alignItems: "center"
   },
   logo: {
-    flex: 0.3,
+    height: height * 0.4,
     resizeMode: "contain"
   },
   form: {
-    width: "100%",
-    flex: 0.2
+    width: "100%"
   },
   inputFields: {
     alignItems: "center",
@@ -37,7 +37,8 @@ export const styles = StyleSheet.create({
     marginLeft: 10
   },
   logInButton: {
-    height: "25%",
+    marginTop: 10,
+    height: 30,
     width: "60%",
     justifyContent: "center",
     alignItems: "center",
@@ -49,7 +50,7 @@ export const styles = StyleSheet.create({
     color: "white"
   },
   content: {
-    flex: 0.2,
+    height: height * 0.25,
     justifyContent: "space-evenly"
   },
   forgotPassword: {
@@ -58,12 +59,13 @@ export const styles = StyleSheet.create({
   },
 
   iconsContainer: {
-    flexDirection: "row"
+    flexDirection: "row",
+    marginBottom: 20
   },
   icon: {
-    height: 40,
-    width: 40,
+    height: width * 0.1,
+    width: width * 0.1,
     resizeMode: "contain",
-    margin: 10
+    marginHorizontal: 10
   }
 });
