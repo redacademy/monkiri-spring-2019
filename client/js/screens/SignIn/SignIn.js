@@ -28,7 +28,7 @@ const SignIn = ({ navigation }) => {
         }}
         validate={validate.bind(this)}
         render={({ handleSubmit }) => (
-          <View>
+          <View style={styles.form}>
             <Field
               name="email"
               render={({ input, meta }) => (

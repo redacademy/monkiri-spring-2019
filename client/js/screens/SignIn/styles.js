@@ -8,21 +8,25 @@ export const styles = StyleSheet.create({
     alignItems: "center"
   },
   logo: {
-    height: 80,
-    width: 80,
-    marginTop: 200,
+    height: 200,
+    width: 200,
+    marginTop: 150,
     marginBottom: 20
+  },
+  form: {
+    alignItems: "center"
   },
   field: {
     marginBottom: 8,
     marginTop: 8
   },
   input: {
+    width: 300,
     height: 40,
     paddingLeft: 10,
     paddingRight: 10,
     borderRadius: 10,
-    backgroundColor: theme.colors.activeOrange
+    backgroundColor: "rgba(243, 152, 78, 0.5)"
   },
   error: {
     color: "red"
