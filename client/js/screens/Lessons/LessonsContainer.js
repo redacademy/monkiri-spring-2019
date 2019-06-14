@@ -16,28 +16,58 @@ class LessonsContainer extends Component {
   render() {
     return (
       <View style={styles.screenContainer}>
-        <View style={styles.title}>
-          <TouchableOpacity
-            onPress={() => {
-              this.setState({ tabIndex: 0 });
+        <View
+          style={{
+            height: 60,
+            width: "100%",
+            flexDirection: "row",
+            marginTop: 20
+          }}
+        >
+          <View
+            style={{
+              flex: 0.5,
+              height: "100%",
+              justifyContent: "flex-end",
+              flexDirection: "column"
             }}
           >
-            <Text
+            <TouchableOpacity
               style={[
-                this.state.tabIndex == 0 ? { backgroundColor: "#fff" } : null
+                this.state.tabIndex !== 0
+                  ? styles.buttonNotClicked
+                  : styles.buttonClicked
               ]}
+              onPress={() => {
+                this.setState({ tabIndex: 0 });
+              }}
             >
-              My Lessons
-            </Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => {
-              this.setState({ tabIndex: 1 });
+              <Text>My Lessons</Text>
+            </TouchableOpacity>
+          </View>
+          <View
+            style={{
+              flex: 0.5,
+              height: "100%",
+              justifyContent: "flex-end",
+              flexDirection: "column"
             }}
           >
-            <Text>Library</Text>
-          </TouchableOpacity>
+            <TouchableOpacity
+              style={[
+                this.state.tabIndex !== 1
+                  ? styles.buttonNotClicked
+                  : styles.buttonClicked
+              ]}
+              onPress={() => {
+                this.setState({ tabIndex: 1 });
+              }}
+            >
+              <Text>Library</Text>
+            </TouchableOpacity>
+          </View>
         </View>
+
         <View>
           {this.state.tabIndex == 0 ? <Text>test 1</Text> : <Text>test2</Text>}
         </View>
