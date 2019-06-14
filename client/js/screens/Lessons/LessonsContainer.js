@@ -41,6 +41,20 @@ class LessonsContainer extends Component {
         <View>
           {this.state.tabIndex == 0 ? <Text>test 1</Text> : <Text>test2</Text>}
         </View>
+        <View style={styles.editButton}>
+          <TouchableOpacity>
+            <Text
+              style={{
+                textAlign: "right",
+                fontSize: 18,
+                width: "100%",
+                textTransform: "capitalize"
+              }}
+            >
+              Edit
+            </Text>
+          </TouchableOpacity>
+        </View>
 
         <View style={styles.container}>
           <View style={[{ backgroundColor: "#99c355" }, styles.iconContainer]}>
@@ -49,8 +63,9 @@ class LessonsContainer extends Component {
               source={require(`../../assets/images/IconsWhite/saving.png`)}
             />
           </View>
+
           <View style={styles.cardContainer}>
-            <Text style={styles.name}>Budgeting</Text>
+            <Text style={styles.name}>Saving</Text>
             <View style={styles.bar} />
           </View>
           <View style={styles.button}>
