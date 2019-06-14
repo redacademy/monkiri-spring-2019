@@ -34,8 +34,10 @@ export const styles = StyleSheet.create({
   btn: {
     marginBottom: 20,
     marginTop: 20,
-    width: 200,
-    height: 30,
+    paddingTop: 5,
+    paddingBottom: 5,
+    paddingLeft: 10,
+    paddingRight: 10,
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: theme.colors.monikOrange,
@@ -43,7 +45,9 @@ export const styles = StyleSheet.create({
   },
   btnText: {
     textTransform: "capitalize",
-    color: "white"
+    color: "white",
+    textAlign: "center",
+    width: 100
   },
   forgot: {
     marginBottom: 20,
