@@ -83,13 +83,32 @@ export const styles = StyleSheet.create({
   },
   title: {
     flexDirection: "row",
-    width: '100%', 
+    width: "100%",
     height: 50,
     padding: 10,
     backgroundColor: "#f07216",
     top: 10,
-    alignItems: 'center',
+    alignItems: "center",
     borderRadius: 5,
-    color: 'white'
+    color: "white"
+  },
+  editButton: {
+    marginBottom: 20,
+    marginTop: 20,
+    paddingTop: 5,
+    paddingBottom: 5,
+    paddingLeft: 10,
+    paddingRight: 10,
+    // justifyContent: "right",
+    // alignItems: "right",
+    // backgroundColor: theme.colors.monikOrange,
+    borderRadius: 20,
+    color: "red"
+  },
+  btnText: {
+    textTransform: "capitalize",
+    color: "white",
+    textAlign: "center",
+    width: 100
   }
 });
