@@ -1,5 +1,12 @@
 import React from "react";
-import { View, Image, TouchableOpacity, TextInput, Text } from "react-native";
+import {
+  View,
+  KeyboardAvoidingView,
+  Image,
+  TouchableOpacity,
+  TextInput,
+  Text
+} from "react-native";
 import { styles } from "./styles";
 import PropTypes from "prop-types";
 import { Form, Field } from "react-final-form";
@@ -22,71 +29,82 @@ const SignIn = ({ navigation }) => {
         style={styles.logo}
         source={require("../../assets/images/Logo.png")}
       />
-      <Form
-        onSubmit={values => {
-          navigation.navigate("Layout");
-        }}
-        validate={validate.bind(this)}
-        render={({ handleSubmit }) => (
-          <View style={styles.form}>
-            <Field
-              name="email"
-              render={({ input, meta }) => (
-                <View style={styles.field}>
-                  <TextInput
-                    {...input}
-                    style={styles.input}
-                    placeholder="E-mail"
-                    keyboardType="default"
-                    value={input.value}
-                  />
-                  {meta.error && meta.touched && (
-                    <Text style={styles.error}>{meta.error}</Text>
-                  )}
-                </View>
-              )}
-            />
-            <Field
-              name="password"
-              render={({ input, meta }) => (
-                <View style={styles.field}>
-                  <TextInput
-                    {...input}
-                    style={styles.input}
-                    placeholder="Password"
-                    keyboardType="default"
-                    secureTextEntry={true}
-                    value={input.value}
-                  />
-                  {meta.error && meta.touched && (
-                    <Text style={styles.error}>{meta.error}</Text>
-                  )}
-                </View>
-              )}
-            />
-            <TouchableOpacity style={styles.btn} onPress={handleSubmit}>
-              <Text style={styles.btnText}> Log In</Text>
-            </TouchableOpacity>
-          </View>
-        )}
-      />
-      <TouchableOpacity onPress={() => navigation.navigate("Layout")}>
-        <Text style={styles.forgot}>Forgot Password?</Text>
-      </TouchableOpacity>
-      <Text style={styles.text}>Or Sign in with:</Text>
-      <View style={styles.iconsContainer}>
-        <TouchableOpacity>
-          <Image
-            style={styles.icon}
-            source={require("../../assets/images/facebook.png")}
-          />
+      <KeyboardAvoidingView style={styles.form} behavior="padding" enabled>
+        <Form
+          onSubmit={values => {
+            navigation.navigate("Layout");
+          }}
+          validate={validate.bind(this)}
+          render={({ handleSubmit }) => (
+            <View style={styles.inputFields}>
+              <Field
+                name="email"
+                render={({ input, meta }) => (
+                  <View style={styles.field}>
+                    <TextInput
+                      style={styles.input}
+                      {...input}
+                      placeholder="E-mail"
+                      keyboardType="default"
+                      value={input.value}
+                    />
+                    <View>
+                      {meta.error && meta.touched && (
+                        <Text style={styles.error}>{meta.error}</Text>
+                      )}
+                    </View>
+                  </View>
+                )}
+              />
+              <Field
+                name="password"
+                render={({ input, meta }) => (
+                  <View style={styles.field}>
+                    <TextInput
+                      style={styles.input}
+                      {...input}
+                      placeholder="Password"
+                      keyboardType="default"
+                      secureTextEntry={true}
+                      value={input.value}
+                    />
+                    <View>
+                      {meta.error && meta.touched && (
+                        <Text style={styles.error}>{meta.error}</Text>
+                      )}
+                    </View>
+                  </View>
+                )}
+              />
+              <TouchableOpacity
+                style={styles.logInButton}
+                onPress={handleSubmit}
+              >
+                <Text style={styles.LogInText}> Log In</Text>
+              </TouchableOpacity>
+            </View>
+          )}
+        />
+      </KeyboardAvoidingView>
+      <View style={styles.content}>
+        <TouchableOpacity onPress={() => navigation.navigate("Layout")}>
+          <Text style={styles.forgotPassword}>Forgot Password?</Text>
         </TouchableOpacity>
-        <TouchableOpacity>
-          <Image
-            style={styles.icon}
-            source={require("../../assets/images/google.png")}
-          />
-        </TouchableOpacity>
+        <Text style={styles.text}>Or Sign in with:</Text>
+        <View style={styles.iconsContainer}>
+          <TouchableOpacity>
+            <Image
+              style={styles.icon}
+              source={require("../../assets/images/facebook.png")}
+            />
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Image
+              style={styles.icon}
+              source={require("../../assets/images/google.png")}
+            />
+          </TouchableOpacity>
+        </View>
       </View>
     </View>
   );
