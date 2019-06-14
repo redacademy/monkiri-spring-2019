@@ -1,4 +1,4 @@
-import theme from "../../../../config/styles";
+import theme from "../config/styles";
 export default (topics = [
   {
     name: "Saving",
