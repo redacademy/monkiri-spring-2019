@@ -1,5 +1,4 @@
 import { StyleSheet } from "react-native";
-import theme from "../../../config/styles";
 export default (styles = StyleSheet.create({
   root: {
     width: "100%",
@@ -23,21 +22,9 @@ export default (styles = StyleSheet.create({
     marginRight:"auto"
   },
   buttonContainer: {
-    height:150,
+    height:100,
     alignItems: 'center',
-    justifyContent: "center",
-  },
-  button:{
-      backgroundColor:theme.colors.monikOrange,
-      borderRadius:50,
-
-  },
-  buttonText:{
-      color:"#fff",
-      padding:10,
-      paddingLeft:50,
-      paddingRight:50,
-      fontSize:20,
+    justifyContent: "flex-start",
   },
   skipButton:{
     padding:20

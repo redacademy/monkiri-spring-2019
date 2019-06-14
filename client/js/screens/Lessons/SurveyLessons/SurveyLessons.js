@@ -2,8 +2,8 @@ import React from "react";
 import { View, Text, TouchableOpacity, ScrollView } from "react-native";
 import TopicList from "../../../components/TopicList";
 import styles from "./styles";
-
-const SurveyLessons = ({ data }) => {
+import { withNavigation } from "react-navigation";
+const SurveyLessons = ({ data, navigation }) => {
   return (
     <ScrollView style={styles.root}>
       <View style={styles.titleContainer}>
@@ -12,13 +12,13 @@ const SurveyLessons = ({ data }) => {
         </Text>
       </View>
       <View style={styles.topicListContainer}>
-        <TopicList topics={data} />
+        <TopicList topics={data} hasButton={true} />
       </View>
       <View style={styles.buttonContainer}>
-        <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>Continue</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.skipButton}>
+        <TouchableOpacity
+          style={styles.skipButton}
+          onPress={() => navigation.navigate("LESSON")}
+        >
           <Text style={styles.skipText}>Skip</Text>
         </TouchableOpacity>
       </View>
@@ -26,4 +26,4 @@ const SurveyLessons = ({ data }) => {
   );
 };
 
-export default SurveyLessons;
+export default withNavigation(SurveyLessons);
