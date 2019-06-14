@@ -1,10 +1,23 @@
 import React from "react";
-import { View } from "react-native";
-import TopicList from "../../../components/";
+import { View, Text, TouchableOpacity } from "react-native";
+import TopicList from "../../../components/TopicList";
+import styles from "./styles";
 const SurveyLessons = ({ data }) => {
   return (
-    <View>
-      <TopicList topics={data} />
+    <View style={styles.root}>
+      <View style={styles.titleContainer}>
+        <Text style={styles.title}>
+          What topics are you interested in learning?
+        </Text>
+      </View>
+      <View style={styles.topicListContainer}>
+        <TopicList topics={data} />
+      </View>
+      <View style={styles.buttonContainer}>
+        <TouchableOpacity style={styles.button}>
+          <Text style={styles.buttonText}>Continue</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };
