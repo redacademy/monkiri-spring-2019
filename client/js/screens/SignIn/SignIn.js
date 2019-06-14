@@ -11,6 +11,20 @@ import { styles } from "./styles";
 import PropTypes from "prop-types";
 import { Form, Field } from "react-final-form";
 
+const validate = values => {
+  const errors = {};
+  if (!values.email) {
+    errors.email = "Required";
+  }
+  if (!values.password) {
+    errors.password = "Required";
+  }
+  if (!values.name) {
+    errors.name = "Required";
+  }
+  return errors;
+};
+
 const SignIn = ({ navigation }) => {
   return (
     <View style={styles.root}>
@@ -23,40 +37,50 @@ const SignIn = ({ navigation }) => {
           console.log(values);
           navigation.navigate("Layout");
         }}
+        validate={validate.bind(this)}
         render={({ handleSubmit }) => (
           <KeyboardAvoidingView>
             <Field
               name="name"
               render={({ input, meta }) => (
-                <TextInput
-                  {...input}
-                  placeholder="Name"
-                  keyboardType="default"
-                  value={input.value}
-                />
+                <View>
+                  <TextInput
+                    {...input}
+                    placeholder="Name"
+                    keyboardType="default"
+                    value={input.value}
+                  />
+                  {meta.error && meta.touched && <Text>{meta.error}</Text>}
+                </View>
               )}
             />
             <Field
               name="email"
               render={({ input, meta }) => (
-                <TextInput
-                  {...input}
-                  placeholder="Email"
-                  keyboardType="default"
-                  value={input.value}
-                />
+                <View>
+                  <TextInput
+                    {...input}
+                    placeholder="Email"
+                    keyboardType="default"
+                    value={input.value}
+                  />
+                  {meta.error && meta.touched && <Text>{meta.error}</Text>}
+                </View>
               )}
             />
             <Field
               name="password"
               render={({ input, meta }) => (
-                <TextInput
-                  {...input}
-                  placeholder="Password"
-                  keyboardType="default"
-                  secureTextEntry={true}
-                  value={input.value}
-                />
+                <View>
+                  <TextInput
+                    {...input}
+                    placeholder="Name"
+                    keyboardType="default"
+                    secureTextEntry={true}
+                    value={input.value}
+                  />
+                  {meta.error && meta.touched && <Text>{meta.error}</Text>}
+                </View>
               )}
             />
             <TouchableHighlight onPress={handleSubmit}>
