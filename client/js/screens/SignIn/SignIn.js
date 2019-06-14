@@ -75,14 +75,18 @@ const SignIn = ({ navigation }) => {
       </TouchableOpacity>
       <Text style={styles.text}>Or Sign in with:</Text>
       <View style={styles.iconsContainer}>
-        <Image
-          style={styles.icon}
-          source={require("../../assets/images/facebook.png")}
-        />
-        <Image
-          style={styles.icon}
-          source={require("../../assets/images/google.png")}
-        />
+        <TouchableOpacity>
+          <Image
+            style={styles.icon}
+            source={require("../../assets/images/facebook.png")}
+          />
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <Image
+            style={styles.icon}
+            source={require("../../assets/images/google.png")}
+          />
+        </TouchableOpacity>
       </View>
     </View>
   );
