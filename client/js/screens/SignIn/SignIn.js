@@ -1,12 +1,5 @@
 import React from "react";
-import {
-  View,
-  Image,
-  TouchableHighlight,
-  TextInput,
-  Text,
-  KeyboardAvoidingView
-} from "react-native";
+import { View, Image, TouchableOpacity, TextInput, Text } from "react-native";
 import { styles } from "./styles";
 import PropTypes from "prop-types";
 import { Form, Field } from "react-final-form";
@@ -18,9 +11,6 @@ const validate = values => {
   }
   if (!values.password) {
     errors.password = "Required";
-  }
-  if (!values.name) {
-    errors.name = "Required";
   }
   return errors;
 };
@@ -34,76 +24,65 @@ const SignIn = ({ navigation }) => {
       />
       <Form
         onSubmit={values => {
-          console.log(values);
           navigation.navigate("Layout");
         }}
         validate={validate.bind(this)}
         render={({ handleSubmit }) => (
-          <KeyboardAvoidingView>
-            <Field
-              name="name"
-              render={({ input, meta }) => (
-                <View>
-                  <TextInput
-                    {...input}
-                    placeholder="Name"
-                    keyboardType="default"
-                    value={input.value}
-                  />
-                  {meta.error && meta.touched && <Text>{meta.error}</Text>}
-                </View>
-              )}
-            />
+          <View>
             <Field
               name="email"
               render={({ input, meta }) => (
-                <View>
+                <View style={styles.field}>
                   <TextInput
                     {...input}
-                    placeholder="Email"
+                    style={styles.input}
+                    placeholder="E-mail"
                     keyboardType="default"
                     value={input.value}
                   />
-                  {meta.error && meta.touched && <Text>{meta.error}</Text>}
+                  {meta.error && meta.touched && (
+                    <Text style={styles.error}>{meta.error}</Text>
+                  )}
                 </View>
               )}
             />
             <Field
               name="password"
               render={({ input, meta }) => (
-                <View>
+                <View style={styles.field}>
                   <TextInput
                     {...input}
-                    placeholder="Name"
+                    style={styles.input}
+                    placeholder="Password"
                     keyboardType="default"
                     secureTextEntry={true}
                     value={input.value}
                   />
-                  {meta.error && meta.touched && <Text>{meta.error}</Text>}
+                  {meta.error && meta.touched && (
+                    <Text style={styles.error}>{meta.error}</Text>
+                  )}
                 </View>
               )}
             />
-            <TouchableHighlight onPress={handleSubmit}>
-              <Text> Sign In</Text>
-            </TouchableHighlight>
-            <Text>Forgot Password?</Text>
-          </KeyboardAvoidingView>
+            <TouchableOpacity style={styles.btn} onPress={handleSubmit}>
+              <Text style={styles.btnText}> Log In</Text>
+            </TouchableOpacity>
+          </View>
         )}
       />
-      <View>
-        <View>
-          <Text>Or Sign in with:</Text>
-        </View>
-        <View>
-          <Image
-            style={styles.icon}
-            source={require("../../assets/images/facebook.png")}
-          />
-          <Image
-            style={styles.icon}
-            source={require("../../assets/images/google.png")}
-          />
-        </View>
+      <TouchableOpacity onPress={() => navigation.navigate("Layout")}>
+        <Text style={styles.forgot}>Forgot Password?</Text>
+      </TouchableOpacity>
+      <Text style={styles.text}>Or Sign in with:</Text>
+      <View style={styles.iconsContainer}>
+        <Image
+          style={styles.icon}
+          source={require("../../assets/images/facebook.png")}
+        />
+        <Image
+          style={styles.icon}
+          source={require("../../assets/images/google.png")}
+        />
       </View>
     </View>
   );
