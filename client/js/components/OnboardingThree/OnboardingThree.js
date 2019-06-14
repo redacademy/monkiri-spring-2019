@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import { View, Text, Image, TouchableOpacity } from "react-native";
 import { styles } from "./styles";
-const OnboardingThree = () => {
+const OnboardingThree = ({ navigation }) => {
   const [isRegisterActive, setIsRegisterActive] = useState(false);
   const [isSignInActive, setIsSignInActive] = useState(false);
 
   const handleReisterToggle = () => {
     setIsRegisterActive(!isRegisterActive);
     setIsSignInActive(false);
+    // navigation.navigate("Layout");
   };
   const handleSignInToggle = () => {
     setIsSignInActive(!isSignInActive);

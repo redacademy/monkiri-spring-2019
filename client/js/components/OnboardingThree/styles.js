@@ -33,7 +33,7 @@ export const styles = StyleSheet.create({
     borderRadius: 20,
     justifyContent: "center",
     alignItems: "center",
-    padding: 10
+    padding: 8
   },
   activeButtonText: {
     fontSize: theme.fonts.subheading2.fontSize,
@@ -47,7 +47,7 @@ export const styles = StyleSheet.create({
     borderRadius: 20,
     justifyContent: "center",
     alignItems: "center",
-    padding: 10,
+    padding: 8,
     borderWidth: 1,
     borderColor: theme.colors.skyBlue
   },

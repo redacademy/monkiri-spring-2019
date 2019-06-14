@@ -5,7 +5,7 @@ import Swiper from "react-native-swiper";
 import OnboardingOne from "../../components/OnboardingOne";
 import OnboardingTwo from "../../components/OnboardingTwo";
 import OnboardingThree from "../../components/OnboardingThree";
-const Onboarding = () => {
+const Onboarding = ({ navigation }) => {
   return (
     <View style={{ flex: 1 }}>
       <Swiper
@@ -15,7 +15,7 @@ const Onboarding = () => {
       >
         <OnboardingOne />
         <OnboardingTwo />
-        <OnboardingThree />
+        <OnboardingThree navigation={navigation} />
       </Swiper>
     </View>
   );

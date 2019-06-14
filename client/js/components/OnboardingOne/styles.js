@@ -19,6 +19,7 @@ export const styles = StyleSheet.create({
     padding: 20
   },
   text: {
-    marginLeft: 10
+    marginLeft: 10,
+    fontWeight: "100"
   }
 });
