@@ -1,72 +1,65 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, Dimensions } from "react-native";
 import theme from "../../config/styles";
 
 export const styles = StyleSheet.create({
   root: {
     flex: 1,
-    justifyContent: "flex-start",
+    justifyContent: "center",
     alignItems: "center"
   },
   logo: {
-    height: 200,
-    width: 200,
-    marginTop: 150,
-    marginBottom: 20
+    flex: 0.3,
+    resizeMode: "contain"
   },
   form: {
-    alignItems: "center"
+    width: "100%",
+    flex: 0.2
+  },
+  inputFields: {
+    alignItems: "center",
+    justifyContent: "space-between"
   },
   field: {
-    marginBottom: 8,
-    marginTop: 8
+    marginBottom: 10,
+    width: "90%"
   },
   input: {
-    width: 300,
+    padding: 5,
     height: 40,
-    paddingLeft: 10,
-    paddingRight: 10,
-    borderRadius: 10,
-    backgroundColor: "rgba(243, 152, 78, 0.5)"
+    backgroundColor: "rgba(243, 152, 78, 0.5)",
+    borderRadius: 10
   },
   error: {
     color: "red"
   },
-  btn: {
-    marginBottom: 20,
-    marginTop: 20,
-    paddingTop: 5,
-    paddingBottom: 5,
-    paddingLeft: 10,
-    paddingRight: 10,
+  logInButton: {
+    height: "25%",
+    width: "60%",
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: theme.colors.monikOrange,
     borderRadius: 20
   },
-  btnText: {
+  LogInText: {
     textTransform: "capitalize",
-    color: "white",
-    textAlign: "center",
-    width: 100
+    color: "white"
   },
-  forgot: {
-    marginBottom: 20,
-    marginTop: 20,
+  content: {
+    flex: 0.2,
+    justifyContent: "space-evenly"
+  },
+  forgotPassword: {
+    color: "black",
     textDecorationLine: "underline"
   },
-  text: {
-    marginBottom: 10,
-    marginTop: 10
-  },
+
   iconsContainer: {
-    marginTop: 10,
-    marginBottom: 10,
     flexDirection: "row"
   },
   icon: {
     height: 40,
     width: 40,
-    marginLeft: 20,
-    marginRight: 20
+    resizeMode: "contain",
+    margin: 10
   }
 });
