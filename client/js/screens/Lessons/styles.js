@@ -84,16 +84,7 @@ export const styles = StyleSheet.create({
   title: {
     flexDirection: "row",
     justifyContent: "center",
-    width: "100%",
-    height: 50,
-   
-    backgroundColor: "#fff",
-    alignItems: "flex-end",
-    borderRadius: 5,
-
-    color: "white",
- 
-    backgroundColor: "#bbb"
+    width: "100%"
   },
   buttonClicked: {
     backgroundColor: "#f07216",
@@ -107,11 +98,10 @@ export const styles = StyleSheet.create({
     borderColor: "#f07216",
     borderTopLeftRadius: 10,
     borderTopRightRadius: 10
-  
   },
   buttonNotClicked: {
     backgroundColor: "#ffffff",
-    color: "#fff",
+
     height: "78%",
     width: "100%",
     textAlign: "center",
@@ -120,49 +110,52 @@ export const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: "#f07216"
   },
-  btnLesson: {
-    alignItems: "center",
-    justifyContent: "center"
+  buttonTextNotClicked: {
+    color: "#f07216"
   },
-  myLesson: {
-    backgroundColor: "#f07216",
-    width: "100%",
-    height: "100%"
+  buttonTextClicked: {
+    color: "#fff"
   },
   editButton: {
     alignItems: "flex-end",
     width: "100%",
-    marginBottom: 20,
-    marginTop: 20
+    marginBottom: 10,
+    marginTop: 5,
+    
+    
   },
-
   advancedButton: {
     backgroundColor: "#25BDD8",
-    paddingTop: 8,
-    paddingBottom: 8,
-    width: "20%",
-    borderRadius: 20
+    paddingTop: '2%',
+    paddingBottom: '2%',
+    width: "23%",
+    right: '5%',
+    borderRadius: 20,
+    
   },
   buttonColor: {
-    textTransform: "capitalize",
+    textTransform: "uppercase",
     color: "white",
     textAlign: "center",
-    width: 80
+    
   },
-  head: {
-    zIndex: 40,
-    backgroundColor: "#f07216",
-    flex: 0.3,
+  tabIndex: {
+    height: 60,
     width: "100%",
-    borderTopLeftRadius: 20,
-    borderTopRightRadius: 20
+    flexDirection: "row",
+    marginTop: 20
   },
-  notHead: {
-    zIndex: 40,
-    backgroundColor: "#fff",
-    flex: 0.3,
-    width: "100%",
-    borderTopLeftRadius: 20,
-    borderTopRightRadius: 20
+  tabLayout: {
+    flex: 0.5,
+    height: "100%",
+    justifyContent: "flex-end",
+    flexDirection: "column",
+    
+  },
+  tabBorder: {
+    flex: 0.5,
+    height: "100%",
+    justifyContent: "flex-end",
+    flexDirection: "column"
   }
 });
