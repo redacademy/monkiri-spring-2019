@@ -16,22 +16,8 @@ class LessonsContainer extends Component {
   render() {
     return (
       <View style={styles.screenContainer}>
-        <View
-          style={{
-            height: 60,
-            width: "100%",
-            flexDirection: "row",
-            marginTop: 20
-          }}
-        >
-          <View
-            style={{
-              flex: 0.5,
-              height: "100%",
-              justifyContent: "flex-end",
-              flexDirection: "column"
-            }}
-          >
+        <View style={styles.tabIndex}>
+          <View style={styles.tabLayout}>
             <TouchableOpacity
               style={[
                 this.state.tabIndex !== 0
@@ -42,17 +28,18 @@ class LessonsContainer extends Component {
                 this.setState({ tabIndex: 0 });
               }}
             >
-              <Text>My Lessons</Text>
+              <Text
+                style={[
+                  this.state.tabIndex !== 0
+                    ? styles.buttonTextNotClicked
+                    : styles.buttonTextClicked, {textTransform: 'uppercase'}
+                ]}
+              >
+                My Lessons
+              </Text>
             </TouchableOpacity>
           </View>
-          <View
-            style={{
-              flex: 0.5,
-              height: "100%",
-              justifyContent: "flex-end",
-              flexDirection: "column"
-            }}
-          >
+          <View style={styles.tabBorder}>
             <TouchableOpacity
               style={[
                 this.state.tabIndex !== 1
@@ -63,7 +50,15 @@ class LessonsContainer extends Component {
                 this.setState({ tabIndex: 1 });
               }}
             >
-              <Text>Library</Text>
+              <Text
+                style={[
+                  this.state.tabIndex !== 1
+                    ? styles.buttonTextNotClicked
+                    : styles.buttonTextClicked, {textTransform: 'uppercase'}
+                ]}
+              >
+                Library
+              </Text>
             </TouchableOpacity>
           </View>
         </View>
