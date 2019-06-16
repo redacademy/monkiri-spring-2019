@@ -13,14 +13,15 @@ const styles = StyleSheet.create({
     paddingBottom: 30
   },
   button: {
+    height:40,
+    width:"50%",
     backgroundColor: theme.colors.monikOrange,
-    borderRadius: 50
+    borderRadius: 50,
+    justifyContent:"center",
+    alignItems:"center"
   },
   buttonText: {
     color: "#fff",
-    padding: 10,
-    paddingLeft: 50,
-    paddingRight: 50,
     fontSize: 20
   },
   buttonContainer: {
