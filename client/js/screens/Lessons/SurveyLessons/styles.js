@@ -2,7 +2,6 @@ import { StyleSheet } from "react-native";
 export default (styles = StyleSheet.create({
   root: {
     width: "100%",
-   
   },
   titleContainer: {
     height:180,
@@ -10,7 +9,6 @@ export default (styles = StyleSheet.create({
     justifyContent: 'center',
   },
   title:{
-    // ...theme.fonts.heading
     fontSize:20,
     width:"60%",
     textAlign:"center",
