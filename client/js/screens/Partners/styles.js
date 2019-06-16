@@ -5,5 +5,5 @@ export const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center"
   },
-  PartnersCard: { width: "90%" }
+  PartnersCard: { width: "91%" }
 });
