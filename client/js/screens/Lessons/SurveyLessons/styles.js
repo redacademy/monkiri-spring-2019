@@ -2,9 +2,12 @@ import { StyleSheet } from "react-native";
 export default (styles = StyleSheet.create({
   root: {
     width: "100%",
+    flex:1
   },
   titleContainer: {
-    height:180,
+    flex:5,
+    marginTop:30,
+    marginBottom:20,
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -15,12 +18,13 @@ export default (styles = StyleSheet.create({
     fontWeight:"300"
   },
   topicListContainer: {
+    flex:1,
     width:"96%",
     marginLeft: "auto",
     marginRight:"auto"
   },
   buttonContainer: {
-    height:100,
+    flex:1,
     alignItems: 'center',
     justifyContent: "flex-start",
   },
@@ -29,5 +33,9 @@ export default (styles = StyleSheet.create({
   },
   skipText:{
     textDecorationLine: 'underline',
+  },
+  content:{
+    flexGrow: 1,
+    justifyContent: 'space-between'
   }
 }));

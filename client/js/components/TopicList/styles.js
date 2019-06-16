@@ -26,8 +26,7 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     alignItems: "center",
-    justifyContent: "center",
-    marginTop: 20
+    justifyContent: "center"
   }
 });
 export default styles;

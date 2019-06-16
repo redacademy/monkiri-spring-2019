@@ -5,7 +5,7 @@ import styles from "./styles";
 import { withNavigation } from "react-navigation";
 const SurveyLessons = ({ data, navigation }) => {
   return (
-    <ScrollView style={styles.root}>
+    <ScrollView style={styles.root} contentContainerStyle={styles.content}>
       <View style={styles.titleContainer}>
         <Text style={styles.title}>
           What topics are you interested in learning?
