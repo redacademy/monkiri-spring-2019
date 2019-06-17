@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { View, Text, TouchableOpacity } from "react-native";
 import { styles } from "./styles";
+import TextField from "@material-ui/core/TextField";
 
 class LessonLibraryContainer extends Component {
   static navigationOptions = {
@@ -11,6 +12,13 @@ class LessonLibraryContainer extends Component {
       <View>
         <View>
           <View>
+            <TextField 
+               id="standard-name"
+               label="Name"
+               className={classes.textField}
+               value={values.name}
+               onChange={handleChange('name')}
+               margin="normal"/>
             <Text>search </Text>
           </View>
           <View style={styles.libraryButtons}>
@@ -18,7 +26,7 @@ class LessonLibraryContainer extends Component {
               <Text style={styles.libraryBtn}>Beginner</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.lButtons}>
-              <Text style={styles.libraryBtn}>advanced</Text>
+              <Text style={styles.libraryBtn}>Advanced</Text>
             </TouchableOpacity>
           </View>
         </View>
