@@ -25,7 +25,7 @@ export const styles = StyleSheet.create({
     justifyContent: "space-around",
     alignItems: "center",
     width: width,
-    height: height * 0.3
+    height: height * 0.25
   },
   activeButton: {
     backgroundColor: theme.colors.skyBlue,
@@ -40,21 +40,5 @@ export const styles = StyleSheet.create({
     fontSize: theme.fonts.subheading2.fontSize,
     fontWeight: theme.fonts.subheading2.fontWeight,
     color: "#FFFFFF"
-  },
-  button: {
-    backgroundColor: "#ffffff",
-    width: width * 0.8,
-    height: "auto",
-    borderRadius: 20,
-    justifyContent: "center",
-    alignItems: "center",
-    padding: 8,
-    borderWidth: 1,
-    borderColor: theme.colors.skyBlue
-  },
-  buttonText: {
-    fontSize: theme.fonts.subheading2.fontSize,
-    fontWeight: theme.fonts.subheading2.fontWeight,
-    color: theme.colors.skyBlue
   }
 });
