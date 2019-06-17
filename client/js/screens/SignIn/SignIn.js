@@ -11,9 +11,9 @@ import { styles } from "./styles";
 import PropTypes from "prop-types";
 import { Form, Field } from "react-final-form";
 import validate from "./helpers/validate";
-import { authenticateUser } from "../../config/models";
+import { setUser } from "../../config/models";
 
-const SignIn = ({ navigation, signIn }) => {
+const SignIn = ({ navigation, signIn, setError, toggleLoading }) => {
   return (
     <View style={styles.root}>
       <Image
@@ -27,15 +27,17 @@ const SignIn = ({ navigation, signIn }) => {
               const response = await signIn({ variables: { ...values } });
               if (response.data.authenticateUser) {
                 const { id, token } = response.data.authenticateUser;
-                await authenticateUser(id, token);
-                navigation.navigate("Layout");
+                toggleLoading();
+                await setUser(id, token);
+                navigation.navigate("App");
               }
             } catch (e) {
-              throw e;
+              setError(e);
+              return e;
             }
           }}
           validate={validate.bind(this)}
-          render={({ handleSubmit, submitting }) => (
+          render={({ handleSubmit }) => (
             <View style={styles.inputFields}>
               <Field
                 name="email"
@@ -82,18 +84,16 @@ const SignIn = ({ navigation, signIn }) => {
               />
               <TouchableOpacity
                 style={styles.logInButton}
-                onPress={!submitting && handleSubmit}
+                onPress={handleSubmit}
               >
-                <Text style={styles.LogInText}>
-                  {!submitting ? "Log In" : "Submitting"}
-                </Text>
+                <Text style={styles.LogInText}>Log In</Text>
               </TouchableOpacity>
             </View>
           )}
         />
       </KeyboardAvoidingView>
       <View style={styles.content}>
-        <TouchableOpacity onPress={() => navigation.navigate("Layout")}>
+        <TouchableOpacity onPress={() => navigation.navigate("App")}>
           <Text style={styles.forgotPassword}>Forgot Password?</Text>
         </TouchableOpacity>
         <Text style={styles.text}>Or Sign in with:</Text>

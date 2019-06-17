@@ -2,18 +2,42 @@ import React, { Component } from "react";
 import gql from "graphql-tag";
 import { Mutation } from "react-apollo";
 import SignIn from "./SignIn";
-import AuthLoader from "../../components/AuthLoader";
+import Loader from "../../components/Loader";
 
 class SignInContainer extends Component {
   static navigationOptions = {
-    title: "Sign In"
+    title: "SignIn"
   };
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      loading: false,
+      error: null
+    };
+  }
+
+  toggleLoading = () => {
+    this.setState({ loading: !this.state.loading, error: null });
+  };
+
+  setError = error => {
+    this.setState({ error });
+  };
+
   render() {
     return (
       <Mutation mutation={AUTHENTICATE_USER}>
         {(signIn, { loading, error }) => {
-          if (loading) return <AuthLoader message="Loading" />;
-          return <SignIn signIn={signIn} navigation={this.props.navigation} />;
+          if (loading || this.state.loading) return <Loader />;
+          return (
+            <SignIn
+              signIn={signIn}
+              navigation={this.props.navigation}
+              setError={this.setError}
+              toggleLoading={this.toggleLoading}
+            />
+          );
         }}
       </Mutation>
     );
