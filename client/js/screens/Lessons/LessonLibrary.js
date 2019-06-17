@@ -8,11 +8,17 @@ class LessonLibraryContainer extends Component {
   };
   render() {
     return (
-      <View >
+      <View>
         <View>
-        <View style={styles.editButton}>
-            <TouchableOpacity style={styles.advancedButton}>
-              <Text style={styles.buttonColor}>Edit</Text>
+          <View>
+            <Text>search </Text>
+          </View>
+          <View style={styles.libraryButtons}>
+            <TouchableOpacity style={styles.lButtons}>
+              <Text style={styles.libraryBtn}>Beginner</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.lButtons}>
+              <Text style={styles.libraryBtn}>advanced</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -21,4 +27,4 @@ class LessonLibraryContainer extends Component {
   }
 }
 
-export default LessonLibraryContainer
+export default LessonLibraryContainer;

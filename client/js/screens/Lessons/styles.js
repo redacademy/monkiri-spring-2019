@@ -152,5 +152,31 @@ export const styles = StyleSheet.create({
     height: "100%",
     justifyContent: "flex-end",
     flexDirection: "column"
+  },
+  libraryBtn:{
+    // alignItems: "flex-end",
+    width: "100%",
+    marginBottom: 5,
+    marginTop: 5,
+    textAlign: "center",
+    color: 'white'
+    
+  },
+  libraryButtons:{
+    flexDirection: "row",
+    alignItems: "center",
+    width: "100%",
+    // marginBottom: 10,
+    // marginTop: 5,
+  
+  },
+  lButtons: {
+    backgroundColor: "#25BDD8",
+    paddingTop: "2%",
+    paddingBottom: "2%",
+    width: "40%",
+    right: "5%",
+    borderRadius: 20,
+   
   }
 });
