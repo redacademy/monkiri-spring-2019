@@ -4,7 +4,7 @@ export const styles = StyleSheet.create({
   root: {
     flex: 1
   },
-  dot: {
+  progressCircle: {
     borderWidth: 2,
     borderColor: "#54bed9",
     width: 13,

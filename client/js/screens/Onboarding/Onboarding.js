@@ -5,13 +5,12 @@ import Swiper from "react-native-swiper";
 import { OnboardingData } from "../../helpers/onboarding";
 import OnboardingIntro from "../../components/OnboardingIntro";
 import OnboardingAuth from "../../components/OnboardingAuth";
-console.log(OnboardingData);
 
 const Onboarding = ({ navigation }) => {
   return (
     <View style={styles.root}>
       <Swiper
-        dot={<View style={styles.dot} />}
+        dot={<View style={styles.progressCircle} />}
         activeDot={<View style={styles.activeDot} />}
         loop={false}
       >
