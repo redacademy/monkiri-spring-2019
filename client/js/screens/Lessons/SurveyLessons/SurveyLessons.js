@@ -5,7 +5,7 @@ import styles from "./styles";
 import { withNavigation } from "react-navigation";
 const SurveyLessons = ({ data, navigation }) => {
   return (
-    <ScrollView style={styles.root} contentContainerStyle={styles.content}>
+    <ScrollView style={styles.root}>
       <View style={styles.titleContainer}>
         <Text style={styles.title}>
           What topics are you interested in learning?
@@ -15,10 +15,7 @@ const SurveyLessons = ({ data, navigation }) => {
         <TopicList topics={data} hasButton={true} />
       </View>
       <View style={styles.buttonContainer}>
-        <TouchableOpacity
-          style={styles.skipButton}
-          onPress={() => navigation.navigate("LESSON")}
-        >
+        <TouchableOpacity onPress={() => navigation.navigate("LESSON")}>
           <Text style={styles.skipText}>Skip</Text>
         </TouchableOpacity>
       </View>

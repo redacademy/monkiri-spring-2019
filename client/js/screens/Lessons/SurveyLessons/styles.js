@@ -1,41 +1,30 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, Dimensions } from "react-native";
+const { height } = Dimensions.get("window");
 export default (styles = StyleSheet.create({
   root: {
-    width: "100%",
-    flex:1
+    flex: 1,
+    marginTop: 25
   },
   titleContainer: {
-    flex:5,
-    marginTop:30,
-    marginBottom:20,
-    alignItems: 'center',
-    justifyContent: 'center',
+    marginVertical: 20,
+    alignItems: "center"
   },
-  title:{
-    fontSize:20,
-    width:"60%",
-    textAlign:"center",
-    fontWeight:"300"
+  title: {
+    fontSize: 20,
+    width: "60%",
+    textAlign: "center",
+    fontWeight: "300"
   },
   topicListContainer: {
-    flex:1,
-    width:"96%",
+    width: "96%",
     marginLeft: "auto",
-    marginRight:"auto"
+    marginRight: "auto"
   },
   buttonContainer: {
-    flex:1,
-    alignItems: 'center',
-    justifyContent: "flex-start",
+    alignItems: "center",
+    marginVertical: 10
   },
-  skipButton:{
-    padding:20
-  },
-  skipText:{
-    textDecorationLine: 'underline',
-  },
-  content:{
-    flexGrow: 1,
-    justifyContent: 'space-between'
+  skipText: {
+    textDecorationLine: "underline"
   }
 }));

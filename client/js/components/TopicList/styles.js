@@ -10,15 +10,15 @@ const styles = StyleSheet.create({
   },
   eachItem: {
     width: "28%",
-    paddingBottom: 30
+    paddingBottom: 25
   },
   button: {
-    height:40,
-    width:"50%",
+    height: 40,
+    width: "50%",
     backgroundColor: theme.colors.monikOrange,
     borderRadius: 50,
-    justifyContent:"center",
-    alignItems:"center"
+    justifyContent: "center",
+    alignItems: "center"
   },
   buttonText: {
     color: "#fff",
