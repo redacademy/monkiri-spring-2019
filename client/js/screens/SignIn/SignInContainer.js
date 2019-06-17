@@ -12,7 +12,7 @@ class SignInContainer extends Component {
     return (
       <Mutation mutation={AUTHENTICATE_USER}>
         {(signIn, { loading, error }) => {
-          if (loading) return <AuthLoader />;
+          if (loading) return <AuthLoader message="Loading" />;
           return <SignIn signIn={signIn} navigation={this.props.navigation} />;
         }}
       </Mutation>
