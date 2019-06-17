@@ -11,6 +11,7 @@ import { styles } from "./styles";
 import PropTypes from "prop-types";
 import { Form, Field } from "react-final-form";
 import validate from "./helpers/validate";
+import { authenticateUser } from "../../config/models";
 
 const SignIn = ({ navigation, signIn }) => {
   return (
@@ -25,7 +26,8 @@ const SignIn = ({ navigation, signIn }) => {
             try {
               const response = await signIn({ variables: { ...values } });
               if (response.data.authenticateUser) {
-                const { token, id } = response.data.authenticateUser;
+                const { id, token } = response.data.authenticateUser;
+                await authenticateUser(id, token);
                 navigation.navigate("Layout");
               }
             } catch (e) {
@@ -33,7 +35,7 @@ const SignIn = ({ navigation, signIn }) => {
             }
           }}
           validate={validate.bind(this)}
-          render={({ handleSubmit }) => (
+          render={({ handleSubmit, submitting }) => (
             <View style={styles.inputFields}>
               <Field
                 name="email"
@@ -80,9 +82,11 @@ const SignIn = ({ navigation, signIn }) => {
               />
               <TouchableOpacity
                 style={styles.logInButton}
-                onPress={handleSubmit}
+                onPress={!submitting && handleSubmit}
               >
-                <Text style={styles.LogInText}> Log In</Text>
+                <Text style={styles.LogInText}>
+                  {!submitting ? "Log In" : "Submitting"}
+                </Text>
               </TouchableOpacity>
             </View>
           )}
