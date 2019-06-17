@@ -15,9 +15,6 @@ const Onboarding = ({ navigation }) => {
         activeDot={<View style={styles.activeDot} />}
         loop={false}
       >
-        {/* {OnboardingData.map(data => (
-          <OnboardingIntro key={data.id} introData={data} />
-        ))} */}
         <OnboardingIntro introData={OnboardingData[0]} />
         <OnboardingIntro introData={OnboardingData[1]} />
         <OnboardingAuth navigation={navigation} />

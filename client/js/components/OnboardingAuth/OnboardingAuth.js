@@ -3,10 +3,12 @@ import { View, Text, Image, TouchableOpacity } from "react-native";
 import { styles } from "./styles";
 const OnboardingAuth = ({ navigation }) => {
   const handleReisterClick = () => {
-    navigation.navigate("Layout");
+    // navigation.navigate("Layout");
+    //links to the Regsiter screen later
   };
   const handleSignInClick = () => {
-    navigation.navigate("Layout");
+    // navigation.navigate("Layout");
+    //links to the SignIn screen later
   };
 
   return (
