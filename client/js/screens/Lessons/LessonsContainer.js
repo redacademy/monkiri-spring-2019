@@ -11,9 +11,9 @@ class LessonsContainer extends Component {
     };
   }
 
-  static navigationOptions = {
-    title: "LESSONS"
-  };
+  // static navigationOptions = {
+  //   title: "LESSONS"
+  // };
   render() {
     return (
       <View style={styles.screenContainer}>
