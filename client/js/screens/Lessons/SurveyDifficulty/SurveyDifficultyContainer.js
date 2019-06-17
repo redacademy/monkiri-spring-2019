@@ -3,9 +3,6 @@ import { View, Text, Image, TouchableOpacity } from "react-native";
 import styles from "./styles";
 
 class SurveyDifficultyContainer extends Component {
-  static navigationOptions = {
-    title: "LESSONS"
-  };
   render() {
     return (
       <View style={styles.container}>
@@ -28,7 +25,7 @@ class SurveyDifficultyContainer extends Component {
             <Text style={styles.buttonColor}>Beginner</Text>
           </TouchableOpacity>
         </View>
-        {/* </View> */}
+
         <View style={styles.advancedContainer}>
           <View style={styles.triangleShadowBlue} />
 

@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     borderRadius: 10,
     width: "80%",
-    height: '37%'
+    height: "37%"
   },
   advancedContainer: {
     backgroundColor: "#59c9c9",
@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     borderRadius: 10,
     width: "80%",
-    height: '37%'
+    height: "37%"
   },
   triangleShadowYellow: {
     right: 0,
@@ -72,7 +72,6 @@ const styles = StyleSheet.create({
     paddingRight: 18,
     justifyContent: "center",
     alignItems: "center",
-    // backgroundColor: theme.colors.monikOrange,
     borderRadius: 20
   },
   skipText: {
