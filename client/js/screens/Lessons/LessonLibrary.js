@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { View, Text, TouchableOpacity } from "react-native";
 import { styles } from "./styles";
-import TextField from "@material-ui/core/TextField";
+// import { SearchBar } from 'react-native-elements';
+import SearchBarComponent from "./SearchBarComponent";
 
 class LessonLibraryContainer extends Component {
   static navigationOptions = {
@@ -12,13 +13,7 @@ class LessonLibraryContainer extends Component {
       <View>
         <View>
           <View>
-            <TextField 
-               id="standard-name"
-               label="Name"
-               className={classes.textField}
-               value={values.name}
-               onChange={handleChange('name')}
-               margin="normal"/>
+           <SearchBarComponent></SearchBarComponent>
             <Text>search </Text>
           </View>
           <View style={styles.libraryButtons}>
@@ -29,6 +24,9 @@ class LessonLibraryContainer extends Component {
               <Text style={styles.libraryBtn}>Advanced</Text>
             </TouchableOpacity>
           </View>
+        </View>
+        <View>
+            
         </View>
       </View>
     );
