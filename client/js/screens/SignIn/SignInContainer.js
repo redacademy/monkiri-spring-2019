@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { View, Text } from "react-native";
+import gql from "graphql-tag";
+import { Mutation } from "react-apollo";
 import SignIn from "./SignIn";
 
 class SignInContainer extends Component {
@@ -7,8 +8,23 @@ class SignInContainer extends Component {
     title: "Sign In"
   };
   render() {
-    return <SignIn navigation={this.props.navigation} />;
+    return (
+      <Mutation mutation={AUTHENTICATE_USER}>
+        {(signIn, { loading, error }) => {
+          return <SignIn signIn={signIn} navigation={this.props.navigation} />;
+        }}
+      </Mutation>
+    );
   }
 }
+
+const AUTHENTICATE_USER = gql`
+  mutation signIn($email: String!, $password: String!) {
+    authenticateUser(email: $email, password: $password) {
+      id
+      token
+    }
+  }
+`;
 
 export default SignInContainer;
