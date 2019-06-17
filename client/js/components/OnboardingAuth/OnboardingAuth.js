@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, Image, TouchableOpacity } from "react-native";
 import { styles } from "./styles";
-const OnboardingThree = ({ navigation }) => {
+const OnboardingAuth = ({ navigation }) => {
   const handleReisterClick = () => {
     navigation.navigate("Layout");
   };
@@ -35,4 +35,4 @@ const OnboardingThree = ({ navigation }) => {
   );
 };
 
-export default OnboardingThree;
+export default OnboardingAuth;

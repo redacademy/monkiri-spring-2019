@@ -1,10 +1,12 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { View } from "react-native";
 import { styles } from "./styles";
 import Swiper from "react-native-swiper";
-import OnboardingOne from "../../components/OnboardingOne";
-import OnboardingTwo from "../../components/OnboardingTwo";
-import OnboardingThree from "../../components/OnboardingThree";
+import { OnboardingData } from "../../helpers/onboarding";
+import OnboardingIntro from "../../components/OnboardingIntro";
+import OnboardingAuth from "../../components/OnboardingAuth";
+console.log(OnboardingData);
+
 const Onboarding = ({ navigation }) => {
   return (
     <View style={styles.root}>
@@ -13,9 +15,12 @@ const Onboarding = ({ navigation }) => {
         activeDot={<View style={styles.activeDot} />}
         loop={false}
       >
-        <OnboardingOne />
-        <OnboardingTwo />
-        <OnboardingThree navigation={navigation} />
+        {/* {OnboardingData.map(data => (
+          <OnboardingIntro key={data.id} introData={data} />
+        ))} */}
+        <OnboardingIntro introData={OnboardingData[0]} />
+        <OnboardingIntro introData={OnboardingData[1]} />
+        <OnboardingAuth navigation={navigation} />
       </Swiper>
     </View>
   );
