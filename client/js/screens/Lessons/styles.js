@@ -120,24 +120,20 @@ export const styles = StyleSheet.create({
     alignItems: "flex-end",
     width: "100%",
     marginBottom: 10,
-    marginTop: 5,
-    
-    
+    marginTop: 5
   },
   advancedButton: {
     backgroundColor: "#25BDD8",
-    paddingTop: '2%',
-    paddingBottom: '2%',
+    paddingTop: "2%",
+    paddingBottom: "2%",
     width: "23%",
-    right: '5%',
-    borderRadius: 20,
-    
+    right: "5%",
+    borderRadius: 20
   },
   buttonColor: {
     textTransform: "uppercase",
     color: "white",
-    textAlign: "center",
-    
+    textAlign: "center"
   },
   tabIndex: {
     height: 60,
@@ -149,8 +145,7 @@ export const styles = StyleSheet.create({
     flex: 0.5,
     height: "100%",
     justifyContent: "flex-end",
-    flexDirection: "column",
-    
+    flexDirection: "column"
   },
   tabBorder: {
     flex: 0.5,
