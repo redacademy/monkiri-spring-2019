@@ -7,7 +7,7 @@ import OnboardingTwo from "../../components/OnboardingTwo";
 import OnboardingThree from "../../components/OnboardingThree";
 const Onboarding = ({ navigation }) => {
   return (
-    <View style={{ flex: 1 }}>
+    <View style={styles.root}>
       <Swiper
         dot={<View style={styles.dot} />}
         activeDot={<View style={styles.activeDot} />}
