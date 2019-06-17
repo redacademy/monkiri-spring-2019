@@ -12,7 +12,7 @@ import PropTypes from "prop-types";
 import { Form, Field } from "react-final-form";
 import validate from "./helpers/validate";
 
-const SignIn = ({ navigation }) => {
+const SignIn = ({ navigation, signIn }) => {
   return (
     <View style={styles.root}>
       <Image
@@ -21,8 +21,16 @@ const SignIn = ({ navigation }) => {
       />
       <KeyboardAvoidingView style={styles.form} behavior="padding" enabled>
         <Form
-          onSubmit={values => {
-            navigation.navigate("Layout");
+          onSubmit={async values => {
+            try {
+              const response = await signIn({ variables: { ...values } });
+              if (response.data.userAuthentication) {
+                const { token, id } = response.data.userAuthentication;
+                navigation.navigate("Layout");
+              }
+            } catch (e) {
+              throw e;
+            }
           }}
           validate={validate.bind(this)}
           render={({ handleSubmit }) => (
@@ -105,7 +113,8 @@ const SignIn = ({ navigation }) => {
 };
 
 SignIn.proptypes = {
-  navigation: PropTypes.array.isRequired
+  navigation: PropTypes.array.isRequired,
+  signIn: PropTypes.func.isRequired
 };
 
 export default SignIn;
