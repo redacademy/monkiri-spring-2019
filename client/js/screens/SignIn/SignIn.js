@@ -26,7 +26,6 @@ const SignIn = ({ navigation, signIn }) => {
               const response = await signIn({ variables: { ...values } });
               if (response.data.authenticateUser) {
                 const { token, id } = response.data.authenticateUser;
-                console.log(token, id);
                 navigation.navigate("Layout");
               }
             } catch (e) {

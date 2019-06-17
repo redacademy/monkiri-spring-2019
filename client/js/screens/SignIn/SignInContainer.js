@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import gql from "graphql-tag";
 import { Mutation } from "react-apollo";
 import SignIn from "./SignIn";
+import AuthLoader from "../../components/AuthLoader";
 
 class SignInContainer extends Component {
   static navigationOptions = {
@@ -11,6 +12,7 @@ class SignInContainer extends Component {
     return (
       <Mutation mutation={AUTHENTICATE_USER}>
         {(signIn, { loading, error }) => {
+          if (loading) return <AuthLoader />;
           return <SignIn signIn={signIn} navigation={this.props.navigation} />;
         }}
       </Mutation>
