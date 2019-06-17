@@ -1,5 +1,5 @@
 import AsyncStorage from "@react-native-community/async-storage";
-export const authenticateUser = async (userId, userToken) => {
+export const setUser = async (userId, userToken) => {
   try {
     await AsyncStorage.setItem("userToken", userToken);
     await AsyncStorage.setItem("userId", userId);
@@ -18,7 +18,15 @@ export const getUserId = async () => {
 
 export const getUserToken = async () => {
   try {
-    return await AsyncStorage.getItem("UserToken");
+    return await AsyncStorage.getItem("userToken");
+  } catch (e) {
+    return e;
+  }
+};
+
+export const logOut = async () => {
+  try {
+    return await AsyncStorage.clear();
   } catch (e) {
     return e;
   }
