@@ -32,7 +32,8 @@ class LessonsContainer extends Component {
                 style={[
                   this.state.tabIndex !== 0
                     ? styles.buttonTextNotClicked
-                    : styles.buttonTextClicked, {textTransform: 'uppercase'}
+                    : styles.buttonTextClicked,
+                  { textTransform: "uppercase" }
                 ]}
               >
                 My Lessons
@@ -54,7 +55,8 @@ class LessonsContainer extends Component {
                 style={[
                   this.state.tabIndex !== 1
                     ? styles.buttonTextNotClicked
-                    : styles.buttonTextClicked, {textTransform: 'uppercase'}
+                    : styles.buttonTextClicked,
+                  { textTransform: "uppercase" }
                 ]}
               >
                 Library
