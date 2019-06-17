@@ -12,26 +12,26 @@ export const styles = StyleSheet.create({
     height: height * 0.4,
     resizeMode: "contain"
   },
-  form: {
+  formContainer: {
     width: "100%"
   },
-  inputFields: {
+  form: {
     alignItems: "center",
     justifyContent: "space-between"
   },
-  field: {
+  formField: {
     marginBottom: 10,
     width: "90%"
   },
-  inputBackground: {
+  formInputBackground: {
     paddingHorizontal: 10,
     backgroundColor: "rgba(243, 152, 78, 0.5)",
     borderRadius: 10
   },
-  input: {
+  formInput: {
     height: 40
   },
-  error: {
+  errorMessage: {
     color: "red",
     marginVertical: 5,
     marginLeft: 10
@@ -49,11 +49,11 @@ export const styles = StyleSheet.create({
     textTransform: "capitalize",
     color: "white"
   },
-  content: {
+  contentContainer: {
     height: height * 0.25,
     justifyContent: "space-evenly"
   },
-  forgotPassword: {
+  bodyText2: {
     color: "black",
     textDecorationLine: "underline"
   },

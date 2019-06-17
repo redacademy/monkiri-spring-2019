@@ -16,11 +16,17 @@ import { setUser } from "../../config/models";
 const SignIn = ({ navigation, signIn, setError, toggleLoading }) => {
   return (
     <View style={styles.root}>
-      <Image
-        style={styles.logo}
-        source={require("../../assets/images/Logo.png")}
-      />
-      <KeyboardAvoidingView style={styles.form} behavior="padding" enabled>
+      <View style={styles.logoContainer}>
+        <Image
+          style={styles.logo}
+          source={require("../../assets/images/Logo.png")}
+        />
+      </View>
+      <KeyboardAvoidingView
+        style={styles.formContainer}
+        behavior="padding"
+        enabled
+      >
         <Form
           onSubmit={async values => {
             try {
@@ -38,23 +44,24 @@ const SignIn = ({ navigation, signIn, setError, toggleLoading }) => {
           }}
           validate={validate.bind(this)}
           render={({ handleSubmit }) => (
-            <View style={styles.inputFields}>
+            <View style={styles.form}>
               <Field
                 name="email"
                 render={({ input, meta }) => (
-                  <View style={styles.field}>
-                    <View style={styles.inputBackground}>
+                  <View style={styles.formField}>
+                    <View style={styles.formInputBackground}>
                       <TextInput
-                        style={styles.input}
+                        style={styles.formInput}
                         {...input}
                         placeholder="E-mail"
                         keyboardType="default"
+                        autoCapitalize="none"
                         value={input.value}
                       />
                     </View>
                     <View>
                       {meta.error && meta.touched && (
-                        <Text style={styles.error}>{meta.error}</Text>
+                        <Text style={styles.errorMessage}>{meta.error}</Text>
                       )}
                     </View>
                   </View>
@@ -63,20 +70,21 @@ const SignIn = ({ navigation, signIn, setError, toggleLoading }) => {
               <Field
                 name="password"
                 render={({ input, meta }) => (
-                  <View style={styles.field}>
-                    <View style={styles.inputBackground}>
+                  <View style={styles.formField}>
+                    <View style={styles.formInputBackground}>
                       <TextInput
-                        style={styles.input}
+                        style={styles.formInput}
                         {...input}
                         placeholder="Password"
                         keyboardType="default"
+                        autoCapitalize="none"
                         secureTextEntry={true}
                         value={input.value}
                       />
                     </View>
                     <View>
                       {meta.error && meta.touched && (
-                        <Text style={styles.error}>{meta.error}</Text>
+                        <Text style={styles.errorMessage}>{meta.error}</Text>
                       )}
                     </View>
                   </View>
@@ -92,11 +100,11 @@ const SignIn = ({ navigation, signIn, setError, toggleLoading }) => {
           )}
         />
       </KeyboardAvoidingView>
-      <View style={styles.content}>
+      <View style={styles.contentContainer}>
         <TouchableOpacity onPress={() => navigation.navigate("App")}>
-          <Text style={styles.forgotPassword}>Forgot Password?</Text>
+          <Text style={styles.bodyText2}>Forgot Password?</Text>
         </TouchableOpacity>
-        <Text style={styles.text}>Or Sign in with:</Text>
+        <Text style={styles.bodyText}>Or Sign in with:</Text>
         <View style={styles.iconsContainer}>
           <TouchableOpacity>
             <Image
