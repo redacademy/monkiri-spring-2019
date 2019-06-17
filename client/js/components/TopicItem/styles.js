@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
   },
   name: {
     textAlign: "center",
-    padding: 10
+    paddingTop: 10
   },
   outlineContainer: {
     padding: 0,
