@@ -153,22 +153,21 @@ export const styles = StyleSheet.create({
     justifyContent: "flex-end",
     flexDirection: "column"
   },
-  libraryBtn:{
+  libraryBtn: {
     // alignItems: "flex-end",
     width: "100%",
     marginBottom: 5,
     marginTop: 5,
     textAlign: "center",
-    color: 'white'
-    
+    color: "white"
   },
-  libraryButtons:{
+  libraryButtons: {
     flexDirection: "row",
     alignItems: "center",
     width: "100%",
+    justifyContent: "space-evenly"
     // marginBottom: 10,
     // marginTop: 5,
-  
   },
   lButtons: {
     backgroundColor: "#25BDD8",
@@ -176,7 +175,17 @@ export const styles = StyleSheet.create({
     paddingBottom: "2%",
     width: "40%",
     right: "5%",
+    borderRadius: 20
+  },
+  searchBar: {
+    // backgroundColor: "red",
+    // color: "red",
+    paddingTop: 20,
     borderRadius: 20,
-   
+    paddingBottom: 20,
+    width: "100%",
+    height: '50%',
+    paddingLeft: 20,
+   paddingRight: 20
   }
 });

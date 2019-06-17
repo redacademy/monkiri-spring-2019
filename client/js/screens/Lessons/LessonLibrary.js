@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import { View, Text, TouchableOpacity } from "react-native";
+import { View, Text, TouchableOpacity} from "react-native";
 import { styles } from "./styles";
-// import { SearchBar } from 'react-native-elements';
 import SearchBarComponent from "./SearchBarComponent";
+// import { SearchBar } from 'react-native-elements';
+
 
 class LessonLibraryContainer extends Component {
   static navigationOptions = {
@@ -12,9 +13,8 @@ class LessonLibraryContainer extends Component {
     return (
       <View>
         <View>
-          <View>
-           <SearchBarComponent></SearchBarComponent>
-            <Text>search </Text>
+          <View style={styles.searchBar}>
+            <SearchBarComponent  />
           </View>
           <View style={styles.libraryButtons}>
             <TouchableOpacity style={styles.lButtons}>
@@ -25,9 +25,8 @@ class LessonLibraryContainer extends Component {
             </TouchableOpacity>
           </View>
         </View>
-        <View>
-            
-        </View>
+        <View />
+
       </View>
     );
   }
