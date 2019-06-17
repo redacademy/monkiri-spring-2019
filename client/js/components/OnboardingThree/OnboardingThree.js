@@ -1,18 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import { View, Text, Image, TouchableOpacity } from "react-native";
 import { styles } from "./styles";
 const OnboardingThree = ({ navigation }) => {
-  const [isRegisterActive, setIsRegisterActive] = useState(false);
-  const [isSignInActive, setIsSignInActive] = useState(false);
-
-  const handleReisterToggle = () => {
-    setIsRegisterActive(!isRegisterActive);
-    setIsSignInActive(false);
+  const handleReisterClick = () => {
     navigation.navigate("Layout");
   };
-  const handleSignInToggle = () => {
-    setIsSignInActive(!isSignInActive);
-    setIsRegisterActive(false);
+  const handleSignInClick = () => {
     navigation.navigate("Layout");
   };
 
@@ -25,26 +18,16 @@ const OnboardingThree = ({ navigation }) => {
       <Text style={styles.subtitle}>Start Growing</Text>
       <View style={styles.buttonContainer}>
         <TouchableOpacity
-          style={isRegisterActive ? styles.activeButton : styles.button}
-          onPress={handleReisterToggle}
+          style={styles.activeButton}
+          onPress={handleReisterClick}
         >
-          <Text
-            style={
-              isRegisterActive ? styles.activeButtonText : styles.buttonText
-            }
-          >
-            Register
-          </Text>
+          <Text style={styles.activeButtonText}>Register</Text>
         </TouchableOpacity>
         <TouchableOpacity
-          style={isSignInActive ? styles.activeButton : styles.button}
-          onPress={handleSignInToggle}
+          style={styles.activeButton}
+          onPress={handleSignInClick}
         >
-          <Text
-            style={isSignInActive ? styles.activeButtonText : styles.buttonText}
-          >
-            Sign In
-          </Text>
+          <Text style={styles.activeButtonText}>Sign In</Text>
         </TouchableOpacity>
       </View>
       <View />
