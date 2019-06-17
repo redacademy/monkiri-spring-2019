@@ -126,7 +126,9 @@ const SignIn = ({ navigation, signIn, setError, toggleLoading }) => {
 
 SignIn.proptypes = {
   navigation: PropTypes.array.isRequired,
-  signIn: PropTypes.func.isRequired
+  signIn: PropTypes.func.isRequired,
+  setError: PropTypes.func.isRequired,
+  toggleLoading: PropTypes.func.isRequired
 };
 
 export default SignIn;
