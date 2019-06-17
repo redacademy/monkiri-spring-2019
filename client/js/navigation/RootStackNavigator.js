@@ -14,7 +14,7 @@ export default createAppContainer(
     {
       Onboarding: OnboardingScreen,
       Auth: AuthScreen,
-      Layout: NavigationLayout
+      App: NavigationLayout
     },
     {
       headerMode: "none"
