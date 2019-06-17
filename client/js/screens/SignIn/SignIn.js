@@ -101,7 +101,7 @@ const SignIn = ({ navigation, signIn, setError, toggleLoading }) => {
         />
       </KeyboardAvoidingView>
       <View style={styles.contentContainer}>
-        <TouchableOpacity onPress={() => navigation.navigate("App")}>
+        <TouchableOpacity onPress={() => navigation.navigate("ResetPassword")}>
           <Text style={styles.bodyText2}>Forgot Password?</Text>
         </TouchableOpacity>
         <Text style={styles.bodyText}>Or Sign in with:</Text>
