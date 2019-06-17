@@ -1,4 +1,5 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, Dimensions } from "react-native";
+const { width, height } = Dimensions.get("window");
 import theme from "../../config/styles";
 
 export const styles = StyleSheet.create({
@@ -10,8 +11,8 @@ export const styles = StyleSheet.create({
     resizeMode: "contain",
     width: "100%",
     maxWidth: 300,
-    marginTop: "20%",
-    marginBottom: "10%"
+    marginTop: height * 0.1,
+    marginBottom: height * 0.1
   },
   subtitle: {
     color: theme.colors.skyBlue,
@@ -23,8 +24,8 @@ export const styles = StyleSheet.create({
     marginTop: "10%",
     justifyContent: "space-around",
     alignItems: "center",
-    width: "100%",
-    height: "30%"
+    width: width,
+    height: height * 0.3
   },
   activeButton: {
     backgroundColor: theme.colors.skyBlue,
@@ -42,7 +43,7 @@ export const styles = StyleSheet.create({
   },
   button: {
     backgroundColor: "#ffffff",
-    width: "80%",
+    width: width * 0.8,
     height: "auto",
     borderRadius: 20,
     justifyContent: "center",

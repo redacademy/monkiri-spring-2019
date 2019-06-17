@@ -1,22 +1,22 @@
-import { StyleSheet } from "react-native";
-
+import { StyleSheet, Dimensions } from "react-native";
+const { width, height } = Dimensions.get("window");
 export const styles = StyleSheet.create({
   Container: { flex: 1 },
   OnboardingBanner: {
-    width: "100%",
+    width: width,
     resizeMode: "contain",
     alignItems: "center",
     justifyContent: "center",
-    marginTop: "10%"
+    marginTop: height * 0.1
   },
   listsContainer: {
     alignItems: "center",
     justifyContent: "center"
   },
   lists: {
-    width: "80%",
+    width: width * 0.8,
     flexDirection: "row",
-    padding: 20
+    padding: 15
   },
   text: {
     marginLeft: 10,

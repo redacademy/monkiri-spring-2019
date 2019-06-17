@@ -8,11 +8,12 @@ const OnboardingThree = ({ navigation }) => {
   const handleReisterToggle = () => {
     setIsRegisterActive(!isRegisterActive);
     setIsSignInActive(false);
-    // navigation.navigate("Layout");
+    navigation.navigate("Layout");
   };
   const handleSignInToggle = () => {
     setIsSignInActive(!isSignInActive);
     setIsRegisterActive(false);
+    navigation.navigate("Layout");
   };
 
   return (
