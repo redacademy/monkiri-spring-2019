@@ -1,15 +1,12 @@
 import React from "react";
 import { View, Text, Image, TouchableOpacity } from "react-native";
 import { styles } from "./styles";
-import { setOnboardStatus } from "../../config/models";
 
 const OnboardingAuth = ({ navigation }) => {
   const handleReisterClick = () => {
-    onboard();
     navigation.navigate("SignUp");
   };
   const handleSignInClick = () => {
-    onboard();
     navigation.navigate("SignIn");
   };
 

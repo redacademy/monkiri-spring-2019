@@ -26,7 +26,8 @@ export const getUserToken = async () => {
 
 export const logOut = async () => {
   try {
-    return await AsyncStorage.clear();
+    await AsyncStorage.setItem("userToken", "");
+    await AsyncStorage.setItem("userId", "");
   } catch (e) {
     return e;
   }
@@ -34,7 +35,7 @@ export const logOut = async () => {
 
 export const setOnboardStatus = async () => {
   try {
-    return await AsyncStorage.setItem("onBoard", true);
+    return await AsyncStorage.setItem("onBoard", "done");
   } catch (e) {
     return e;
   }
