@@ -31,3 +31,19 @@ export const logOut = async () => {
     return e;
   }
 };
+
+export const setOnboardStatus = async () => {
+  try {
+    return await AsyncStorage.setItem("onBoard", true);
+  } catch (e) {
+    return e;
+  }
+};
+
+export const getOnboardStatus = async () => {
+  try {
+    return await AsyncStorage.getItem("onBoard");
+  } catch (e) {
+    return e;
+  }
+};
