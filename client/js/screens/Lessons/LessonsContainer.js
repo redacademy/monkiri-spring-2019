@@ -11,9 +11,6 @@ class LessonsContainer extends Component {
     };
   }
 
-  // static navigationOptions = {
-  //   title: "LESSONS"
-  // };
   render() {
     return (
       <View style={styles.screenContainer}>
@@ -65,10 +62,6 @@ class LessonsContainer extends Component {
             </TouchableOpacity>
           </View>
         </View>
-
-        {/* <View>
-          {this.state.tabIndex == 0 ? <Text>test 1</Text> : <Text>test2</Text>}
-        </View> */}
         {this.state.tabIndex == 0 ?
         <View>
           <View style={styles.editButton}>

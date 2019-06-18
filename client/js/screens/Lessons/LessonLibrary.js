@@ -12,7 +12,8 @@ class LessonLibraryContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      search: ""
+      search: "",
+      tabIndex: 0 // hmm
     };
   }
   updateSearch = search => {
@@ -28,7 +29,7 @@ class LessonLibraryContainer extends Component {
 
     console.log(result);
     return (
-      <View style={styles.libraryContainer}>
+      <View>
         <View>
           <View style={styles.searchBar}>
             <SearchBar
@@ -51,16 +52,53 @@ class LessonLibraryContainer extends Component {
             />
           </View>
           <View style={styles.libraryButtons}>
-            <TouchableOpacity style={styles.lButtons}>
-              <Text style={styles.libraryBtn}>Beginner</Text>
+        
+            <TouchableOpacity
+              
+              style={[
+                this.state.tabIndex === 0
+                  ? styles.selectButtonClicked
+                  : styles.selectButtonNotClicked
+              ]}
+              onPress={() => {
+                this.setState({ tabIndex: 0 });
+              }}
+            >
+              <Text
+                style={[
+                  this.state.tabIndex === 0
+                    ? styles.selectButtonTextClicked
+                    : styles.selectButtonTextNotClicked
+                ]}
+              >
+                Beginner
+              </Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.lButtons}>
-              <Text style={styles.libraryBtn}>Advanced</Text>
+            <TouchableOpacity
+              
+              style={[
+                this.state.tabIndex === 1
+                  ? styles.selectButtonClicked
+                  : styles.selectButtonNotClicked
+              ]}
+              onPress={() => {
+                this.setState({ tabIndex: 1 });
+              }}
+            >
+              <Text
+                style={[
+                  this.state.tabIndex === 1
+                    ? styles.selectButtonTextClicked
+                    : styles.selectButtonTextNotClicked
+                ]}
+              >
+                Advanced
+              </Text>
             </TouchableOpacity>
           </View>
         </View>
 
-        <ScrollView style={{width:"100%"}}>
+        <ScrollView style={{ width: "100%" }}>
           <TopicList
             style={styles.topicList}
             topics={result}

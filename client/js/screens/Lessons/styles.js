@@ -97,7 +97,6 @@ export const styles = StyleSheet.create({
   },
   buttonNotClicked: {
     backgroundColor: "#ffffff",
-
     height: "78%",
     width: "100%",
     textAlign: "center",
@@ -149,42 +148,70 @@ export const styles = StyleSheet.create({
     justifyContent: "flex-end",
     flexDirection: "column"
   },
+  
   //library
   libraryBtn: {
-    color: "#fff",
     fontSize: 16,
-    marginTop: 5,
-    textAlign: "center",
+    // marginTop: 5,
+    // textAlign: "center",
     height: 25
   },
   libraryButtons: {
     flexDirection: "row",
     alignItems: "center",
     width: "80%",
-    marginBottom: "10%"
+    marginBottom: "10%",
+    marginLeft: 'auto',
+    marginRight: 'auto'
   },
-  lButtons: {
+
+  selectButtonClicked: {
+    flex: 1,
     backgroundColor: "#25BDD8",
     paddingTop: "2%",
     width: "50%",
-    borderRadius: 20
+    borderRadius: 20,
+    borderWidth: 2,
+    borderColor: "#25BDD8",
+    justifyContent: "center",
+    alignItems: "center",
+
+  },
+  selectButtonNotClicked: {
+    backgroundColor: "#ffff",
+    flex: 1,
+    paddingTop: "2%",
+    width: "50%",
+    borderRadius: 20,
+    borderWidth: 2,
+    borderColor: "#25BDD8",
+    justifyContent: "center",
+    alignItems: "center",
+  
+
+  },
+  selectButtonTextClicked: {
+    color: "white"
+  },
+  selectButtonTextNotClicked: {
+    color: "#25BDD8"
   },
   searchBar: {
     paddingTop: 20,
     borderRadius: 20,
-    paddingBottom: "5%",
-    width: "100%"
-  },
-  topicListContainer: {
-    width: "96%",
+    // paddingBottom: "5%",
+    width: "80%",
     marginLeft: "auto",
     marginRight: "auto"
   },
-  topicList:{
-   
+  topicListContainer: {
+    width: "96%"
+    // marginLeft: "auto",
+    // marginRight: "auto"
   },
+  topicList: {},
   libraryContainer: {
-    margin: "5%",
-    paddingBottom: '5%'
+    // margin: "5%"
+    // paddingBottom: '5%'
   }
 });
