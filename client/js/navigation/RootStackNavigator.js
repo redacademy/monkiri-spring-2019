@@ -12,8 +12,8 @@ const OnboardingStack = createStackNavigator({ Onboarding: OnboardingScreen });
 export default createAppContainer(
   createSwitchNavigator(
     {
-      Onboarding: OnboardingScreen,
-      Auth: AuthScreen,
+      // Onboarding: OnboardingScreen,
+      // Auth: AuthScreen,
       App: NavigationLayout
     },
     {
