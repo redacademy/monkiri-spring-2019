@@ -2,7 +2,6 @@ import React from "react";
 import { View, Text, Image } from "react-native";
 import { styles } from "./styles";
 const OnboardingIntro = ({ introData }) => {
-  console.log(introData);
   return (
     <View style={styles.Container}>
       <Image style={styles.OnboardingBanner} source={introData.bannerImage} />

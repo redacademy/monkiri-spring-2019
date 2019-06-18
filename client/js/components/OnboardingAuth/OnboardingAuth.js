@@ -1,14 +1,24 @@
 import React from "react";
 import { View, Text, Image, TouchableOpacity } from "react-native";
 import { styles } from "./styles";
+import { setOnboardStatus } from "../../config/models";
+
 const OnboardingAuth = ({ navigation }) => {
   const handleReisterClick = () => {
-    // navigation.navigate("Layout");
-    //links to the Regsiter screen later
+    onboard();
+    navigation.navigate("SignUp");
   };
   const handleSignInClick = () => {
-    // navigation.navigate("Layout");
-    //links to the SignIn screen later
+    onboard();
+    navigation.navigate("SignIn");
+  };
+
+  const onboard = async () => {
+    try {
+      await setOnboardStatus();
+    } catch (e) {
+      return e;
+    }
   };
 
   return (
