@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import { View, TouchableOpacity } from "react-native";
+import { View, TouchableOpacity, Text } from "react-native";
 import TopicItem from "../TopicItem";
 import styles from "./styles";
 import PropTypes from "prop-types";
-
+import { withNavigation } from "react-navigation";
 class TopicList extends Component {
   constructor(props) {
     super(props);
@@ -19,19 +19,31 @@ class TopicList extends Component {
     this.setState({ selectedTopics: { ...currentSelected } });
   }
   render() {
-    const { topics } = this.props;
+    const { topics, hasButton, navigation } = this.props;
     const { selectedTopics } = this.state;
     return (
-      <View style={styles.container}>
-        {topics.map((topic, index) => (
-          <TouchableOpacity
-            key={topic.name + index}
-            style={styles.eachItem}
-            onPress={() => this.toggle(topic)}
-          >
-            <TopicItem topic={topic} selected={selectedTopics[topic.name]} />
-          </TouchableOpacity>
-        ))}
+      <View>
+        <View style={styles.container}>
+          {topics.map((topic, index) => (
+            <TouchableOpacity
+              key={topic.name + index}
+              style={styles.eachItem}
+              onPress={() => this.toggle(topic)}
+            >
+              <TopicItem topic={topic} selected={selectedTopics[topic.name]} />
+            </TouchableOpacity>
+          ))}
+        </View>
+        {hasButton ? (
+          <View style={styles.buttonContainer}>
+            <TouchableOpacity
+              style={styles.button}
+              onPress={() => navigation.navigate("LESSON", { selectedTopics })}
+            >
+              <Text style={styles.buttonText}>Continue</Text>
+            </TouchableOpacity>
+          </View>
+        ) : null}
       </View>
     );
   }
@@ -40,4 +52,4 @@ class TopicList extends Component {
 TopicList.propTypes = {
   topics: PropTypes.array.isRequired
 };
-export default TopicList;
+export default withNavigation(TopicList);
