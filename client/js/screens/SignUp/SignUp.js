@@ -112,11 +112,16 @@ const SignUp = ({ navigation, signUp, setError, toggleLoading }) => {
                   </View>
                 )}
               />
+
+              {error && error.message && (
+                <Text style={styles.errorMessage}>{error.message}</Text>
+              )}
+
               <TouchableOpacity
-                style={styles.logInButton}
+                style={styles.signUpButton}
                 onPress={handleSubmit}
               >
-                <Text style={styles.LogInText}>Sign Up</Text>
+                <Text style={styles.signUpText}>Sign Up</Text>
               </TouchableOpacity>
             </View>
           )}
@@ -147,7 +152,8 @@ SignUp.proptypes = {
   navigation: PropTypes.array.isRequired,
   signUp: PropTypes.func.isRequired,
   setError: PropTypes.func.isRequired,
-  toggleLoading: PropTypes.func.isRequired
+  toggleLoading: PropTypes.func.isRequired,
+  error: PropTypes.object.isRequired
 };
 
 export default SignUp;

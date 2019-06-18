@@ -35,6 +35,7 @@ class SignInContainer extends Component {
               signIn={signIn}
               navigation={this.props.navigation}
               setError={this.setError}
+              error={error || this.state.error}
               toggleLoading={this.toggleLoading}
             />
           );

@@ -35,6 +35,7 @@ class SignUpContainer extends Component {
               signUp={signUp}
               navigation={this.props.navigation}
               setError={this.setError}
+              error={error || this.state.error}
               toggleLoading={this.toggleLoading}
             />
           );

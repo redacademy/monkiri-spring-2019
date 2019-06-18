@@ -13,7 +13,7 @@ import { Form, Field } from "react-final-form";
 import validate from "./helpers/validate";
 import { setUser } from "../../config/models";
 
-const SignIn = ({ navigation, signIn, setError, toggleLoading }) => {
+const SignIn = ({ navigation, signIn, setError, toggleLoading, error }) => {
   return (
     <View style={styles.root}>
       <View style={styles.logoContainer}>
@@ -90,6 +90,11 @@ const SignIn = ({ navigation, signIn, setError, toggleLoading }) => {
                   </View>
                 )}
               />
+
+              {error && error.message && (
+                <Text style={styles.errorMessage}>{error.message}</Text>
+              )}
+
               <TouchableOpacity
                 style={styles.logInButton}
                 onPress={handleSubmit}
@@ -128,7 +133,8 @@ SignIn.proptypes = {
   navigation: PropTypes.array.isRequired,
   signIn: PropTypes.func.isRequired,
   setError: PropTypes.func.isRequired,
-  toggleLoading: PropTypes.func.isRequired
+  toggleLoading: PropTypes.func.isRequired,
+  error: PropTypes.object.isRequired
 };
 
 export default SignIn;

@@ -36,7 +36,7 @@ export const styles = StyleSheet.create({
     marginVertical: 5,
     marginLeft: 10
   },
-  logInButton: {
+  signUpButton: {
     marginTop: 10,
     height: 30,
     width: "60%",
@@ -45,7 +45,7 @@ export const styles = StyleSheet.create({
     backgroundColor: theme.colors.monikOrange,
     borderRadius: 20
   },
-  LogInText: {
+  signUpText: {
     textTransform: "capitalize",
     color: "white"
   },
