@@ -149,13 +149,13 @@ export const styles = StyleSheet.create({
     justifyContent: "flex-end",
     flexDirection: "column"
   },
+  //library
   libraryBtn: {
     color: "#fff",
     fontSize: 16,
     marginTop: 5,
     textAlign: "center",
-    height: 25,
-    
+    height: 25
   },
   libraryButtons: {
     flexDirection: "row",
@@ -166,26 +166,25 @@ export const styles = StyleSheet.create({
   lButtons: {
     backgroundColor: "#25BDD8",
     paddingTop: "2%",
-
     width: "50%",
-
     borderRadius: 20
   },
   searchBar: {
     paddingTop: 20,
     borderRadius: 20,
-    paddingBottom: 20,
-    width: "100%",
-
-    paddingLeft: 20,
-    paddingRight: 20
+    paddingBottom: "5%",
+    width: "100%"
   },
   topicListContainer: {
     width: "96%",
     marginLeft: "auto",
     marginRight: "auto"
   },
+  topicList:{
+   
+  },
   libraryContainer: {
-    margin: "5%"
+    margin: "5%",
+    paddingBottom: '5%'
   }
 });
