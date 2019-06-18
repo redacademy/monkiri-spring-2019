@@ -13,7 +13,7 @@ import { Form, Field } from "react-final-form";
 import validate from "./helpers/validate";
 import { setUser } from "../../config/models";
 
-const SignUp = ({ navigation, signUp, setError, toggleLoading }) => {
+const SignUp = ({ navigation, signUp, setError, toggleLoading, error }) => {
   return (
     <View style={styles.root}>
       <View style={styles.logoContainer}>
