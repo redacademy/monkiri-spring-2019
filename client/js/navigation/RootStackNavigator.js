@@ -23,6 +23,9 @@ export default createAppContainer(
       App: NavigationLayout
     },
     {
+      initialRouteName: "AuthLoading"
+    },
+    {
       headerMode: "none"
     }
   )
