@@ -7,9 +7,13 @@ const Profile = ({ navigation }) => {
   return (
     <View>
       <TouchableOpacity
-        onPress={() => {
-          logOut();
-          navigation.navigate("Auth");
+        onPress={async () => {
+          try {
+            logOut();
+            navigation.navigate("Auth");
+          } catch (e) {
+            return false;
+          }
         }}
       >
         <Text>Log Out</Text>
