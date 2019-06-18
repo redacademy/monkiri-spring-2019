@@ -19,7 +19,7 @@ const SignIn = ({ navigation, signIn, setError, toggleLoading, error }) => {
       <View style={styles.logoContainer}>
         <Image
           style={styles.logo}
-          source={require("../../assets/images/Logo.png")}
+          source={require("../../assets/images/Logo-2.png")}
         />
       </View>
       <KeyboardAvoidingView
