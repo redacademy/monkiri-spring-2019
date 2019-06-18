@@ -72,10 +72,10 @@ export const styles = StyleSheet.create({
     position: "absolute",
     right: 15,
     bottom: 30,
-    shadowColor: "grey",
-    shadowRadius: 2,
-    shadowOffset: { height: 0, width: 0 },
-    shadowColor: "#000",
+    // shadowColor: "grey",
+    // shadowRadius: 2,
+    // shadowOffset: { height: 0, width: 0 },
+    // shadowColor: "#000",
     shadowOffset: { width: 0, height: 3 },
     shadowOpacity: 0.2,
     shadowRadius: 3,
@@ -154,38 +154,48 @@ export const styles = StyleSheet.create({
     flexDirection: "column"
   },
   libraryBtn: {
-    // alignItems: "flex-end",
+    color: "#fff",
+    fontSize: 20,
     width: "100%",
     marginBottom: 5,
     marginTop: 5,
     textAlign: "center",
-    color: "white"
+  
   },
   libraryButtons: {
     flexDirection: "row",
     alignItems: "center",
     width: "100%",
-    justifyContent: "space-evenly"
-    // marginBottom: 10,
+    justifyContent: "space-evenly",
+    marginBottom: '10%',
     // marginTop: 5,
   },
   lButtons: {
     backgroundColor: "#25BDD8",
     paddingTop: "2%",
-    paddingBottom: "2%",
-    width: "40%",
-    right: "5%",
+    // paddingBottom: "2%",
+    width: "50%",
+
     borderRadius: 20
   },
   searchBar: {
-    // backgroundColor: "red",
-    // color: "red",
+
     paddingTop: 20,
     borderRadius: 20,
     paddingBottom: 20,
     width: "100%",
-    height: '50%',
+    // height: '50%',
     paddingLeft: 20,
-   paddingRight: 20
+    paddingRight: 20
+  },
+  topicListContainer: {
+    // height: 500,
+    // justifyContent:"space-evenly"
+    width: "96%",
+    marginLeft: "auto",
+    marginRight: "auto"
+  },
+  libraryContainer:{
+    margin: '5%'
   }
 });
