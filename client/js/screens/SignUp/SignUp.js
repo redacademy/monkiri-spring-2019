@@ -13,7 +13,7 @@ import { Form, Field } from "react-final-form";
 import validate from "./helpers/validate";
 import { setUser } from "../../config/models";
 
-const SignIn = ({ navigation, signIn, setError, toggleLoading, error }) => {
+const SignUp = ({ navigation, signUp, setError, toggleLoading, error }) => {
   return (
     <View style={styles.root}>
       <View style={styles.logoContainer}>
@@ -30,9 +30,9 @@ const SignIn = ({ navigation, signIn, setError, toggleLoading, error }) => {
         <Form
           onSubmit={async values => {
             try {
-              const response = await signIn({ variables: { ...values } });
-              if (response.data.authenticateUser) {
-                const { id, token } = response.data.authenticateUser;
+              const response = await signUp({ variables: { ...values } });
+              if (response.data.signupUser) {
+                const { id, token } = response.data.signupUser;
                 toggleLoading();
                 await setUser(id, token);
                 navigation.navigate("App");
@@ -45,6 +45,28 @@ const SignIn = ({ navigation, signIn, setError, toggleLoading, error }) => {
           validate={validate.bind(this)}
           render={({ handleSubmit }) => (
             <View style={styles.form}>
+              <Field
+                name="name"
+                render={({ input, meta }) => (
+                  <View style={styles.formField}>
+                    <View style={styles.formInputBackground}>
+                      <TextInput
+                        style={styles.formInput}
+                        {...input}
+                        placeholder="Name"
+                        keyboardType="default"
+                        autoCapitalize="none"
+                        value={input.value}
+                      />
+                    </View>
+                    <View>
+                      {meta.error && meta.touched && (
+                        <Text style={styles.errorMessage}>{meta.error}</Text>
+                      )}
+                    </View>
+                  </View>
+                )}
+              />
               <Field
                 name="email"
                 render={({ input, meta }) => (
@@ -96,19 +118,16 @@ const SignIn = ({ navigation, signIn, setError, toggleLoading, error }) => {
               )}
 
               <TouchableOpacity
-                style={styles.logInButton}
+                style={styles.signUpButton}
                 onPress={handleSubmit}
               >
-                <Text style={styles.LogInText}>Log In</Text>
+                <Text style={styles.signUpText}>Sign Up</Text>
               </TouchableOpacity>
             </View>
           )}
         />
       </KeyboardAvoidingView>
       <View style={styles.contentContainer}>
-        <TouchableOpacity onPress={() => navigation.navigate("ResetPassword")}>
-          <Text style={styles.bodyText2}>Forgot Password?</Text>
-        </TouchableOpacity>
         <Text style={styles.bodyText}>Or Sign in with:</Text>
         <View style={styles.iconsContainer}>
           <TouchableOpacity>
@@ -129,12 +148,12 @@ const SignIn = ({ navigation, signIn, setError, toggleLoading, error }) => {
   );
 };
 
-SignIn.proptypes = {
+SignUp.proptypes = {
   navigation: PropTypes.array.isRequired,
-  signIn: PropTypes.func.isRequired,
+  signUp: PropTypes.func.isRequired,
   setError: PropTypes.func.isRequired,
   toggleLoading: PropTypes.func.isRequired,
   error: PropTypes.object.isRequired
 };
 
-export default SignIn;
+export default SignUp;
