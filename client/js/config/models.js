@@ -35,7 +35,7 @@ export const logOut = async () => {
 
 export const setOnboardStatus = async () => {
   try {
-    return await AsyncStorage.setItem("onBoard", "done");
+    return await AsyncStorage.setItem("onBoard", true);
   } catch (e) {
     return e;
   }
