@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ImageLoader from "../ImageLoader";
+import ImageLoader from "../../components/ImageLoader";
 import { View, Text, Image, ScrollView, TouchableOpacity } from "react-native";
 import { styles } from "./styles";
 import * as Progress from "react-native-progress";
