@@ -24,7 +24,7 @@ const OnboardingAuth = ({ navigation }) => {
         style={styles.logo}
         source={require("../../assets/images/onBoarding/logo.png")}
       />
-      <Text style={styles.subtitle}>Start Growing</Text>
+      <Text style={styles.subtitle}>Start Growing!</Text>
       <View style={styles.buttonContainer}>
         <TouchableOpacity
           style={styles.activeButton}
@@ -33,10 +33,10 @@ const OnboardingAuth = ({ navigation }) => {
           <Text style={styles.activeButtonText}>Register</Text>
         </TouchableOpacity>
         <TouchableOpacity
-          style={styles.activeButton}
+          style={styles.activeButton2}
           onPress={handleSignInClick}
         >
-          <Text style={styles.activeButtonText}>Sign In</Text>
+          <Text style={styles.activeButtonText2}>Sign In</Text>
         </TouchableOpacity>
       </View>
       <View />
