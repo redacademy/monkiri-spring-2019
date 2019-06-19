@@ -62,7 +62,7 @@ const Profile = ({ navigation, user }) => {
         <TouchableOpacity
           onPress={async () => {
             try {
-              logOut();
+              await logOut();
               navigation.navigate("Auth");
             } catch (e) {
               return false;
