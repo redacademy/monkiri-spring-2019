@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import gql from "graphql-tag";
 import { Mutation } from "react-apollo";
-import SignIn from "./SignIn";
+import SignUp from "./SignUp";
 import Loader from "../../components/Loader";
 
-class SignInContainer extends Component {
+class SignUpContainer extends Component {
   static navigationOptions = {
-    title: "SignIn"
+    title: "SignUp"
   };
 
   constructor(props) {
@@ -27,12 +27,12 @@ class SignInContainer extends Component {
 
   render() {
     return (
-      <Mutation mutation={AUTHENTICATE_USER}>
-        {(signIn, { loading, error }) => {
+      <Mutation mutation={SIGNUP_USER}>
+        {(signUp, { loading, error }) => {
           if (loading || this.state.loading) return <Loader />;
           return (
-            <SignIn
-              signIn={signIn}
+            <SignUp
+              signUp={signUp}
               navigation={this.props.navigation}
               setError={this.setError}
               error={error || this.state.error}
@@ -45,13 +45,13 @@ class SignInContainer extends Component {
   }
 }
 
-const AUTHENTICATE_USER = gql`
-  mutation signIn($email: String!, $password: String!) {
-    authenticateUser(email: $email, password: $password) {
+const SIGNUP_USER = gql`
+  mutation signUp($name: String!, $email: String!, $password: String!) {
+    signupUser(name: $name, email: $email, password: $password) {
       id
       token
     }
   }
 `;
 
-export default SignInContainer;
+export default SignUpContainer;

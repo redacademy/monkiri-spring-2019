@@ -16,8 +16,7 @@ export const styles = StyleSheet.create({
   },
   subtitle: {
     color: theme.colors.skyBlue,
-    fontWeight: theme.fonts.subheading.fontWeight,
-    fontSize: theme.fonts.subheading.fontSize * 1.2,
+    ...theme.fonts.heading,
     letterSpacing: 3
   },
   buttonContainer: {
@@ -36,9 +35,23 @@ export const styles = StyleSheet.create({
     alignItems: "center",
     padding: 8
   },
+  activeButton2: {
+    borderColor: theme.colors.skyBlue,
+    borderWidth: 1,
+    borderStyle: "solid",
+    width: "80%",
+    height: "auto",
+    borderRadius: 20,
+    justifyContent: "center",
+    alignItems: "center",
+    padding: 8
+  },
   activeButtonText: {
-    fontSize: theme.fonts.subheading2.fontSize,
-    fontWeight: theme.fonts.subheading2.fontWeight,
+    ...theme.fonts.subheading,
     color: "#FFFFFF"
+  },
+  activeButtonText2: {
+    ...theme.fonts.subheading,
+    color: theme.colors.skyBlue
   }
 });
