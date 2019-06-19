@@ -11,7 +11,7 @@ class TopicList extends Component {
     this.state = {
       selectedTopics: {},
       openPopUp: false,
-      currentTopic: undefined
+      currentTopic: {}
     };
   }
   toggle = topic => {
