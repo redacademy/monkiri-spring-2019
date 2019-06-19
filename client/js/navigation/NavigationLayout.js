@@ -9,9 +9,10 @@ import LessonsScreen from "../screens/Lessons";
 import PartnersScreen from "../screens/Partners";
 import ProfileScreen from "../screens/Profile";
 import QuestScreen from "../screens/Quests";
+import ProgressScreen from "../screens/ProgressInfo";
 
 const LessonsStack = createStackNavigator(
-  { LESSON: LessonsScreen },
+  { LESSON: LessonsScreen, PROGRESS: ProgressScreen },
   {
     defaultNavigationOptions: ({ navigation }) => ({
       ...sharedNavigationOptions(navigation)
