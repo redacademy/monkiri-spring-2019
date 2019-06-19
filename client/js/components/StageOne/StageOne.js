@@ -2,23 +2,25 @@ import React, { Component } from "react";
 import { View, Text } from "react-native";
 import * as Progress from "react-native-progress";
 
+import { styles } from "./styles";
+
 class StageOneContainer extends Component {
   static navigationOptions = {
     title: "Stage 1"
   };
   render() {
     return (
-      <View style={{ flex: 1, alignItems: "center", paddingTop: 25 }}>
+      <View style={styles.title}>
         <Text> Digital Currency </Text>
         <Progress.Bar progress={0.3} width={200} />
 
         <View>
-          <Text>Compound Interest</Text>
+          <Text style={styles.heading1}>Compound Interest</Text>
           <Text>Compound interest is what most loans deal with. </Text>
         </View>
 
         <View>
-          <Text>Compound InterestVS Simple Interest</Text>
+          <Text style={styles.heading1}>Compound InterestVS Simple Interest</Text>
           <Text>
             When we are dealing with simple interest, we are only focusing on
             the original principal and the interest rate.
@@ -30,7 +32,7 @@ class StageOneContainer extends Component {
         </View>
 
         <View>
-          <Text>Time</Text>
+          <Text style={styles.heading1}>Time</Text>
           <Text>
             Comparison between a Simple Interest loan and a Compound Interest
             loan.
