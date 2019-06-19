@@ -4,7 +4,7 @@ import { styles } from "./styles";
 import { SearchBar } from "react-native-elements";
 import TopicList from "../../components/TopicList";
 import topics from "../../helpers/topics";
-import SurveyLessons from "./SurveyLessons";
+
 class LessonLibraryContainer extends Component {
   static navigationOptions = {
     title: "Libray"
@@ -13,7 +13,7 @@ class LessonLibraryContainer extends Component {
     super(props);
     this.state = {
       search: "",
-      tabIndex: 0 // hmm
+      tabIndex: 0
     };
   }
   updateSearch = search => {
@@ -29,7 +29,7 @@ class LessonLibraryContainer extends Component {
 
     console.log(result);
     return (
-      <View>
+      <View style={styles.libraryContainer}>
         <View>
           <View style={styles.searchBar}>
             <SearchBar
@@ -37,24 +37,13 @@ class LessonLibraryContainer extends Component {
               onChangeText={this.updateSearch}
               value={search}
               lightTheme={true}
-              containerStyle={{
-                backgroundColor: "white",
-                borderRadius: 10,
-                shadowColor: "#000",
-                shadowOpacity: 0.2,
-                shadowColor: "grey",
-                shadowRadius: 2,
-                shadowOffset: { height: 3, width: 0 },
-                shadowRadius: 3
-              }}
+              containerStyle={styles.searchBarContainerStyle}
               inputContainerStyle={{ backgroundColor: "white" }}
               searchIcon={{ color: "#25BDD8" }}
             />
           </View>
           <View style={styles.libraryButtons}>
-        
             <TouchableOpacity
-              
               style={[
                 this.state.tabIndex === 0
                   ? styles.selectButtonClicked
@@ -75,7 +64,6 @@ class LessonLibraryContainer extends Component {
               </Text>
             </TouchableOpacity>
             <TouchableOpacity
-              
               style={[
                 this.state.tabIndex === 1
                   ? styles.selectButtonClicked
@@ -98,13 +86,10 @@ class LessonLibraryContainer extends Component {
           </View>
         </View>
 
-        <ScrollView style={{ width: "100%" }}>
-          <TopicList
-            style={styles.topicList}
-            topics={result}
-            hasButton={false}
-            isLibrary={true}
-          />
+        <ScrollView style={styles.scrollView}>
+          <View style={styles.topisContainer}>
+            <TopicList topics={result} hasButton={false} isLibrary={true} />
+          </View>
         </ScrollView>
       </View>
     );

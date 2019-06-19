@@ -148,12 +148,10 @@ export const styles = StyleSheet.create({
     justifyContent: "flex-end",
     flexDirection: "column"
   },
-  
+
   //library
   libraryBtn: {
     fontSize: 16,
-    // marginTop: 5,
-    // textAlign: "center",
     height: 25
   },
   libraryButtons: {
@@ -161,34 +159,31 @@ export const styles = StyleSheet.create({
     alignItems: "center",
     width: "80%",
     marginBottom: "10%",
-    marginLeft: 'auto',
-    marginRight: 'auto'
+    marginTop: "3%",
+    marginLeft: "auto",
+    marginRight: "auto",
+    justifyContent: "space-between"
   },
 
   selectButtonClicked: {
-    flex: 1,
     backgroundColor: "#25BDD8",
-    paddingTop: "2%",
-    width: "50%",
+    width: "45%",
     borderRadius: 20,
     borderWidth: 2,
     borderColor: "#25BDD8",
     justifyContent: "center",
     alignItems: "center",
-
+    padding: 5
   },
   selectButtonNotClicked: {
     backgroundColor: "#ffff",
-    flex: 1,
-    paddingTop: "2%",
-    width: "50%",
+    width: "45%",
     borderRadius: 20,
     borderWidth: 2,
     borderColor: "#25BDD8",
     justifyContent: "center",
     alignItems: "center",
-  
-
+    padding: 5
   },
   selectButtonTextClicked: {
     color: "white"
@@ -197,21 +192,31 @@ export const styles = StyleSheet.create({
     color: "#25BDD8"
   },
   searchBar: {
-    paddingTop: 20,
+    paddingTop: "5%",
     borderRadius: 20,
-    // paddingBottom: "5%",
     width: "80%",
     marginLeft: "auto",
     marginRight: "auto"
   },
   topicListContainer: {
-    width: "96%"
-    // marginLeft: "auto",
-    // marginRight: "auto"
+    width: "100%",
+    marginLeft: "auto",
+    marginRight: "auto"
   },
-  topicList: {},
-  libraryContainer: {
-    // margin: "5%"
-    // paddingBottom: '5%'
+  scrollView: {
+    width: "100%"
+  },
+  searchBarContainerStyle: {
+    backgroundColor: "white",
+    borderRadius: 10,
+    shadowColor: "#000",
+    shadowOpacity: 0.2,
+    shadowColor: "grey",
+    shadowRadius: 2,
+    shadowOffset: { height: 3, width: 0 },
+    shadowRadius: 3
+  },
+  topisContainer: {
+    paddingBottom: "20%"
   }
 });
