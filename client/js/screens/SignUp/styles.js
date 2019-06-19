@@ -29,12 +29,14 @@ export const styles = StyleSheet.create({
     borderRadius: 10
   },
   formInput: {
-    height: 40
+    height: 40,
+    ...theme.fonts.subheading2
   },
   errorMessage: {
     color: "red",
     marginVertical: 5,
-    marginLeft: 10
+    marginLeft: 10,
+    ...theme.fonts.bodyText
   },
   signUpButton: {
     marginTop: 10,
@@ -47,7 +49,11 @@ export const styles = StyleSheet.create({
   },
   signUpText: {
     textTransform: "capitalize",
-    color: "white"
+    color: "white",
+    ...theme.fonts.subheading
+  },
+  bodyText: {
+    ...theme.fonts.bodyText
   },
   contentContainer: {
     height: height * 0.25,
