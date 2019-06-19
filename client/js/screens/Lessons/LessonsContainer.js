@@ -7,10 +7,9 @@ class LessonsContainer extends Component {
   };
   render() {
     return (
-      // <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      //   <Text>Lessons Screen</Text>
-      // </View>
-      <ProgressInfo />
+      <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+        <Text>Lessons Screen</Text>
+      </View>
     );
   }
 }

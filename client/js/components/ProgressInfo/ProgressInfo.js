@@ -1,13 +1,6 @@
 import React, { useState } from "react";
 import ImageLoader from "../ImageLoader";
-import {
-  View,
-  Text,
-  Image,
-  ScrollView,
-  TouchableOpacity,
-  Animated
-} from "react-native";
+import { View, Text, Image, ScrollView, TouchableOpacity } from "react-native";
 import { styles } from "./styles";
 import * as Progress from "react-native-progress";
 const initialData = [
@@ -42,7 +35,9 @@ const ProgressInfo = () => {
   handleComplete = id => {
     const newStage = stages
       .map(stage => (stage.id === id ? { ...stage, isCompleted: true } : stage))
-      .map(d => (d.id === id + 1 ? { ...d, avaiable: true } : d));
+      .map(stage =>
+        stage.id === id + 1 ? { ...stage, avaiable: true } : stage
+      );
     setStages(newStage);
     setCurrentXp(preXp => preXp + xp);
   };
@@ -61,18 +56,19 @@ const ProgressInfo = () => {
           source={require("../../assets/images/processGrow/grow1.png")}
         />
       ) : null}
-      {currentXp === maxXp ? (
-        <ImageLoader
-          style={styles.processBanner}
-          source={require("../../assets/images/processGrow/grow3.png")}
-        />
-      ) : null}
       {currentXp > 20 && currentXp < maxXp ? (
         <ImageLoader
           style={styles.processBanner}
           source={require("../../assets/images/processGrow/grow2.png")}
         />
       ) : null}
+      {currentXp === maxXp ? (
+        <ImageLoader
+          style={styles.processBanner}
+          source={require("../../assets/images/processGrow/grow3.png")}
+        />
+      ) : null}
+
       <View style={styles.barContainer}>
         <Progress.Bar
           progress={currentXp / maxXp}
