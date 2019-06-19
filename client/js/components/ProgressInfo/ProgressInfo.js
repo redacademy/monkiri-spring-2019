@@ -1,5 +1,13 @@
 import React, { useState } from "react";
-import { View, Text, Image, ScrollView, TouchableOpacity } from "react-native";
+import ImageLoader from "../ImageLoader";
+import {
+  View,
+  Text,
+  Image,
+  ScrollView,
+  TouchableOpacity,
+  Animated
+} from "react-native";
 import { styles } from "./styles";
 import * as Progress from "react-native-progress";
 const initialData = [
@@ -7,63 +15,60 @@ const initialData = [
     id: 1,
     lessonName: "Introduction",
     icon: require("../../assets/images/outlinedIcons/business.png"),
+    avaiable: true,
     isCompleted: false
   },
   {
     id: 2,
     lessonName: "Quiz",
     icon: require("../../assets/images/outlinedIcons/taxes.png"),
-    isCompleted: false
+    isCompleted: false,
+    avaiable: false
   },
   {
     id: 3,
     lessonName: "Calculator",
     icon: require("../../assets/images/outlinedIcons/insurance.png"),
-    isCompleted: false
+    isCompleted: false,
+    avaiable: false
   }
 ];
 const ProgressInfo = () => {
   const [stages, setStages] = useState(initialData);
   const [currentXp, setCurrentXp] = useState(0);
-  //   const [isLessonCompleted, setIsLessonCompleted] = useState(false);
   const xp = 20;
-  const maxXp = xp * initialData.length;
+  const maxXp = xp * stages.length;
 
   handleComplete = id => {
-    const newStage = stages.map(stage =>
-      stage.id === id ? { ...stage, isCompleted: true } : stage
-    );
+    const newStage = stages
+      .map(stage => (stage.id === id ? { ...stage, isCompleted: true } : stage))
+      .map(d => (d.id === id + 1 ? { ...d, avaiable: true } : d));
     setStages(newStage);
     setCurrentXp(preXp => preXp + xp);
-    //     const check = stages.filter(stage => stage.id === id);
-    //    if(check.isCompleted){
-
-    //    }
-    //     console.log(check);
   };
 
   return (
     <ScrollView contentContainerStyle={styles.root}>
       {currentXp === 0 ? (
-        <Image
+        <ImageLoader
           style={styles.processBanner}
           source={require("../../assets/images/processGrow/grow0.png")}
         />
       ) : null}
       {currentXp === 20 ? (
-        <Image
+        <ImageLoader
           style={styles.processBanner}
           source={require("../../assets/images/processGrow/grow1.png")}
         />
       ) : null}
       {currentXp === maxXp ? (
-        <Image
+        <ImageLoader
           style={styles.processBanner}
           source={require("../../assets/images/processGrow/grow3.png")}
         />
       ) : null}
       {currentXp > 20 && currentXp < maxXp ? (
-        <Image
+        <ImageLoader
           style={styles.processBanner}
           source={require("../../assets/images/processGrow/grow2.png")}
         />
@@ -86,15 +91,33 @@ const ProgressInfo = () => {
           <TouchableOpacity
             key={stage.id}
             onPress={() =>
-              stage.isCompleted ? null : handleComplete(stage.id)
+              stage.isCompleted || !stage.avaiable
+                ? null
+                : handleComplete(stage.id)
             }
           >
             <View style={styles.container}>
-              <View style={styles.outline}>
-                <Image
-                  style={styles.circle}
-                  source={require("../../assets/images/Illustrations/circle.png")}
-                />
+              <View
+                style={
+                  !stage.avaiable
+                    ? styles.inactiveOutline
+                    : !stage.isCompleted
+                    ? styles.incompletedOutline
+                    : styles.outline
+                }
+              >
+                {stage.avaiable ? (
+                  <Image
+                    style={styles.circle}
+                    source={require("../../assets/images/Illustrations/circle.png")}
+                  />
+                ) : (
+                  <Image
+                    style={styles.circle}
+                    source={require("../../assets/images/Illustrations/circleFalse.png")}
+                  />
+                )}
+
                 <Image style={styles.icon} source={stage.icon} />
               </View>
               <Text style={styles.subheader}>{stage.lessonName}</Text>

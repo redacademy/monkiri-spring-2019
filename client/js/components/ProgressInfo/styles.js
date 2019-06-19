@@ -9,9 +9,9 @@ export const styles = StyleSheet.create({
     resizeMode: "contain"
   },
   barContainer: {
-    marginTop: height * 0.05,
     marginBottom: height * 0.05,
-    position: "relative"
+    position: "relative",
+    justifyContent: "center"
   },
   bar: {
     backgroundColor: "#e9fbd4",
@@ -20,7 +20,7 @@ export const styles = StyleSheet.create({
   complete: {
     color: "#ffffff",
     fontWeight: theme.fonts.heading.fontWeight,
-    fontSize: 13,
+    fontSize: 12,
     position: "absolute",
     right: 5
   },
@@ -32,6 +32,15 @@ export const styles = StyleSheet.create({
   },
   inactiveOutline: {
     borderColor: "#d9d9d9",
+    borderWidth: 3,
+    width: 80,
+    height: 80,
+    borderRadius: 40,
+    justifyContent: "center",
+    alignItems: "center"
+  },
+  incompletedOutline: {
+    borderColor: "#beecf4",
     borderWidth: 3,
     width: 80,
     height: 80,
