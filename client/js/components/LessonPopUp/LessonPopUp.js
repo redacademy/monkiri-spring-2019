@@ -3,8 +3,8 @@ import { Text, View, TouchableOpacity, Image } from "react-native";
 import Modal from "react-native-modal";
 import styles from "./styles";
 import Ionicons from "react-native-vector-icons/Ionicons";
-
-export default class LessonPopUp extends Component {
+import PropTypes from "prop-types";
+class LessonPopUp extends Component {
   state = {
     isModalVisible: true
   };
@@ -68,3 +68,8 @@ export default class LessonPopUp extends Component {
     );
   }
 }
+LessonPopUp.propTypes = {
+  topic: PropTypes.object.isRequired,
+  openPopUp: PropTypes.bool.isRequired
+};
+export default LessonPopUp;
