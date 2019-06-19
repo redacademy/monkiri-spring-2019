@@ -152,5 +152,8 @@ export const styles = StyleSheet.create({
     height: "100%",
     justifyContent: "flex-end",
     flexDirection: "column"
+  },
+  backgroundGreen: {
+    backgroundColor: "#99c355"
   }
 });

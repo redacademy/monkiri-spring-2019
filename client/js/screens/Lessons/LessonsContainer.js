@@ -65,9 +65,7 @@ class LessonsContainer extends Component {
           </View>
         </View>
 
-        <View>
-          {this.state.tabIndex == 0 ? <Text>test 1</Text> : <Text>test2</Text>}
-        </View>
+       
         <View style={styles.editButton}>
           <TouchableOpacity style={styles.advancedButton}>
             <Text style={styles.buttonColor}>Edit</Text>
@@ -75,7 +73,7 @@ class LessonsContainer extends Component {
         </View>
 
         <View style={styles.container}>
-          <View style={[{ backgroundColor: "#99c355" }, styles.iconContainer]}>
+          <View style={[styles.backgroundGreen, styles.iconContainer]}>
             <Image
               style={styles.whiteIcon}
               source={require(`../../assets/images/IconsWhite/saving.png`)}
