@@ -32,8 +32,7 @@ class LessonsContainer extends Component {
                 style={[
                   this.state.tabIndex !== 0
                     ? styles.buttonTextNotClicked
-                    : styles.buttonTextClicked,
-                  { textTransform: "uppercase" }
+                    : styles.buttonTextClicked
                 ]}
               >
                 My Lessons
@@ -55,8 +54,7 @@ class LessonsContainer extends Component {
                 style={[
                   this.state.tabIndex !== 1
                     ? styles.buttonTextNotClicked
-                    : styles.buttonTextClicked,
-                  { textTransform: "uppercase" }
+                    : styles.buttonTextClicked
                 ]}
               >
                 Library
@@ -65,7 +63,6 @@ class LessonsContainer extends Component {
           </View>
         </View>
 
-       
         <View style={styles.editButton}>
           <TouchableOpacity style={styles.advancedButton}>
             <Text style={styles.buttonColor}>Edit</Text>
@@ -94,7 +91,7 @@ class LessonsContainer extends Component {
           </View>
         </View>
         <View style={styles.container}>
-          <View style={[{ backgroundColor: "#50A255" }, styles.iconContainer]}>
+          <View style={[styles.backgroundDarkGreen, styles.iconContainer]}>
             <Image
               style={styles.whiteIcon}
               source={require(`../../assets/images/IconsWhite/budgeting.png`)}

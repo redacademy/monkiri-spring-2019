@@ -97,11 +97,12 @@ export const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: "#f07216",
     borderTopLeftRadius: 10,
-    borderTopRightRadius: 10
+    borderTopRightRadius: 10,
+   
   },
   buttonNotClicked: {
     backgroundColor: "#ffffff",
-
+    textTransform: "uppercase",
     height: "78%",
     width: "100%",
     textAlign: "center",
@@ -111,10 +112,12 @@ export const styles = StyleSheet.create({
     borderColor: "#f07216"
   },
   buttonTextNotClicked: {
-    color: "#f07216"
+    color: "#f07216",
+    textTransform: "uppercase"
   },
   buttonTextClicked: {
-    color: "#fff"
+    color: "#fff",
+    textTransform: "uppercase"
   },
   editButton: {
     alignItems: "flex-end",
@@ -155,5 +158,8 @@ export const styles = StyleSheet.create({
   },
   backgroundGreen: {
     backgroundColor: "#99c355"
+  },
+  backgroundDarkGreen: {
+    backgroundColor: "#50A255"
   }
 });
