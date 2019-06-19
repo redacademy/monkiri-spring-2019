@@ -4,12 +4,7 @@ import { styles } from "./styles";
 
 const OnboardingAuth = ({ navigation }) => {
   const handleReisterClick = () => {
-<<<<<<< HEAD
-    navigation.navigate("App");
-    //links to the Regsiter screen later
-=======
     navigation.navigate("SignUp");
->>>>>>> develop
   };
   const handleSignInClick = () => {
     navigation.navigate("SignIn");
