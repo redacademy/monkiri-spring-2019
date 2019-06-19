@@ -7,7 +7,7 @@ import topics from "../../helpers/topics";
 
 class LessonLibraryContainer extends Component {
   static navigationOptions = {
-    title: "Libray"
+    title: "Library"
   };
   constructor(props) {
     super(props);
