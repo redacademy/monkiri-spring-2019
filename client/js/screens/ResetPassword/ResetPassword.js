@@ -31,7 +31,7 @@ const ResetPassword = ({ navigation }) => {
         enabled
       >
         <Form
-          onSubmit={values => console.log(values)}
+          onSubmit={() => navigation.navigate("SignIn")}
           validate={validate.bind(this)}
           render={({ handleSubmit }) => (
             <View style={styles.form}>

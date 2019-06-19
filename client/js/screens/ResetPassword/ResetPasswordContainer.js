@@ -7,7 +7,7 @@ class ResetPasswordContainer extends Component {
   };
 
   render() {
-    return <ResetPassword />;
+    return <ResetPassword navigation={this.props.navigation} />;
   }
 }
 
