@@ -24,6 +24,16 @@ export const styles = StyleSheet.create({
     position: "absolute",
     right: 5
   },
+  textContainer: {
+    width: width * 0.8,
+    alignItems: "center",
+    justifyContent: "center",
+    marginBottom: height * 0.05
+  },
+  text: {
+    textAlign: "center",
+    fontWeight: "100"
+  },
   stageLists: {
     width: width,
     flexDirection: "row",

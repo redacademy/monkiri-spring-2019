@@ -9,26 +9,33 @@ const initialData = [
     lessonName: "Introduction",
     icon: require("../../assets/images/outlinedIcons/business.png"),
     avaiable: true,
-    isCompleted: false
+    isCompleted: false,
+    text: "Start the Quiz to water and grow your sprout!"
   },
   {
     id: 2,
     lessonName: "Quiz",
     icon: require("../../assets/images/outlinedIcons/taxes.png"),
     isCompleted: false,
-    avaiable: false
+    avaiable: false,
+    text: "Start the Calculator to water and grow your sprout!"
   },
   {
     id: 3,
     lessonName: "Calculator",
     icon: require("../../assets/images/outlinedIcons/insurance.png"),
     isCompleted: false,
-    avaiable: false
+    avaiable: false,
+    text:
+      "You've completed all the compound interest ! Your tree is full grown."
   }
 ];
 const ProgressInfo = () => {
   const [stages, setStages] = useState(initialData);
   const [currentXp, setCurrentXp] = useState(0);
+  const [text, setText] = useState(
+    "Start the Introduction to water and grow your sprout!"
+  );
   const xp = 20;
   const maxXp = xp * stages.length;
 
@@ -38,6 +45,7 @@ const ProgressInfo = () => {
       .map(stage =>
         stage.id === id + 1 ? { ...stage, avaiable: true } : stage
       );
+    setText(newStage[id - 1].text);
     setStages(newStage);
     setCurrentXp(preXp => preXp + xp);
   };
@@ -81,6 +89,9 @@ const ProgressInfo = () => {
         {currentXp === maxXp ? (
           <Text style={styles.complete}>COMPLETE!</Text>
         ) : null}
+      </View>
+      <View style={styles.textContainer}>
+        <Text style={styles.text}>{text}</Text>
       </View>
       <View style={styles.stageLists}>
         {stages.map(stage => (
