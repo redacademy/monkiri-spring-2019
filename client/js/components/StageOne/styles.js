@@ -20,12 +20,12 @@ export const styles = StyleSheet.create({
       color: 'white',
     //   backgroundColor: "#0274ff",
     //   padding: 5,
+
       fontWeight: '600',
-      
-    // position: 'absolute',
-    //  zIndex: 1,
-    //  fontSize: 15,
-    // alignItems: "center",
+    position: 'absolute',
+     zIndex: 1,
+     fontSize: 15,
+    alignItems: "center",
       
   }
 });
