@@ -5,11 +5,12 @@ const { width, height } = Dimensions.get("window");
 export const styles = StyleSheet.create({
   root: {
     flex: 1,
-    justifyContent: "space-evenly",
+    marginTop: height * 0.15,
+    justifyContent: "flex-start",
     alignItems: "center"
   },
   logo: {
-    height: height * 0.4,
+    width: height * 0.4,
     resizeMode: "contain"
   },
   formContainer: {
@@ -38,7 +39,7 @@ export const styles = StyleSheet.create({
     marginLeft: 10,
     ...theme.fonts.bodyText
   },
-  logInButton: {
+  submitButton: {
     marginTop: 10,
     height: 30,
     width: "60%",
@@ -47,31 +48,15 @@ export const styles = StyleSheet.create({
     backgroundColor: theme.colors.monikOrange,
     borderRadius: 20
   },
-  LogInText: {
+  submitText: {
     textTransform: "capitalize",
     color: "white",
     ...theme.fonts.subheading
   },
-  contentContainer: {
-    height: height * 0.25,
-    justifyContent: "space-evenly"
-  },
-  bodyText2: {
-    color: "black",
-    textDecorationLine: "underline",
-    ...theme.fonts.bodyText2
-  },
   bodyText: {
+    maxWidth: width * 0.7,
+    textAlign: "center",
+    marginVertical: 20,
     ...theme.fonts.bodyText
-  },
-  iconsContainer: {
-    flexDirection: "row",
-    marginBottom: 20
-  },
-  icon: {
-    height: width * 0.1,
-    width: width * 0.1,
-    resizeMode: "contain",
-    marginHorizontal: 10
   }
 });

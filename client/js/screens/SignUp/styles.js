@@ -38,7 +38,7 @@ export const styles = StyleSheet.create({
     marginLeft: 10,
     ...theme.fonts.bodyText
   },
-  logInButton: {
+  signUpButton: {
     marginTop: 10,
     height: 30,
     width: "60%",
@@ -47,23 +47,19 @@ export const styles = StyleSheet.create({
     backgroundColor: theme.colors.monikOrange,
     borderRadius: 20
   },
-  LogInText: {
+  signUpText: {
     textTransform: "capitalize",
     color: "white",
     ...theme.fonts.subheading
+  },
+  bodyText: {
+    ...theme.fonts.bodyText
   },
   contentContainer: {
     height: height * 0.25,
     justifyContent: "space-evenly"
   },
-  bodyText2: {
-    color: "black",
-    textDecorationLine: "underline",
-    ...theme.fonts.bodyText2
-  },
-  bodyText: {
-    ...theme.fonts.bodyText
-  },
+
   iconsContainer: {
     flexDirection: "row",
     marginBottom: 20
