@@ -46,7 +46,7 @@ export default class StageTwo extends Component {
     const { width } = Dimensions.get("window");
     const { clickedT, clickedF } = this.state;
     return (
-      <ScrollView style={styles.root} contentContainerStyle={styles.content}>
+      <ScrollView contentContainerStyle={styles.content}>
         <Text style={styles.title}> Quiz </Text>
         <Progress.Bar
           style={styles.processBar}

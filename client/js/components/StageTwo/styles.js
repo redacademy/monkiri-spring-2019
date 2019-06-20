@@ -3,12 +3,8 @@ import theme from "../../config/styles";
 const { width, height } = Dimensions.get("window");
 
 const styles = StyleSheet.create({
-  root: {
-    flex: 0.95,
-    marginTop: "auto",
-    marginBottom: "auto"
-  },
   content: {
+    flexGrow:1,
     justifyContent: "space-around",
     alignItems: "center",
     padding: 10
