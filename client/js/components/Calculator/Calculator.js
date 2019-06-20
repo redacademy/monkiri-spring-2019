@@ -5,9 +5,9 @@ import {
   TextInput,
   Picker,
   TouchableOpacity,
-  Slider,
   ScrollView
 } from "react-native";
+import Slider from "@react-native-community/slider";
 import theme from "../../config/styles";
 import { styles } from "./styles";
 const Calculator = () => {
