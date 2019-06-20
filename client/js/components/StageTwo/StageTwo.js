@@ -47,7 +47,7 @@ export default class StageTwo extends Component {
     const { clickedT, clickedF } = this.state;
     return (
       <ScrollView style={styles.root} contentContainerStyle={styles.content}>
-        <Text style={styles.title}> Digital Currency </Text>
+        <Text style={styles.title}> Quiz </Text>
         <Progress.Bar
           style={styles.processBar}
           progress={0.65}
@@ -56,8 +56,8 @@ export default class StageTwo extends Component {
         />
         <Text style={styles.checkin}>CHECK IN!</Text>
         <Text style={styles.description}>
-          True or False. Mobile wallets let you purchase goods online and in
-          real life.
+          A loan with compound interest will be larger than the same loan
+          withsimple interest.
         </Text>
         <Image
           style={styles.icon}
@@ -106,8 +106,8 @@ export default class StageTwo extends Component {
         </View>
         {clickedF ? (
           <Text style={styles.result}>
-            Mobile wallets allow you to purchase goods and services both online
-            and in stores that support mobile payments!
+            nterest is defined as the cost of borrowing money. ... Simple
+            interest is calculated on the principal amount of a loan only.
           </Text>
         ) : null}
         <View style={styles.buttonsContainer}>
