@@ -36,8 +36,8 @@ class StageOneContainer extends Component {
               </View>
             </View>
             <Text style={styles.textOne}>
-              {" "}
-              When we are dealing with{" "}
+              
+              When we are dealing with
               <Text style={styles.heading1}>Simple Interest</Text> we are only
               focusing on the original principal and the interest rate.{" "}
             </Text>
@@ -53,9 +53,9 @@ class StageOneContainer extends Component {
               </View>
             </View>
             <Text style={styles.textTwo}>
-              {" "}
+              
               With <Text style={styles.heading1}>Compound Interest</Text> we
-              also look at the time and compounding periods{" "}
+              also look at the time and compounding periods
             </Text>
           </View>
 
@@ -65,12 +65,12 @@ class StageOneContainer extends Component {
             </Text>
 
             <Text style={styles.textOne}>
-              {" "}
+            
               Both loans have the original principal of $100 and an interest
-              rate of 20%. The left loan is{" "}
+              rate of 20%. The left loan is
               <Text style={styles.heading1}>Simple Interest</Text> and the right
               is Compound Interest. Let’s see the difference after a couple of
-              years{" "}
+              years
             </Text>
 
             <View style={styles.table}>

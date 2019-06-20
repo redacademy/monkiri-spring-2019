@@ -41,19 +41,23 @@ export const styles = StyleSheet.create({
     
   },
   cI: {
-    marginTop: height * 0.04
+    marginTop: height * 0.04,
+    justifyContent: 'center'
   },
   simpleVsCompound: {
     color: "white",
     backgroundColor: theme.colors.skyBlue,
-    padding: 15,
+    // padding: 15,
     width: width * 0.9,
     fontWeight: "600",
     fontSize: 15,
     alignItems: "center",
-    paddingBottom: "2%",
-    textAlign: "center"
+    // paddingBottom: "2%",
+    textAlign: "center",
     // marginBottom: '3%',
+    paddingTop: '2.5%',
+    paddingBottom: '2.5%'
+    
   },
   table: {
     flexDirection: "row",
@@ -135,8 +139,8 @@ export const styles = StyleSheet.create({
     shadowRadius: 3
   },
   textOne: {
-    paddingTop: "10%",
-    paddingBottom:  "10%",
+    paddingTop: "3%",
+    paddingBottom:  "8%",
     lineHeight: 20,
 
   },
