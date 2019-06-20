@@ -87,25 +87,21 @@ const Calculator = () => {
         <Text style={styles.checkin}>Try it!</Text>
       </View>
       <View style={styles.principal}>
-        <Text style={styles.title}>Your Principal:</Text>
-        <Text> $ </Text>
         <TextInput
           value={principal}
           style={styles.input}
           onChangeText={updatePrincipal}
-          placeholder="Your Principal"
+          placeholder="Type Your Principal Here "
           ref={focusRef}
         />
       </View>
       <View style={styles.interest}>
-        <Text style={styles.title}>Your Interest: </Text>
         <TextInput
           value={interestRate}
           style={styles.input}
           onChangeText={updateInterest}
-          placeholder="Your Interest"
+          placeholder="Type Your Interest Here"
         />
-        <Text> %</Text>
       </View>
       <View style={styles.compound}>
         <Text style={styles.title}>Interest is compounded: </Text>
@@ -146,7 +142,6 @@ const Calculator = () => {
         >
           <Text style={styles.button}>Calculate</Text>
         </TouchableOpacity>
-        {/* {isError?<Text style={styles.title}>Invalid Input!</Text>} */}
         {isSumbit && !isError ? (
           <View>
             <Text style={styles.title}>

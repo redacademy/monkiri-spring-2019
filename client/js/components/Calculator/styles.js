@@ -13,7 +13,7 @@ export const styles = StyleSheet.create({
     margin: 10
   },
   input: {
-    width: width * 0.5,
+    width: width * 0.95,
     height: 40,
     borderWidth: 2,
     borderColor: theme.colors.seaBlue,
@@ -39,7 +39,9 @@ export const styles = StyleSheet.create({
   },
   title: {
     ...theme.fonts.subheading,
-    color: theme.colors.skyBlue
+    color: theme.colors.skyBlue,
+    textAlign: "center",
+    margin: 5
   },
   principal: {
     flexDirection: "row",
@@ -55,7 +57,8 @@ export const styles = StyleSheet.create({
     margin: 5
   },
   result: {
-    margin: 5
+    margin: 5,
+    alignItems: "center"
   },
 
   button: {
