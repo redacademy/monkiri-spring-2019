@@ -9,4 +9,5 @@ type User @model {
   name: String
   image: String  @defaultValue(value: "https://www.freeiconspng.com/uploads/profile-icon-9.png")
   xp: Int  @defaultValue(value: 0)
+  surveyTaken: Boolean @defaultValue(value: false)
 }
