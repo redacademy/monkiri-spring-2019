@@ -1,16 +1,50 @@
 import React, { Component } from "react";
-import { ScrollView,View, Text, Image, TouchableOpacity, Dimensions } from "react-native";
+import {
+  ScrollView,
+  View,
+  Text,
+  Image,
+  TouchableOpacity,
+  Dimensions
+} from "react-native";
 import * as Progress from "react-native-progress";
 import styles from "./styles";
 import theme from "../../config/styles";
 export default class StageTwo extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      clickedT: false,
+      clickedF: false
+    };
   }
-
+  toggleT(clickedT) {
+    if (clickedT) {
+      this.setState({
+        clickedT: !clickedT
+      });
+    } else {
+      this.setState({
+        clickedT: !clickedT,
+        clickedF: clickedT
+      });
+    }
+  }
+  toggleF(clickedF) {
+    if (clickedF) {
+      this.setState({
+        clickedF: !clickedF
+      });
+    } else {
+      this.setState({
+        clickedT: clickedF,
+        clickedF: !clickedF
+      });
+    }
+  }
   render() {
     const { width } = Dimensions.get("window");
+    const { clickedT, clickedF } = this.state;
     return (
       <ScrollView style={styles.root} contentContainerStyle={styles.content}>
         <Text style={styles.title}> Digital Currency </Text>
@@ -31,28 +65,54 @@ export default class StageTwo extends Component {
         />
         <View style={styles.buttonsContainer}>
           <TouchableOpacity
-            style={styles.selectButtonContainer}
-            //   onPress={}
+            style={[
+              styles.selectButtonContainer,
+              clickedT ? styles.clickedButtonContainer : null
+            ]}
+            onPress={() => this.toggleT(clickedT)}
           >
-            <Text style={styles.selectButtonText}>TRUE</Text>
+            <Text
+              style={[
+                styles.selectButtonText,
+                clickedT ? styles.clickedButtonText : null
+              ]}
+            >
+              TRUE
+            </Text>
           </TouchableOpacity>
           <TouchableOpacity
-            style={styles.selectButtonContainer}
-            //   onPress={}
+            style={[
+              styles.selectButtonContainer,
+              clickedF ? styles.clickedButtonContainer : null
+            ]}
+            onPress={() => this.toggleF(clickedF)}
           >
-            <Text style={styles.selectButtonText}>FALSE</Text>
+            <Text
+              style={[
+                styles.selectButtonText,
+                clickedF ? styles.clickedButtonText : null
+              ]}
+            >
+              FALSE
+            </Text>
           </TouchableOpacity>
-          {/* <Text style={styles.result}>You are correct!</Text> */}
-          <Text style={styles.result}>The correct answer is 'True'.</Text>
+          {clickedT || clickedF ? (
+            clickedT ? (
+              <Text style={styles.result}>You are correct!</Text>
+            ) : (
+              <Text style={styles.result}>The correct answer is 'True'.</Text>
+            )
+          ) : null}
         </View>
-        <Text style={styles.result}>
+        {clickedF ? (
+          <Text style={styles.result}>
             Mobile wallets allow you to purchase goods and services both online
             and in stores that support mobile payments!
           </Text>
+        ) : null}
         <View style={styles.buttonsContainer}>
           <TouchableOpacity
             style={[styles.burronShadow, styles.orangeButtonContainer]}
-            //   onPress={}
           >
             <Text style={styles.orangeButtonText}>Continue</Text>
           </TouchableOpacity>

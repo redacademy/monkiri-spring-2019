@@ -60,6 +60,18 @@ const styles = StyleSheet.create({
   selectButtonText: {
     color: theme.colors.skyBlue
   },
+  clickedButtonContainer: {
+    backgroundColor: theme.colors.skyBlue,
+    borderRadius: 50,
+    width: "100%",
+    padding: 10,
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: 10
+  },
+  clickedButtonText: {
+    color: "#fff"
+  },
   orangeButtonContainer: {
     backgroundColor: theme.colors.monikOrange,
     borderRadius: 50,
