@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, Text, Image } from "react-native";
+import { View, Text, Image, TouchableOpacity } from "react-native";
 import * as Progress from "react-native-progress";
 
 import { styles } from "./styles";
@@ -9,6 +9,8 @@ class StageOneContainer extends Component {
     title: "Stage 1"
   };
   render() {
+    //const {content} =this.props;
+
     return (
       <View style={styles.title}>
         <Text> Digital Currency </Text>
@@ -54,16 +56,18 @@ class StageOneContainer extends Component {
           <Text style={styles.simpleVsCompound}>
             Simple Interest vs Compound Interest
           </Text>
-
-          <Image
-            style={{
-              width: 40,
-              height: 40,
-              justifyContent: "center",
-              flex: 1
-            }}
-            source={require("../../assets/images/illustrations/Circle.png")}
-          />
+          <View style={styles.one}>
+          <Text>1</Text>
+            <Image
+              style={{
+                width: 40,
+                height: 40,
+                justifyContent: "center",
+                flex: 1
+              }}
+              source={require("../../assets/images/illustrations/Circle.png")}
+            />
+          </View>
           <Text>
             {" "}
             Both loans have the original principal of $100 and an interest rate
@@ -73,7 +77,33 @@ class StageOneContainer extends Component {
             years{" "}
           </Text>
 
-          <Text />
+          <View style={styles.table}>
+            <View style={{ width: "50%" }}>
+              <Text style={styles.heading}>Simple Interest</Text>
+
+              <View style={styles.formula}>
+                <Text style={styles.interest}>
+                  SI=P×r×n{"\n"}P=Principal Amount{"\n"}r=Annual Interest Rate
+                  {"\n"}n=Term of Loan, in years ​
+                </Text>
+              </View>
+            </View>
+
+            <View style={{ width: "50%" }}>
+              <Text style={styles.heading}>Compound Interest</Text>
+              <Text style={styles.interest}>
+                CI=P×(1+r) t −P {"\n"}P=Principal Amount{"\n"}r=Annual Interest
+                Rate
+                {"\n"}t=Number of years interest is applied
+              </Text>
+            </View>
+          </View>
+
+          <View>
+            <TouchableOpacity>
+              <Text>Next</Text>
+            </TouchableOpacity>
+          </View>
         </View>
       </View>
     );
