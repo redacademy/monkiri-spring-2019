@@ -80,7 +80,7 @@ export const styles = StyleSheet.create({
     color: "white",
     backgroundColor: theme.colors.skyBlue,
     textAlign: "center",
-    marginBottom: 5
+    marginBottom: 10
   },
   checkin: {
     ...theme.fonts.subheading3,

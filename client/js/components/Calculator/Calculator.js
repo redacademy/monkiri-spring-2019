@@ -119,12 +119,12 @@ const Calculator = () => {
           onValueChange={itemValue => updatePeriod(itemValue)}
           style={styles.picker}
         >
-          <Picker.Item label="Semi-Monthly(24/Yr)" value={24} />
-          <Picker.Item label="Monthly(12/Yr)" value={12} />
-          <Picker.Item label="Bi-Monthly(6/Yr)" value={6} />
-          <Picker.Item label="Quarterly(4/Yr)" value={4} />
-          <Picker.Item label="Semi-Annually(2/Yr)" value={2} />
-          <Picker.Item label="Annually(1/Yr)" value={1} />
+          <Picker.Item label="Semi-Monthly(24/Year)" value={24} />
+          <Picker.Item label="Monthly(12/Year)" value={12} />
+          <Picker.Item label="Bi-Monthly(6/Year)" value={6} />
+          <Picker.Item label="Quarterly(4/Year)" value={4} />
+          <Picker.Item label="Semi-Annually(2/Year)" value={2} />
+          <Picker.Item label="Annually(1/Year)" value={1} />
         </Picker>
       </View>
       <View style={styles.sliderContainer}>
