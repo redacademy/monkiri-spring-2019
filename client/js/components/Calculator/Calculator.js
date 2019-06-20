@@ -5,8 +5,10 @@ import {
   TextInput,
   Picker,
   TouchableOpacity,
-  ScrollView
+  ScrollView,
+  Dimensions
 } from "react-native";
+import * as Progress from "react-native-progress";
 import Slider from "@react-native-community/slider";
 import theme from "../../config/styles";
 import { styles } from "./styles";
@@ -20,6 +22,7 @@ const Calculator = () => {
   const [isError, setIsError] = useState(false);
   const focusRef = useRef();
   const scrollRef = useRef();
+  const { width, height } = Dimensions.get("window");
 
   const updateTime = time => {
     const intTime = Math.floor(time);
@@ -68,7 +71,21 @@ const Calculator = () => {
     }
   };
   return (
-    <ScrollView style={styles.root} ref={scrollRef}>
+    <ScrollView
+      style={styles.root}
+      contentContainerStyle={styles.content}
+      ref={scrollRef}
+    >
+      <View style={styles.processContainer}>
+        <Text style={styles.header}> Compound Interest Calculator </Text>
+        <Progress.Bar
+          style={styles.processBar}
+          progress={0.75}
+          width={0.7 * width}
+          color={theme.colors.skyBlue}
+        />
+        <Text style={styles.checkin}>Try it!</Text>
+      </View>
       <View style={styles.principal}>
         <Text style={styles.title}>Your Principal:</Text>
         <Text> $ </Text>
@@ -131,15 +148,26 @@ const Calculator = () => {
         </TouchableOpacity>
         {/* {isError?<Text style={styles.title}>Invalid Input!</Text>} */}
         {isSumbit && !isError ? (
-          <Text style={styles.title}>
-            Your initial investment of
-            <Text style={styles.highlight}> ${principal}</Text> at an annualized
-            interest rate of
-            <Text style={styles.highlight}> {interestRate}%</Text>
-            will be worth<Text style={styles.highlight}> ${total} </Text>,after
-            <Text style={styles.highlight}> {time} </Text> years when compounded
-            <Text style={styles.highlight}> {convertPeriod(period)}</Text>.
-          </Text>
+          <View>
+            <Text style={styles.title}>
+              RESULT: Your initial investment of
+              <Text style={styles.highlight}> ${principal}</Text> at an
+              annualized interest rate of
+              <Text style={styles.highlight}> {interestRate}%</Text>
+              will be worth<Text style={styles.highlight}> ${total} </Text>
+              ,after
+              <Text style={styles.highlight}> {time} </Text> years when
+              compounded
+              <Text style={styles.highlight}> {convertPeriod(period)}</Text>.
+            </Text>
+            <View style={styles.buttonsContainer}>
+              <TouchableOpacity
+                style={[styles.burronShadow, styles.orangeButtonContainer]}
+              >
+                <Text style={styles.orangeButtonText}>Continue</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
         ) : isError ? (
           <Text style={styles.title}>Invalid Input!</Text>
         ) : null}
