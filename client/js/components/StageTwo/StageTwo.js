@@ -14,37 +14,22 @@ export default class StageTwo extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      clickedT: false,
-      clickedF: false
+      answer: null
     };
   }
-  toggleT(clickedT) {
-    if (clickedT) {
-      this.setState({
-        clickedT: !clickedT
-      });
-    } else {
-      this.setState({
-        clickedT: !clickedT,
-        clickedF: clickedT
-      });
-    }
+  answerTrue() {
+    this.setState({
+      answer: true
+    });
   }
-  toggleF(clickedF) {
-    if (clickedF) {
-      this.setState({
-        clickedF: !clickedF
-      });
-    } else {
-      this.setState({
-        clickedT: clickedF,
-        clickedF: !clickedF
-      });
-    }
+  answerFalse() {
+    this.setState({
+      answer: false
+    });
   }
   render() {
     const { width } = Dimensions.get("window");
-    const { clickedT, clickedF } = this.state;
+    const { answer } = this.state;
     return (
       <ScrollView contentContainerStyle={styles.content}>
         <Text style={styles.title}> Quiz </Text>
@@ -67,14 +52,14 @@ export default class StageTwo extends Component {
           <TouchableOpacity
             style={[
               styles.selectButtonContainer,
-              clickedT ? styles.clickedButtonContainer : null
+              answer === true ? styles.clickedButtonContainer : null
             ]}
-            onPress={() => this.toggleT(clickedT)}
+            onPress={() => this.answerTrue()}
           >
             <Text
               style={[
                 styles.selectButtonText,
-                clickedT ? styles.clickedButtonText : null
+                answer === true ? styles.clickedButtonText : null
               ]}
             >
               TRUE
@@ -83,28 +68,28 @@ export default class StageTwo extends Component {
           <TouchableOpacity
             style={[
               styles.selectButtonContainer,
-              clickedF ? styles.clickedButtonContainer : null
+              answer === false ? styles.clickedButtonContainer : null
             ]}
-            onPress={() => this.toggleF(clickedF)}
+            onPress={() => this.answerFalse()}
           >
             <Text
               style={[
                 styles.selectButtonText,
-                clickedF ? styles.clickedButtonText : null
+                answer === false ? styles.clickedButtonText : null
               ]}
             >
               FALSE
             </Text>
           </TouchableOpacity>
-          {clickedT || clickedF ? (
-            clickedT ? (
+          {answer !== null ? (
+            answer ? (
               <Text style={styles.result}>You are correct!</Text>
             ) : (
               <Text style={styles.result}>The correct answer is 'True'.</Text>
             )
           ) : null}
         </View>
-        {clickedF ? (
+        {answer === false ? (
           <Text style={styles.result}>
             nterest is defined as the cost of borrowing money. ... Simple
             interest is calculated on the principal amount of a loan only.
