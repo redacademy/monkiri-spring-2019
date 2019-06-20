@@ -17,6 +17,7 @@ const Calculator = () => {
   const [time, setTime] = useState(1);
   const [total, setTotal] = useState("");
   const [isSumbit, setIsSubmit] = useState(false);
+  const [isError, setIsError] = useState(false);
   const focusRef = useRef();
   const scrollRef = useRef();
 
@@ -37,10 +38,18 @@ const Calculator = () => {
     setIsSubmit(true);
     const pow = Math.pow(1 + (interestRate * 0.01) / period, period * time);
     const result = Number.parseFloat(principal * pow).toFixed(2);
-    setTotal(result);
-    setTimeout(() => {
-      scrollRef.current.scrollToEnd({ animated: true });
-    }, 10);
+    if (isNaN(result)) {
+      setIsError(true);
+      setTimeout(() => {
+        scrollRef.current.scrollToEnd({ animated: true });
+      }, 10);
+    } else {
+      setIsError(false);
+      setTotal(result);
+      setTimeout(() => {
+        scrollRef.current.scrollToEnd({ animated: true });
+      }, 10);
+    }
   };
 
   const convertPeriod = period => {
@@ -120,7 +129,8 @@ const Calculator = () => {
         >
           <Text style={styles.button}>Calculate</Text>
         </TouchableOpacity>
-        {isSumbit ? (
+        {/* {isError?<Text style={styles.title}>Invalid Input!</Text>} */}
+        {isSumbit && !isError ? (
           <Text style={styles.title}>
             Your initial investment of
             <Text style={styles.highlight}> ${principal}</Text> at an annualized
@@ -130,6 +140,8 @@ const Calculator = () => {
             <Text style={styles.highlight}> {time} </Text> years when compounded
             <Text style={styles.highlight}> {convertPeriod(period)}</Text>.
           </Text>
+        ) : isError ? (
+          <Text style={styles.title}>Invalid Input!</Text>
         ) : null}
       </View>
     </ScrollView>
