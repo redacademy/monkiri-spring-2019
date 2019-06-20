@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
     padding: 10,
     justifyContent: "center",
     alignItems: "center",
-    marginTop: 10
+    marginTop: 0.1 * width
   },
   orangeButtonText: {
     color: "#fff"
