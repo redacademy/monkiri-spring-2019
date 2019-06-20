@@ -4,9 +4,7 @@ const { width, height } = Dimensions.get("window");
 export const styles = StyleSheet.create({
   title: {
     flex: 1,
-    
     width: "100%",
-
     padding: "5%"
   },
   content: {
@@ -26,38 +24,30 @@ export const styles = StyleSheet.create({
   },
   heading1: {
     color: "#25BDD8",
-    fontWeight: "600",
-    
+    fontWeight: "600"
   },
   compoundInterest: {
-    // Top: '3%',
     marginTop: height * 0.02,
     marginBottom: height * 0.03
   },
   compoundInterest1: {
     flexDirection: "row",
-    flexWrap: "wrap",
-
-    
+    flexWrap: "wrap"
   },
   cI: {
     marginTop: height * 0.04,
-    justifyContent: 'center'
+    justifyContent: "center"
   },
   simpleVsCompound: {
     color: "white",
     backgroundColor: theme.colors.skyBlue,
-    // padding: 15,
     width: width * 0.9,
     fontWeight: "600",
     fontSize: 15,
     alignItems: "center",
-    // paddingBottom: "2%",
     textAlign: "center",
-    // marginBottom: '3%',
-    paddingTop: '2.5%',
-    paddingBottom: '2.5%'
-    
+    paddingTop: "2.5%",
+    paddingBottom: "2.5%"
   },
   table: {
     flexDirection: "row",
@@ -81,9 +71,8 @@ export const styles = StyleSheet.create({
   },
   interest: {
     padding: 5,
-    lineHeight: 20,
+    lineHeight: 20
   },
-
   circleOne: {
     width: "100%",
     justifyContent: "center",
@@ -93,7 +82,6 @@ export const styles = StyleSheet.create({
     width: "100%",
     justifyContent: "center",
     alignItems: "center"
-    // marginTop: '5%'
   },
   circleImg: {
     width: 40,
@@ -103,7 +91,7 @@ export const styles = StyleSheet.create({
     position: "absolute",
     alignSelf: "center",
     alignItems: "center",
-    lineHeight: 20,
+    lineHeight: 20
   },
   one: {
     color: "#fff",
@@ -140,9 +128,8 @@ export const styles = StyleSheet.create({
   },
   textOne: {
     paddingTop: "3%",
-    paddingBottom:  "8%",
-    lineHeight: 20,
-
+    paddingBottom: "8%",
+    lineHeight: 20
   },
   textTwo: {
     paddingTop: 15,
