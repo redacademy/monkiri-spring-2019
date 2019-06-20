@@ -56,5 +56,14 @@ export const styles = StyleSheet.create({
   },
   one:{
     // position: 'absolute'
+  },
+  number:{
+    position: 'absolute',
+    zIndex: 1,
+    justifyContent: 'center'
+
+  },
+  circleOne:{
+
   }
 });

@@ -24,6 +24,8 @@ class StageOneContainer extends Component {
         </View>
 
         <View style={styles.compoundInterest}>
+          <View style={styles.circleOne}>
+          <Text style={styles.number}>1</Text>
           <Image
             style={{
               width: 40,
@@ -32,12 +34,14 @@ class StageOneContainer extends Component {
             }}
             source={require("../../assets/images/illustrations/Circle.png")}
           />
+          </View>
           <Text>
             {" "}
             When we are dealing with{" "}
             <Text style={styles.heading1}>Simple Interest</Text> we are only
             focusing on the original principal and the interest rate.{" "}
           </Text>
+         
           <Image
             style={{
               width: 40,
@@ -57,7 +61,7 @@ class StageOneContainer extends Component {
             Simple Interest vs Compound Interest
           </Text>
           <View style={styles.one}>
-          <Text>1</Text>
+          
             <Image
               style={{
                 width: 40,
