@@ -6,7 +6,8 @@ import {
   Picker,
   TouchableOpacity,
   ScrollView,
-  Dimensions
+  Dimensions,
+  Image
 } from "react-native";
 import * as Progress from "react-native-progress";
 import Slider from "@react-native-community/slider";
@@ -94,6 +95,10 @@ const Calculator = () => {
           placeholder="Type Your Principal Here "
           ref={focusRef}
         />
+        <Image
+          style={styles.inputIcon}
+          source={require("../../assets/images/dollar.png")}
+        />
       </View>
       <View style={styles.interest}>
         <TextInput
@@ -101,6 +106,10 @@ const Calculator = () => {
           style={styles.input}
           onChangeText={updateInterest}
           placeholder="Type Your Interest Here"
+        />
+        <Image
+          style={styles.inputIcon}
+          source={require("../../assets/images/percentage.png")}
         />
       </View>
       <View style={styles.compound}>

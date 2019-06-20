@@ -17,7 +17,8 @@ export const styles = StyleSheet.create({
     height: 40,
     borderWidth: 2,
     borderColor: theme.colors.seaBlue,
-    padding: 5
+    padding: 5,
+    margin: 5
   },
   sliderTitle: {
     textAlign: "center"
@@ -46,12 +47,21 @@ export const styles = StyleSheet.create({
   principal: {
     flexDirection: "row",
     alignItems: "center",
-    margin: 5
+    margin: 5,
+    position: "relative"
   },
   interest: {
     flexDirection: "row",
     alignItems: "center",
-    margin: 5
+    margin: 5,
+    position: "relative"
+  },
+  inputIcon: {
+    position: "absolute",
+    right: width * 0.05,
+    width: 12,
+    height: 12,
+    resizeMode: "contain"
   },
   compound: {
     margin: 5
