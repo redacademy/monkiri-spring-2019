@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, Text, Image, TouchableOpacity, Dimensions } from "react-native";
+import { ScrollView,View, Text, Image, TouchableOpacity, Dimensions } from "react-native";
 import * as Progress from "react-native-progress";
 import styles from "./styles";
 import theme from "../../config/styles";
@@ -12,7 +12,7 @@ export default class StageTwo extends Component {
   render() {
     const { width } = Dimensions.get("window");
     return (
-      <View style={styles.root}>
+      <ScrollView style={styles.root} contentContainerStyle={styles.content}>
         <Text style={styles.title}> Digital Currency </Text>
         <Progress.Bar
           style={styles.processBar}
@@ -31,27 +31,33 @@ export default class StageTwo extends Component {
         />
         <View style={styles.buttonsContainer}>
           <TouchableOpacity
-            style={styles.trueButtonContainer}
+            style={styles.selectButtonContainer}
             //   onPress={}
           >
-            <Text style={styles.trueButtonText}>TRUE</Text>
+            <Text style={styles.selectButtonText}>TRUE</Text>
           </TouchableOpacity>
           <TouchableOpacity
-            style={styles.falseButtonContainer}
+            style={styles.selectButtonContainer}
             //   onPress={}
           >
-            <Text style={styles.falseButtonText}>FALSE</Text>
+            <Text style={styles.selectButtonText}>FALSE</Text>
           </TouchableOpacity>
-          <Text>You are correct!</Text>
+          {/* <Text style={styles.result}>You are correct!</Text> */}
+          <Text style={styles.result}>The correct answer is 'True'.</Text>
         </View>
-
-        <TouchableOpacity
-          style={[styles.continueButtonContainer, styles.burronShadow]}
-          //   onPress={}
-        >
-          <Text style={styles.continueButtonText}>Continue</Text>
-        </TouchableOpacity>
-      </View>
+        <Text style={styles.result}>
+            Mobile wallets allow you to purchase goods and services both online
+            and in stores that support mobile payments!
+          </Text>
+        <View style={styles.buttonsContainer}>
+          <TouchableOpacity
+            style={[styles.burronShadow, styles.orangeButtonContainer]}
+            //   onPress={}
+          >
+            <Text style={styles.orangeButtonText}>Continue</Text>
+          </TouchableOpacity>
+        </View>
+      </ScrollView>
     );
   }
 }
