@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { View, Text, Image, TouchableOpacity } from "react-native";
 import * as Progress from "react-native-progress";
 
+
 import { styles } from "./styles";
 
 class StageOneContainer extends Component {
@@ -12,6 +13,7 @@ class StageOneContainer extends Component {
     //const {content} =this.props;
 
     return (
+     
       <View style={styles.title}>
         <Text> Digital Currency </Text>
         <Progress.Bar progress={0.3} width={200} />
@@ -24,16 +26,16 @@ class StageOneContainer extends Component {
         </View>
 
         <View style={styles.compoundInterest}>
+
           <View style={styles.circleOne}>
-          <Text style={styles.number}>1</Text>
-          <Image
-            style={{
-              width: 40,
-              height: 40,
-              justifyContent: "center"
-            }}
-            source={require("../../assets/images/illustrations/Circle.png")}
-          />
+            <Image
+              style={styles.circleImg}
+              source={require(`../../assets/images/illustrations/Circle.png`)}
+            />
+
+            <View style={styles.numberOne}>
+              <Text style={styles.one}>1</Text>
+            </View>
           </View>
           <Text>
             {" "}
@@ -41,14 +43,17 @@ class StageOneContainer extends Component {
             <Text style={styles.heading1}>Simple Interest</Text> we are only
             focusing on the original principal and the interest rate.{" "}
           </Text>
-         
-          <Image
-            style={{
-              width: 40,
-              height: 40
-            }}
-            source={require("../../assets/images/illustrations/Circle.png")}
-          />
+
+          <View style={styles.circleOne}>
+            <Image
+              style={styles.circleImg}
+              source={require(`../../assets/images/illustrations/Circle.png`)}
+            />
+
+            <View style={styles.numberOne}>
+              <Text style={styles.one}>2</Text>
+            </View>
+          </View>
           <Text>
             {" "}
             With <Text style={styles.heading1}>Compound Interest</Text> we also
@@ -61,7 +66,6 @@ class StageOneContainer extends Component {
             Simple Interest vs Compound Interest
           </Text>
           <View style={styles.one}>
-          
             <Image
               style={{
                 width: 40,
@@ -103,11 +107,14 @@ class StageOneContainer extends Component {
             </View>
           </View>
 
-          <View>
-            <TouchableOpacity>
-              <Text>Next</Text>
-            </TouchableOpacity>
-          </View>
+          <View style={styles.buttonsContainer}>
+          <TouchableOpacity
+            style={[styles.burronShadow, styles.orangeButtonContainer]}
+            //   onPress={}
+          >
+            <Text style={styles.orangeButtonText}>Next</Text>
+          </TouchableOpacity>
+        </View>
         </View>
       </View>
     );
