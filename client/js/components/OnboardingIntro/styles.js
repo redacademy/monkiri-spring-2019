@@ -1,4 +1,5 @@
 import { StyleSheet, Dimensions } from "react-native";
+import theme from "../../config/styles";
 const { width, height } = Dimensions.get("window");
 export const styles = StyleSheet.create({
   Container: { flex: 1 },
@@ -20,6 +21,6 @@ export const styles = StyleSheet.create({
   },
   text: {
     marginLeft: 10,
-    fontWeight: "100"
+    ...theme.fonts.bodytext
   }
 });

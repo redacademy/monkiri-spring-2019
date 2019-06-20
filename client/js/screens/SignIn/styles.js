@@ -12,29 +12,31 @@ export const styles = StyleSheet.create({
     height: height * 0.4,
     resizeMode: "contain"
   },
-  form: {
+  formContainer: {
     width: "100%"
   },
-  inputFields: {
+  form: {
     alignItems: "center",
     justifyContent: "space-between"
   },
-  field: {
+  formField: {
     marginBottom: 10,
     width: "90%"
   },
-  inputBackground: {
+  formInputBackground: {
     paddingHorizontal: 10,
     backgroundColor: "rgba(243, 152, 78, 0.5)",
     borderRadius: 10
   },
-  input: {
-    height: 40
+  formInput: {
+    height: 40,
+    ...theme.fonts.subheading2
   },
-  error: {
+  errorMessage: {
     color: "red",
     marginVertical: 5,
-    marginLeft: 10
+    marginLeft: 10,
+    ...theme.fonts.bodyText
   },
   logInButton: {
     marginTop: 10,
@@ -47,17 +49,21 @@ export const styles = StyleSheet.create({
   },
   LogInText: {
     textTransform: "capitalize",
-    color: "white"
+    color: "white",
+    ...theme.fonts.subheading
   },
-  content: {
+  contentContainer: {
     height: height * 0.25,
     justifyContent: "space-evenly"
   },
-  forgotPassword: {
+  bodyText2: {
     color: "black",
-    textDecorationLine: "underline"
+    textDecorationLine: "underline",
+    ...theme.fonts.bodyText2
   },
-
+  bodyText: {
+    ...theme.fonts.bodyText
+  },
   iconsContainer: {
     flexDirection: "row",
     marginBottom: 20
