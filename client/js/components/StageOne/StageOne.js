@@ -30,7 +30,7 @@ class StageOneContainer extends Component {
           <View style={styles.circleOne}>
             <Image
               style={styles.circleImg}
-              source={require(`../../assets/images/illustrations/Circle.png`)}
+              source={require(`../../assets/images/Illustrations/circle.png`)}
             />
 
             <View style={styles.numberOne}>
@@ -46,7 +46,7 @@ class StageOneContainer extends Component {
           <View style={styles.circleTwo}>
             <Image
               style={styles.circleImg}
-              source={require(`../../assets/images/illustrations/Circle.png`)}
+              source={require(`../../assets/images/Illustrations/circle.png`)}
             />
 
             <View style={styles.numberOne}>
@@ -67,7 +67,7 @@ class StageOneContainer extends Component {
           <Text style={styles.textOne}>
             Both loans have the original principal of $100 and an interest rate
             of 20%. The left loan is
-            <Text style={styles.heading1}>Simple Interest</Text> and the right
+            <Text style={styles.heading1}> Simple Interest</Text> and the right
             is Compound Interest. Let’s see the difference after a couple of
             years
           </Text>

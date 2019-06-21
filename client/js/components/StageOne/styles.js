@@ -46,8 +46,8 @@ export const styles = StyleSheet.create({
     fontSize: 15,
     alignItems: "center",
     textAlign: "center",
-    paddingTop: "2.5%",
-    paddingBottom: "2.5%"
+    paddingVertical: "2.5%",
+
   },
   table: {
     flexDirection: "row",
@@ -127,8 +127,8 @@ export const styles = StyleSheet.create({
     shadowRadius: 3
   },
   textOne: {
-    paddingTop: "3%",
-    paddingBottom: "8%",
+    paddingVertical: "3%",
+   
     lineHeight: 20
   },
   textTwo: {
