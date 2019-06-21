@@ -17,19 +17,25 @@ export default class StageTwo extends Component {
       answer: null
     };
   }
-  answerTrue() {
-    this.setState({
-      answer: true
-    });
-  }
-  answerFalse() {
-    this.setState({
-      answer: false
-    });
-  }
+  toggleAnswer = () => {
+    this.setState({ answer: !this.state.answer });
+  };
   render() {
     const { width } = Dimensions.get("window");
     const { answer } = this.state;
+    const stage = {
+      id: 2,
+      type: "quiz",
+      lessonName: "Quiz",
+      icon: require("../../assets/images/outlinedIcons/taxes.png"),
+      isCompleted: false,
+      avaiable: false,
+      text:
+        "A loan with compound interest will be larger than the same loan withsimple interest.",
+      answer: true,
+      explanation:
+        "Interest is defined as the cost of borrowing money. ... Simple interest is calculated on the principal amount of a loan only."
+    };
     return (
       <ScrollView contentContainerStyle={styles.content}>
         <Text style={styles.title}> Quiz </Text>
@@ -40,10 +46,7 @@ export default class StageTwo extends Component {
           color={theme.colors.skyBlue}
         />
         <Text style={styles.checkin}>CHECK IN!</Text>
-        <Text style={styles.description}>
-          A loan with compound interest will be larger than the same loan
-          withsimple interest.
-        </Text>
+        <Text style={styles.description}>{stage.text}</Text>
         <Image
           style={styles.icon}
           source={require("../../assets/images/mobileWallet/mobileWalletStage2.png")}
@@ -54,7 +57,7 @@ export default class StageTwo extends Component {
               styles.selectButtonContainer,
               answer === true ? styles.clickedButtonContainer : null
             ]}
-            onPress={() => this.answerTrue()}
+            onPress={() => this.toggleAnswer()}
           >
             <Text
               style={[
@@ -70,7 +73,7 @@ export default class StageTwo extends Component {
               styles.selectButtonContainer,
               answer === false ? styles.clickedButtonContainer : null
             ]}
-            onPress={() => this.answerFalse()}
+            onPress={() => this.toggleAnswer()}
           >
             <Text
               style={[
@@ -82,18 +85,17 @@ export default class StageTwo extends Component {
             </Text>
           </TouchableOpacity>
           {answer !== null ? (
-            answer ? (
+            answer === stage.answer ? (
               <Text style={styles.result}>You are correct!</Text>
             ) : (
-              <Text style={styles.result}>The correct answer is 'True'.</Text>
+              <Text style={styles.result}>
+                The correct answer is '{stage.answer ? "True" : "False"}'.
+              </Text>
             )
           ) : null}
         </View>
-        {answer === false ? (
-          <Text style={styles.result}>
-            nterest is defined as the cost of borrowing money. ... Simple
-            interest is calculated on the principal amount of a loan only.
-          </Text>
+        {answer === !stage.answer ? (
+          <Text style={styles.result}>{stage.explanation}</Text>
         ) : null}
         <View style={styles.buttonsContainer}>
           <TouchableOpacity
