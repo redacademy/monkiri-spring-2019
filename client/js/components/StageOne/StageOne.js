@@ -73,7 +73,7 @@ class StageOneContainer extends Component {
           </Text>
 
           <View style={styles.table}>
-            <View style={{ width: "50%" }}>
+            <View style={styles.tableContent}>
               <Text style={styles.heading}>Simple Interest</Text>
 
               <View style={styles.formula}>
@@ -84,7 +84,7 @@ class StageOneContainer extends Component {
               </View>
             </View>
 
-            <View style={{ width: "50%" }}>
+            <View style={styles.tableContent}>
               <Text style={styles.heading}>Compound Interest</Text>
               <Text style={styles.interest}>
                 CI=P×(1+r) t −P {"\n"}P=Principal Amount{"\n"}r=Annual Interest

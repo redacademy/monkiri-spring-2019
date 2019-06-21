@@ -131,8 +131,11 @@ export const styles = StyleSheet.create({
    
     lineHeight: 20
   },
+  tableContent:{
+    width: "50%" 
+  },
   textTwo: {
     paddingTop: 15,
     lineHeight: 20
-  }
+  }.lineHeighttable
 });
