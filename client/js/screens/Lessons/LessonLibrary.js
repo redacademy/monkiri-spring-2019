@@ -22,12 +22,11 @@ class LessonLibraryContainer extends Component {
 
   render() {
     const { search } = this.state;
-    console.log(search);
+
     const result = topics.filter(topic =>
       topic.name.toLowerCase().includes(search.toLowerCase())
     );
 
-    console.log(result);
     return (
       <View style={styles.libraryContainer}>
         <View>
