@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Image } from "react-native";
+import { View, Image, Linking, TouchableOpacity } from "react-native";
 import { styles } from "./styles";
 const PartnersCardExpand = ({ data }) => {
   return data.isOpen ? (
@@ -10,7 +10,13 @@ const PartnersCardExpand = ({ data }) => {
       ]}
     >
       {data.partnersIcon.map((icon, index) => (
-        <Image key={index} source={icon} style={styles.icon} />
+        <TouchableOpacity
+          onPress={() => {
+            Linking.openURL("https://www.pipay.com/");
+          }}
+        >
+          <Image key={index} source={icon} style={styles.icon} />
+        </TouchableOpacity>
       ))}
     </View>
   ) : (
