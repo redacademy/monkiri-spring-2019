@@ -35,7 +35,7 @@ const SignIn = ({ navigation, signIn, setError, toggleLoading, error }) => {
                 const { id, token } = response.data.authenticateUser;
                 toggleLoading();
                 await setUser(id, token);
-                navigation.navigate("App");
+                navigation.navigate("SurveyLoading");
               }
             } catch (e) {
               setError(e);
