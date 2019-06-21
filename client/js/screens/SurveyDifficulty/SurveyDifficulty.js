@@ -45,7 +45,7 @@ const SurveyDifficulty = ({ navigation }) => {
       </View>
 
       <View>
-        <TouchableOpacity onPress={() => navigation.navigate("LESSONS")}>
+        <TouchableOpacity onPress={() => navigation.navigate("LESSON")}>
           <Text style={styles.skipText}>skip</Text>
         </TouchableOpacity>
       </View>
