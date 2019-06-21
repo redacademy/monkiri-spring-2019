@@ -12,7 +12,7 @@ const SurveyLessons = ({ data, navigation }) => {
         </Text>
       </View>
       <View style={styles.topicListContainer}>
-        <TopicList topics={data} hasButton={true} />
+        <TopicList topics={data} hasButton={true} isLibrary={false}/>
       </View>
       <View style={styles.buttonContainer}>
         <TouchableOpacity onPress={() => navigation.navigate("LESSON")}>

@@ -72,6 +72,10 @@ export const styles = StyleSheet.create({
     position: "absolute",
     right: 15,
     bottom: 30,
+    shadowColor: "grey",
+    shadowRadius: 2,
+    shadowOffset: { height: 0, width: 0 },
+    shadowColor: "#000",
     shadowOffset: { width: 0, height: 3 },
     shadowOpacity: 0.2,
     shadowRadius: 3,
@@ -93,10 +97,12 @@ export const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: "#f07216",
     borderTopLeftRadius: 10,
-    borderTopRightRadius: 10
+    borderTopRightRadius: 10,
+   
   },
   buttonNotClicked: {
     backgroundColor: "#ffffff",
+    textTransform: "uppercase",
     height: "78%",
     width: "100%",
     textAlign: "center",
@@ -106,10 +112,12 @@ export const styles = StyleSheet.create({
     borderColor: "#f07216"
   },
   buttonTextNotClicked: {
-    color: "#f07216"
+    color: "#f07216",
+    textTransform: "uppercase"
   },
   buttonTextClicked: {
-    color: "#fff"
+    color: "#fff",
+    textTransform: "uppercase"
   },
   editButton: {
     alignItems: "flex-end",
@@ -148,75 +156,10 @@ export const styles = StyleSheet.create({
     justifyContent: "flex-end",
     flexDirection: "column"
   },
-
-  //library
-  libraryBtn: {
-    fontSize: 16,
-    height: 25
+  backgroundGreen: {
+    backgroundColor: "#99c355"
   },
-  libraryButtons: {
-    flexDirection: "row",
-    alignItems: "center",
-    width: "80%",
-    marginBottom: "10%",
-    marginTop: "3%",
-    marginLeft: "auto",
-    marginRight: "auto",
-    justifyContent: "space-between"
-  },
-
-  selectButtonClicked: {
-    backgroundColor: "#25BDD8",
-    width: "45%",
-    borderRadius: 20,
-    borderWidth: 2,
-    borderColor: "#25BDD8",
-    justifyContent: "center",
-    alignItems: "center",
-    padding: 5
-  },
-  selectButtonNotClicked: {
-    backgroundColor: "#ffff",
-    width: "45%",
-    borderRadius: 20,
-    borderWidth: 2,
-    borderColor: "#25BDD8",
-    justifyContent: "center",
-    alignItems: "center",
-    padding: 5
-  },
-  selectButtonTextClicked: {
-    color: "white"
-  },
-  selectButtonTextNotClicked: {
-    color: "#25BDD8"
-  },
-  searchBar: {
-    paddingTop: "5%",
-    borderRadius: 20,
-    width: "80%",
-    marginLeft: "auto",
-    marginRight: "auto"
-  },
-  topicListContainer: {
-    width: "100%",
-    marginLeft: "auto",
-    marginRight: "auto"
-  },
-  scrollView: {
-    width: "100%"
-  },
-  searchBarContainerStyle: {
-    backgroundColor: "white",
-    borderRadius: 10,
-    shadowColor: "#000",
-    shadowOpacity: 0.2,
-    shadowColor: "grey",
-    shadowRadius: 2,
-    shadowOffset: { height: 3, width: 0 },
-    shadowRadius: 3
-  },
-  topisContainer: {
-    paddingBottom: "20%"
+  backgroundDarkGreen: {
+    backgroundColor: "#50A255"
   }
 });
