@@ -11,11 +11,12 @@ const PartnersCardExpand = ({ data }) => {
     >
       {data.partnersIcon.map((icon, index) => (
         <TouchableOpacity
+          key={index}
           onPress={() => {
             Linking.openURL("https://www.pipay.com/");
           }}
         >
-          <Image key={index} source={icon} style={styles.icon} />
+          <Image source={icon} style={styles.icon} />
         </TouchableOpacity>
       ))}
     </View>
