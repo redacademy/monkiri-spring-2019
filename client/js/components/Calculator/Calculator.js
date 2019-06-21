@@ -165,7 +165,7 @@ const Calculator = () => {
             </Text>
           </View>
         ) : isError ? (
-          <Text style={styles.title}>Invalid Input!</Text>
+          <Text style={styles.error}>Invalid Input!</Text>
         ) : null}
       </View>
       <View style={styles.buttonsContainer}>

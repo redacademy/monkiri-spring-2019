@@ -48,6 +48,10 @@ export const styles = StyleSheet.create({
     margin: 5,
     ...theme.fonts.subheading2
   },
+  error: {
+    ...theme.fonts.heading,
+    color: "#cc3300"
+  },
   principal: {
     flexDirection: "row",
     alignItems: "center",
