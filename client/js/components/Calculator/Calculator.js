@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import {
   View,
   Text,
@@ -25,6 +25,9 @@ const Calculator = () => {
   const scrollRef = useRef();
   const { width, height } = Dimensions.get("window");
 
+  useEffect(() => {
+    calculateInterest(principal, interestRate, period, time);
+  });
   const updateTime = time => {
     const intTime = Math.floor(time);
     setTime(intTime);
@@ -129,13 +132,15 @@ const Calculator = () => {
         </Picker>
       </View>
       <View style={styles.sliderContainer}>
-        <Text style={styles.title}>Years to grow: </Text>
-        <Text style={styles.sliderTitle}>Year:{time}</Text>
+        <Text style={styles.title}>
+          {time}
+          {time <= 1 ? " year " : " years "}to grow:{" "}
+        </Text>
         <View style={styles.sliderContent}>
-          <Text>0</Text>
+          <Text>1</Text>
           <Slider
             style={styles.slider}
-            minimumValue={0}
+            minimumValue={1}
             maximumValue={50}
             maximumTrackTintColor={theme.colors.seaBlue}
             onValueChange={updateTime}
@@ -145,17 +150,10 @@ const Calculator = () => {
         </View>
       </View>
       <View style={styles.result}>
-        <TouchableOpacity
-          onPress={() =>
-            calculateInterest(principal, interestRate, period, time)
-          }
-        >
-          <Text style={styles.button}>Calculate</Text>
-        </TouchableOpacity>
         {isSumbit && !isError ? (
           <View>
-            <Text style={styles.title}>
-              RESULT: Your initial investment of
+            <Text style={styles.result}>
+              Your initial investment of
               <Text style={styles.highlight}> ${principal}</Text> at an
               annualized interest rate of
               <Text style={styles.highlight}> {interestRate}%</Text>
@@ -165,17 +163,17 @@ const Calculator = () => {
               compounded
               <Text style={styles.highlight}> {convertPeriod(period)}</Text>.
             </Text>
-            <View style={styles.buttonsContainer}>
-              <TouchableOpacity
-                style={[styles.burronShadow, styles.orangeButtonContainer]}
-              >
-                <Text style={styles.orangeButtonText}>Continue</Text>
-              </TouchableOpacity>
-            </View>
           </View>
         ) : isError ? (
           <Text style={styles.title}>Invalid Input!</Text>
         ) : null}
+      </View>
+      <View style={styles.buttonsContainer}>
+        <TouchableOpacity
+          style={[styles.burronShadow, styles.orangeButtonContainer]}
+        >
+          <Text style={styles.orangeButtonText}>Continue</Text>
+        </TouchableOpacity>
       </View>
     </ScrollView>
   );
