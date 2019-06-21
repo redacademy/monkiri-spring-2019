@@ -118,6 +118,7 @@ const Calculator = () => {
           selectedValue={period}
           onValueChange={itemValue => updatePeriod(itemValue)}
           style={styles.picker}
+          itemStyle={{ fontSize: 18 }}
         >
           <Picker.Item label="Semi-Monthly(24/Year)" value={24} />
           <Picker.Item label="Monthly(12/Year)" value={12} />
