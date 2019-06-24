@@ -1,4 +1,5 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, Dimensions } from "react-native";
+const { width, height } = Dimensions.get("window");
 export const styles = StyleSheet.create({
   iconContainer: {
     width: "20%",
@@ -97,8 +98,7 @@ export const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: "#f07216",
     borderTopLeftRadius: 10,
-    borderTopRightRadius: 10,
-   
+    borderTopRightRadius: 10
   },
   buttonNotClicked: {
     backgroundColor: "#ffffff",
@@ -161,5 +161,81 @@ export const styles = StyleSheet.create({
   },
   backgroundDarkGreen: {
     backgroundColor: "#50A255"
+  },
+  //library
+  libraryBtn: {
+    fontSize: 16,
+    height: 25
+  },
+  libraryButtons: {
+    flexDirection: "row",
+    alignItems: "center",
+    width: "80%",
+    marginBottom: "10%",
+    justifyContent: "space-around",
+    marginLeft: "auto",
+    marginRight: "auto"
+  },
+  selectButtonClicked: {
+    backgroundColor: "#25BDD8",
+    width: "45%",
+    borderRadius: 20,
+    borderWidth: 2,
+    borderColor: "#25BDD8",
+    justifyContent: "center",
+    alignItems: "center",
+    padding: 5
+  },
+  selectButtonNotClicked: {
+    backgroundColor: "#ffff",
+    width: "45%",
+    borderRadius: 20,
+    borderWidth: 2,
+    borderColor: "#25BDD8",
+    justifyContent: "center",
+    alignItems: "center",
+    padding: 5
+  },
+  selectButtonTextClicked: {
+    color: "white"
+  },
+  selectButtonTextNotClicked: {
+    color: "#25BDD8"
+  },
+  searchBar: {
+    paddingTop: "5%",
+    borderRadius: 20,
+    width: "80%",
+    marginLeft: "auto",
+    marginRight: "auto"
+  },
+  libraryContainer: {
+    width: "100%",
+    marginLeft: "auto",
+    marginRight: "auto",
+    flex:1,
+    justifyContent:"space-between",
+ 
+  },
+  scrollView: {
+    width: "100%",
+    height: 0.48 * height,
+  
+  },
+  searchBarContainerStyle: {
+    backgroundColor: "white",
+    borderRadius: 10,
+    shadowColor: "#000",
+    shadowOpacity: 0.2,
+    shadowColor: "grey",
+    shadowRadius: 2,
+    shadowOffset: { height: 3, width: 0 },
+    shadowRadius: 3
+  },
+  topisContainer: {
+    paddingBottom: "20%"
+  },
+  dashboard: {
+    height: 0.18 * height
   }
 });
