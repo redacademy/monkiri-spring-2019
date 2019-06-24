@@ -112,7 +112,7 @@ t=Number of years interest is applied`
               </View>
             </View>
 
-            <View style={styles.table}>
+            <View style={styles.tableContent}>
               <Text style={styles.heading}>{stage.columnTwoTitle}</Text>
               <Text style={styles.interest}>{stage.columnTwoContent}</Text>
             </View>
