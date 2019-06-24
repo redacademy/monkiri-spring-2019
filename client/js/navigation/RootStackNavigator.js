@@ -12,17 +12,27 @@ import OnboardingScreen from "../screens/Onboarding";
 import SurveyDifficultyScreen from "../screens/SurveyDifficulty";
 import SurveyLessonsScreen from "../screens/SurveyLessons";
 
-const AuthStack = createStackNavigator({
-  Onbarding: OnboardingScreen,
-  SignIn: SignInScreen,
-  SignUp: SignUpScreen,
-  ResetPassword: ResetPasswordScreen
-});
+const AuthStack = createStackNavigator(
+  {
+    Onbarding: OnboardingScreen,
+    SignIn: SignInScreen,
+    SignUp: SignUpScreen,
+    ResetPassword: ResetPasswordScreen
+  },
+  {
+    headerMode: "none"
+  }
+);
 
-const SurveyStack = createStackNavigator({
-  SurveyDifficulty: SurveyDifficultyScreen,
-  SurveyLessons: SurveyLessonsScreen
-});
+const SurveyStack = createStackNavigator(
+  {
+    SurveyDifficulty: SurveyDifficultyScreen,
+    SurveyLessons: SurveyLessonsScreen
+  },
+  {
+    headerMode: "none"
+  }
+);
 
 export default createAppContainer(
   createSwitchNavigator(
