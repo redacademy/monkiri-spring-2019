@@ -10,38 +10,25 @@ export const styles = StyleSheet.create({
     justifyContent: "space-around"
   },
   userInfoContainer: {
-    flex: 2,
-    position: "relative"
-  },
-  editButton: {
-    position: "absolute",
-    top: 5,
-    right: 5,
-    zIndex: 5,
-    backgroundColor: theme.colors.skyBlue,
-    borderRadius: 20,
-    paddingVertical: 5,
-    paddingHorizontal: 25
-  },
-  editButtonText: {
-    ...theme.fonts.subheading2,
-    color: "white",
-    textTransform: "uppercase"
+    flex: 2
   },
   backgroundImage: {
-    resizeMode: "cover"
+    height: "70%",
+    resizeMode: "contain"
+  },
+  userInfo: {
+    paddingLeft: width * 0.3,
+    marginLeft: 5,
+    paddingBottom: 15,
+    position: "relative"
   },
   userAvatar: {
-    resizeMode: "contain",
     position: "absolute",
     left: 0,
-    bottom: width * 0.125,
+    bottom: 0,
     width: width * 0.25,
     height: width * 0.25,
     borderRadius: width * 0.125
-  },
-  userInfo: {
-    marginLeft: width * 0.25 + 10
   },
   userName: {
     color: theme.colors.monikOrange,
@@ -56,16 +43,14 @@ export const styles = StyleSheet.create({
     alignItems: "center"
   },
   userStatsHeaderContainer: {
-    position: "relative",
+    flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
     width: width * 0.7
   },
   headerImage: {
-    resizeMode: "stretch",
-    position: "absolute",
-    bottom: 0,
-    zIndex: -5
+    width: width * 0.1,
+    resizeMode: "contain"
   },
   userStatsHeader: {
     ...theme.fonts.subheading,
@@ -104,7 +89,7 @@ export const styles = StyleSheet.create({
   userStatsLessons: {
     ...theme.fonts.heading,
     color: theme.colors.sunYellow,
-    fontSize: theme.fonts.heading.fontSize * 2
+    fontSize: theme.fonts.heading.fontSize * 1.5
   },
   shareButton: {
     backgroundColor: theme.colors.monikOrange,
@@ -123,6 +108,6 @@ export const styles = StyleSheet.create({
   },
   signOut: {
     textDecorationLine: "underline",
-    ...theme.fonts.bodytext2
+    ...theme.fonts.bodytext
   }
 });
