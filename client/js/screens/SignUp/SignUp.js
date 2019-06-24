@@ -110,9 +110,14 @@ const SignUp = ({ navigation, signUp, setError, toggleLoading, error }) => {
                   )}
                 />
 
-                {error && error.message && (
-                  <Text style={styles.errorMessage}>{error.message}</Text>
-                )}
+                {(error && error.graphQLErrors[0].functionError && (
+                  <Text style={styles.errorMessage}>
+                    {error.graphQLErrors[0].functionError}
+                  </Text>
+                )) ||
+                  (error && error.message && (
+                    <Text style={styles.errorMessage}>{error.message}</Text>
+                  ))}
 
                 <TouchableOpacity
                   style={styles.signUpButton}
