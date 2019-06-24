@@ -1,4 +1,5 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, Dimensions } from "react-native";
+const { width, height } = Dimensions.get("window");
 export const styles = StyleSheet.create({
   iconContainer: {
     width: "20%",
@@ -170,11 +171,13 @@ export const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     width: "80%",
-    marginBottom: "10%"
+    marginBottom: "10%",
+    justifyContent: "space-around",
+    marginLeft: "auto",
+    marginRight: "auto"
   },
   selectButtonClicked: {
     backgroundColor: "#25BDD8",
-    color: 'white',
     width: "45%",
     borderRadius: 20,
     borderWidth: 2,
@@ -194,7 +197,9 @@ export const styles = StyleSheet.create({
     padding: 5
   },
   selectButtonTextClicked: {
-    color: "white",
+    color: "white"
+  },
+  selectButtonTextNotClicked: {
     color: "#25BDD8"
   },
   searchBar: {
@@ -207,10 +212,15 @@ export const styles = StyleSheet.create({
   libraryContainer: {
     width: "100%",
     marginLeft: "auto",
-    marginRight: "auto"
+    marginRight: "auto",
+    flex:1,
+    justifyContent:"space-between",
+ 
   },
   scrollView: {
-    width: "100%"
+    width: "100%",
+    height: 0.48 * height,
+  
   },
   searchBarContainerStyle: {
     backgroundColor: "white",
@@ -224,5 +234,8 @@ export const styles = StyleSheet.create({
   },
   topisContainer: {
     paddingBottom: "20%"
+  },
+  dashboard: {
+    height: 0.18 * height
   }
 });
