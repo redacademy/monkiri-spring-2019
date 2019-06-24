@@ -3,19 +3,23 @@ import { View, Text, TouchableOpacity, Image, ScrollView } from "react-native";
 import { styles } from "./styles";
 import LessonLibrary from "./LessonLibrary";
 import theme from "../../config/styles";
-import { DrawerItems } from "react-navigation";
-
+import Ionicons from "react-native-vector-icons/Ionicons";
 class LessonsContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      tabIndex: 0
+      tabIndex: 0,
+      isEditMode: false
     };
   }
 
   static navigationOptions = {
     title: "LESSONS"
   };
+  toggleEditMode() {
+    this.setState({ isEditMode: !this.state.isEditMode });
+  }
+
   render() {
     const selectedTopics = [
       {
@@ -83,35 +87,54 @@ class LessonsContainer extends Component {
         ) : (
           <ScrollView>
             <View style={styles.editButtonContainer}>
-              <TouchableOpacity style={styles.editButton}>
-                <Text style={styles.buttonColor}>Edit</Text>
+              <TouchableOpacity
+                onPress={() => this.toggleEditMode()}
+                style={styles.editButton}
+              >
+                <Text style={styles.buttonColor}>
+                  {this.state.isEditMode ? "Done" : "Edit"}
+                </Text>
               </TouchableOpacity>
             </View>
 
             {selectedTopics.map(item => {
               return (
                 <View key={item.name} style={styles.container}>
+                  {this.state.isEditMode ? (
+                    <TouchableOpacity style={styles.deleteButton}>
+                      <Ionicons size={30} name="ios-close" color="#fff" />
+                    </TouchableOpacity>
+                  ) : null}
+
                   <View
                     style={[
                       { backgroundColor: item.background },
-                      styles.iconContainer
+                      styles.iconContainer,
+                      this.state.isEditMode ? styles.noBorderRadius : null
                     ]}
                   >
                     <Image style={styles.whiteIcon} source={item.icon} />
                   </View>
 
-                  <View style={styles.cardContainer}>
+                  <View
+                    style={[
+                      styles.cardContainer,
+                      this.state.isEditMode ? styles.editModeCardWidth : null
+                    ]}
+                  >
                     <Text style={styles.name}>{item.name}</Text>
-                    <View style={styles.bar} />
+                    {this.state.isEditMode ? null : <View style={styles.bar} />}
                   </View>
-                  <View style={styles.button}>
-                    <TouchableOpacity>
-                      <Image
-                        style={styles.playButton}
-                        source={require(`../../assets/images/Buttons/play_button.png`)}
-                      />
-                    </TouchableOpacity>
-                  </View>
+                  {this.state.isEditMode ? null : (
+                    <View style={styles.button}>
+                      <TouchableOpacity>
+                        <Image
+                          style={styles.playButton}
+                          source={require(`../../assets/images/Buttons/play_button.png`)}
+                        />
+                      </TouchableOpacity>
+                    </View>
+                  )}
                 </View>
               );
             })}

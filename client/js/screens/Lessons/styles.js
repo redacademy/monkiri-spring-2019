@@ -1,4 +1,5 @@
 import { StyleSheet, Dimensions } from "react-native";
+import theme from "../../config/styles";
 const { width, height } = Dimensions.get("window");
 export const styles = StyleSheet.create({
   iconContainer: {
@@ -10,7 +11,7 @@ export const styles = StyleSheet.create({
     borderBottomLeftRadius: 10
   },
   container: {
-    width: "95%",
+    width: 0.95 * width,
     flexDirection: "row",
     shadowColor: "grey",
     shadowRadius: 2,
@@ -25,8 +26,9 @@ export const styles = StyleSheet.create({
     shadowRadius: 3,
     marginBottom: 15,
     elevation: 212,
-    marginLeft: 'auto',
-    marginRight: 'auto'
+    marginLeft: "auto",
+    marginRight: "auto",
+    justifyContent: "space-between"
   },
   name: {
     textAlign: "left",
@@ -36,6 +38,24 @@ export const styles = StyleSheet.create({
     width: "60%",
     justifyContent: "center",
     paddingLeft: 15
+  },
+  editModeCardWidth: {
+    width: "60%"
+  },
+  deleteButton: {
+    backgroundColor: theme.colors.cherryRed,
+    height: 30,
+    width: 30,
+    borderRadius: 15,
+    justifyContent: "center",
+    alignItems: "center",
+    margin: 10,
+    marginTop: "auto",
+    marginBottom: "auto"
+  },
+  noBorderRadius: {
+    borderTopLeftRadius: 0,
+    borderBottomLeftRadius: 0
   },
   playButton: {
     width: 40,
@@ -123,7 +143,7 @@ export const styles = StyleSheet.create({
   },
   editButtonContainer: {
     alignItems: "flex-end",
-    width: 0.95*width,
+    width: 0.95 * width,
     marginBottom: 10,
     marginTop: 15
   },
