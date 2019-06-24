@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "Animated Splash.gif",
+      "filename" : "Logo - full.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "Animated Splash-1.gif",
+      "filename" : "Logo - full@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "Animated Splash-2.gif",
+      "filename" : "Logo - full@3x.png",
       "scale" : "3x"
     }
   ],
