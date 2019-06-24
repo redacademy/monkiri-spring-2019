@@ -23,7 +23,7 @@ const Profile = ({ navigation, user }) => {
         <Image source={{ uri: user.image }} />
         <Gravatar
           options={{
-            email: "@gmail.com",
+            email: user.email && "example@gmail.com",
             parameters: { size: "200", d: "mm" },
             secure: true
           }}
