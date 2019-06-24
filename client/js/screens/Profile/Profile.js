@@ -5,6 +5,7 @@ import PropTypes from "prop-types";
 import { styles } from "./styles";
 import theme from "../../config/styles";
 import * as Progress from "react-native-progress";
+import { Gravatar } from "react-native-gravatar";
 
 const Profile = ({ navigation, user }) => {
   const maxXp = 4000;
@@ -19,7 +20,15 @@ const Profile = ({ navigation, user }) => {
           style={styles.backgroundImage}
           source={require("../../assets/images/profile-background.png")}
         />
-        <Image style={styles.userAvatar} source={{ uri: user.image }} />
+        <Image source={{ uri: user.image }} />
+        <Gravatar
+          options={{
+            email: "@gmail.com",
+            parameters: { size: "200", d: "mm" },
+            secure: true
+          }}
+          style={styles.userAvatar}
+        />
         <View style={styles.userInfo}>
           <Text style={styles.userName}>{user.name}</Text>
           <Text style={styles.userEmail}>{user.email}</Text>

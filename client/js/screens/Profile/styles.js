@@ -32,7 +32,7 @@ export const styles = StyleSheet.create({
     resizeMode: "cover"
   },
   userAvatar: {
-    resizeMode: "center",
+    resizeMode: "contain",
     position: "absolute",
     left: 0,
     bottom: width * 0.125,
