@@ -8,12 +8,16 @@ export const styles = StyleSheet.create({
     justifyContent: "space-evenly",
     alignItems: "center"
   },
-  logo: {
+  logoContainer: {
     height: height * 0.4,
+    alignItems: "center",
+    justifyContent: "center"
+  },
+  logo: {
     resizeMode: "contain"
   },
   formContainer: {
-    width: "100%"
+    width: width
   },
   form: {
     alignItems: "center",
@@ -21,7 +25,7 @@ export const styles = StyleSheet.create({
   },
   formField: {
     marginBottom: 10,
-    width: "90%"
+    width: width * 0.9
   },
   formInputBackground: {
     paddingHorizontal: 10,
