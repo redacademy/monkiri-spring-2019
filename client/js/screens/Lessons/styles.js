@@ -24,7 +24,9 @@ export const styles = StyleSheet.create({
     shadowOpacity: 0.2,
     shadowRadius: 3,
     marginBottom: 15,
-    elevation: 212
+    elevation: 212,
+    marginLeft: 'auto',
+    marginRight: 'auto'
   },
   name: {
     textAlign: "left",
@@ -168,12 +170,6 @@ export const styles = StyleSheet.create({
     height: "100%",
     justifyContent: "flex-end",
     flexDirection: "column"
-  },
-  backgroundGreen: {
-    backgroundColor: "#99c355"
-  },
-  backgroundDarkGreen: {
-    backgroundColor: "#50A255"
   },
   //library
   libraryBtn: {

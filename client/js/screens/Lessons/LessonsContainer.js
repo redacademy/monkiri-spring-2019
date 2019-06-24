@@ -1,7 +1,9 @@
 import React, { Component } from "react";
-import { View, Text, TouchableOpacity, Image } from "react-native";
+import { View, Text, TouchableOpacity, Image, ScrollView } from "react-native";
 import { styles } from "./styles";
 import LessonLibrary from "./LessonLibrary";
+import theme from "../../config/styles";
+import { DrawerItems } from "react-navigation";
 
 class LessonsContainer extends Component {
   constructor(props) {
@@ -15,6 +17,19 @@ class LessonsContainer extends Component {
     title: "LESSONS"
   };
   render() {
+    const selectedTopics = [
+      {
+        name: "Saving",
+        icon: require("../../assets/images/outlinedIcons/saving.png"),
+        background: theme.colors.vitalGreen,
+        description: undefined
+      },
+      {
+        name: "Taxes",
+        icon: require("../../assets/images/outlinedIcons/taxes.png"),
+        background: theme.colors.cherryRed
+      }
+    ];
     return (
       <View style={styles.screenContainer}>
         <View style={styles.tabIndex}>
@@ -66,54 +81,41 @@ class LessonsContainer extends Component {
         {this.state.tabIndex !== 0 ? (
           <LessonLibrary />
         ) : (
-          <View>
+          <ScrollView>
             <View style={styles.editButtonContainer}>
               <TouchableOpacity style={styles.editButton}>
                 <Text style={styles.buttonColor}>Edit</Text>
               </TouchableOpacity>
             </View>
-            <View style={styles.container}>
-              <View style={[styles.backgroundGreen, styles.iconContainer]}>
-                <Image
-                  style={styles.whiteIcon}
-                  source={require(`../../assets/images/IconsWhite/saving.png`)}
-                />
-              </View>
 
-              <View style={styles.cardContainer}>
-                <Text style={styles.name}>Saving</Text>
-                <View style={styles.bar} />
-              </View>
-              <View style={styles.button}>
-                <TouchableOpacity>
-                  <Image
-                    style={styles.playButton}
-                    source={require(`../../assets/images/Buttons/play_button.png`)}
-                  />
-                </TouchableOpacity>
-              </View>
-            </View>
-            <View style={styles.container}>
-              <View style={[styles.backgroundDarkGreen, styles.iconContainer]}>
-                <Image
-                  style={styles.whiteIcon}
-                  source={require(`../../assets/images/IconsWhite/budgeting.png`)}
-                />
-              </View>
-              <View style={styles.cardContainer}>
-                <Text style={styles.name}>Budgeting</Text>
-                <View style={styles.bar} />
-              </View>
-              <View style={styles.button}>
-                <TouchableOpacity>
-                  <Image
-                    style={styles.playButton}
-                    source={require(`../../assets/images/Buttons/play_button.png`)}
-                  />
-                </TouchableOpacity>
-              </View>
-            </View>
-          </View>
+            {selectedTopics.map(item => {
+              return (
+                <View key={item.name} style={styles.container}>
+                  <View
+                    style={[
+                      { backgroundColor: item.background },
+                      styles.iconContainer
+                    ]}
+                  >
+                    <Image style={styles.whiteIcon} source={item.icon} />
+                  </View>
+
+                  <View style={styles.cardContainer}>
+                    <Text style={styles.name}>{item.name}</Text>
+                    <View style={styles.bar} />
+                  </View>
+                  <View style={styles.button}>
+                    <TouchableOpacity>
+                      <Image
+                        style={styles.playButton}
+                        source={require(`../../assets/images/Buttons/play_button.png`)}
+                      />
+                    </TouchableOpacity>
+                  </View>
+                </View>
+              );
+            })}
+          </ScrollView>
         )}
         {this.state.tabIndex === 0 ? (
           <TouchableOpacity
