@@ -9,6 +9,8 @@ import ResetPasswordScreen from "../screens/ResetPassword";
 import AuthLoadingScreen from "../screens/AuthLoading";
 import NavigationLayout from "./NavigationLayout";
 import OnboardingScreen from "../screens/Onboarding";
+import SurveyDifficultyScreen from "../screens/SurveyDifficulty";
+import SurveyLessonsScreen from "../screens/SurveyLessons";
 
 const AuthStack = createStackNavigator({
   Onbarding: OnboardingScreen,
@@ -17,11 +19,17 @@ const AuthStack = createStackNavigator({
   ResetPassword: ResetPasswordScreen
 });
 
+const SurveyStack = createStackNavigator({
+  SurveyDifficulty: SurveyDifficultyScreen,
+  SurveyLessons: SurveyLessonsScreen
+});
+
 export default createAppContainer(
   createSwitchNavigator(
     {
       AuthLoading: AuthLoadingScreen,
       Auth: AuthStack,
+      Survey: SurveyStack,
       App: NavigationLayout
     },
     {
