@@ -9,9 +9,43 @@ class StageOneContainer extends Component {
     title: "Stage 1"
   };
   render() {
+    const stage = {
+      id: 1,
+      type: "2-paragraoh-content",
+      lessonName: "Introduction",
+      icon: require("../../assets/images/outlinedIcons/business.png"),
+      avaiable: true,
+      isCompleted: false,
+      text: "Start the Quiz to water and grow your sprout!",
+      description1: "Compound interest",
+      description2: " is what most loans deal with.",
+      paragraphOne1: "When we are dealing with ",
+      paragraphOne2: "Simple Interest",
+      paragraphOne3:
+        " we are only focusing on the original principal and the interest rate.",
+      paragraphTwo1: "With ",
+      paragraphTwo2: "Compound Interest",
+      paragraphTwo3: " we also look at the time and compounding periods.",
+      formTitle: "Simple Interest vs Compound Interest",
+      formDescription1:
+        "Both loans have the original principal of $100 and an interest rate of 20%. The left loan is ",
+      formDescription2: "Simple Interest",
+      formDescription3:
+        " and the right is Compound Interest. Let’s see the difference after a couple of years",
+      columnOneTitle: "Simple Interest",
+      columnOneContent: `SI=P×r×n
+P=Principal Amount
+r=Annual Interest Rate
+n=Term of Loan, in years `,
+      columnTwoTitle: "Compound Interest",
+      columnTwoContent: `CI=P×(1+r) t −P
+P=Principal Amount
+r=Annual Interest Rate
+t=Number of years interest is applied`
+    };
     return (
       <ScrollView style={styles.title} contentContainerStyle={styles.content}>
-        <Text style={styles.digitalCurrency}> Digital Currency </Text>
+        <Text style={styles.digitalCurrency}>{stage.lessonName}</Text>
         <Progress.Bar
           style={styles.progressBar}
           progress={0.3}
@@ -21,8 +55,8 @@ class StageOneContainer extends Component {
 
         <View style={styles.compoundInterest}>
           <Text>
-            <Text style={styles.heading1}>Compound interest</Text> is what most
-            loans deal with.
+            <Text style={styles.heading1}>{stage.description1}</Text>
+            {stage.description2}
           </Text>
         </View>
 
@@ -38,9 +72,9 @@ class StageOneContainer extends Component {
             </View>
           </View>
           <Text style={styles.textOne}>
-            When we are dealing with
-            <Text style={styles.heading1}>Simple Interest</Text> we are only
-            focusing on the original principal and the interest rate.{" "}
+            {stage.paragraphOne1}
+            <Text style={styles.heading1}>{stage.paragraphOne2}</Text>
+            {stage.paragraphOne3}
           </Text>
 
           <View style={styles.circleTwo}>
@@ -54,43 +88,33 @@ class StageOneContainer extends Component {
             </View>
           </View>
           <Text style={styles.textTwo}>
-            With <Text style={styles.heading1}>Compound Interest</Text> we also
-            look at the time and compounding periods
+            {stage.paragraphTwo1}
+            <Text style={styles.heading1}>{stage.paragraphTwo2}</Text>
+            {stage.paragraphTwo3}
           </Text>
         </View>
 
         <View style={styles.cI}>
-          <Text style={styles.simpleVsCompound}>
-            Simple Interest vs Compound Interest
-          </Text>
+          <Text style={styles.simpleVsCompound}>{stage.formTitle}</Text>
 
           <Text style={styles.textOne}>
-            Both loans have the original principal of $100 and an interest rate
-            of 20%. The left loan is
-            <Text style={styles.heading1}> Simple Interest</Text> and the right
-            is Compound Interest. Let’s see the difference after a couple of
-            years
+            {stage.formDescription1}
+            <Text style={styles.heading1}>{stage.formDescription2}</Text>
+            {stage.formDescription3}
           </Text>
 
           <View style={styles.table}>
             <View style={styles.tableContent}>
-              <Text style={styles.heading}>Simple Interest</Text>
+              <Text style={styles.heading}>{stage.columnOneTitle}</Text>
 
               <View style={styles.formula}>
-                <Text style={styles.interest}>
-                  SI=P×r×n{"\n"}P=Principal Amount{"\n"}r=Annual Interest Rate
-                  {"\n"}n=Term of Loan, in years ​
-                </Text>
+                <Text style={styles.interest}>{stage.columnOneContent}</Text>
               </View>
             </View>
 
-            <View style={styles.tableContent}>
-              <Text style={styles.heading}>Compound Interest</Text>
-              <Text style={styles.interest}>
-                CI=P×(1+r) t −P {"\n"}P=Principal Amount{"\n"}r=Annual Interest
-                Rate
-                {"\n"}t=Number of years interest is applied
-              </Text>
+            <View style={styles.table}>
+              <Text style={styles.heading}>{stage.columnTwoTitle}</Text>
+              <Text style={styles.interest}>{stage.columnTwoContent}</Text>
             </View>
           </View>
 
