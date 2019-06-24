@@ -1,5 +1,11 @@
 import React, { Component } from "react";
-import { View, Text, TouchableOpacity, ScrollView } from "react-native";
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  ScrollView,
+  TextInput
+} from "react-native";
 import { styles } from "./styles";
 import { SearchBar } from "react-native-elements";
 import TopicList from "../../components/TopicList";
@@ -40,6 +46,8 @@ class LessonLibraryContainer extends Component {
               inputContainerStyle={{ backgroundColor: "white" }}
               searchIcon={{ color: "#25BDD8" }}
             />
+            {/* <TextInput style={styles.searchBar}
+            onChangeText={this.updateSearch} value={search} /> */}
           </View>
           <View style={styles.libraryButtons}>
             <TouchableOpacity

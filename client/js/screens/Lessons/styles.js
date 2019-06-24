@@ -161,5 +161,6 @@ export const styles = StyleSheet.create({
   },
   backgroundDarkGreen: {
     backgroundColor: "#50A255"
-  }
+  },
+  
 });
