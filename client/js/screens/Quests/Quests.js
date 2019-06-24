@@ -47,6 +47,9 @@ const Quests = ({ tabIndex, switchTab }) => {
           </TouchableOpacity>
         </View>
       </View>
+      <View style={styles.contentContainer}>
+        <Text style={styles.message}>Coming Soon...</Text>
+      </View>
     </View>
   );
 };
