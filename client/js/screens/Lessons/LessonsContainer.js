@@ -67,8 +67,8 @@ class LessonsContainer extends Component {
           <LessonLibrary />
         ) : (
           <View>
-            <View style={styles.editButton}>
-              <TouchableOpacity style={styles.advancedButton}>
+            <View style={styles.editButtonContainer}>
+              <TouchableOpacity style={styles.editButton}>
                 <Text style={styles.buttonColor}>Edit</Text>
               </TouchableOpacity>
             </View>
@@ -116,14 +116,19 @@ class LessonsContainer extends Component {
           </View>
         )}
         {this.state.tabIndex === 0 ? (
-          <View style={styles.addButtonContainer}>
-            <TouchableOpacity>
+          <TouchableOpacity
+            style={styles.addButtonContainer}
+            onPress={() => {
+              this.setState({ tabIndex: 1 });
+            }}
+          >
+            <View style={styles.addButton}>
               <Image
                 style={styles.addButton}
                 source={require(`../../assets/images/Buttons/add.png`)}
               />
-            </TouchableOpacity>
-          </View>
+            </View>
+          </TouchableOpacity>
         ) : null}
       </View>
     );

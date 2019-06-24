@@ -119,11 +119,11 @@ export const styles = StyleSheet.create({
     color: "#fff",
     textTransform: "uppercase"
   },
-  editButton: {
+  editButtonContainer: {
     alignItems: "flex-end",
-    width: "100%",
+    width: 0.95*width,
     marginBottom: 10,
-    marginTop: 5
+    marginTop: 15
   },
   advancedButton: {
     backgroundColor: "#25BDD8",
@@ -132,6 +132,19 @@ export const styles = StyleSheet.create({
     width: "23%",
     right: "5%",
     borderRadius: 20
+  },
+  editButton: {
+    backgroundColor: "#25BDD8",
+    paddingTop: "2%",
+    paddingBottom: "2%",
+    borderRadius: 20,
+    width: 0.2 * width,
+    shadowColor: "#000",
+    shadowOpacity: 0.2,
+    shadowColor: "grey",
+    shadowRadius: 2,
+    shadowOffset: { height: 3, width: 0 },
+    shadowRadius: 3
   },
   buttonColor: {
     textTransform: "uppercase",
@@ -213,14 +226,12 @@ export const styles = StyleSheet.create({
     width: "100%",
     marginLeft: "auto",
     marginRight: "auto",
-    flex:1,
-    justifyContent:"space-between",
- 
+    flex: 1,
+    justifyContent: "space-between"
   },
   scrollView: {
     width: "100%",
-    height: 0.48 * height,
-  
+    height: 0.48 * height
   },
   searchBarContainerStyle: {
     backgroundColor: "white",
