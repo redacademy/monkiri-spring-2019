@@ -11,6 +11,9 @@ import * as Progress from "react-native-progress";
 import styles from "./styles";
 import theme from "../../config/styles";
 export default class StageTwo extends Component {
+  static navigationOptions = {
+    title: "Saving"
+  };
   constructor(props) {
     super(props);
     this.state = {
@@ -99,9 +102,13 @@ export default class StageTwo extends Component {
         ) : null}
         <View style={styles.buttonsContainer}>
           <TouchableOpacity
+            onPress={() => {
+              this.props.navigation.state.params.handleComplete(2);
+              this.props.navigation.navigate("PROGRESS");
+            }}
             style={[styles.burronShadow, styles.orangeButtonContainer]}
           >
-            <Text style={styles.orangeButtonText}>Continue</Text>
+            <Text style={styles.orangeButtonText}>Finish</Text>
           </TouchableOpacity>
         </View>
       </ScrollView>

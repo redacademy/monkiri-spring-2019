@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ImageLoader from "../../components/ImageLoader";
 import { View, Text, Image, ScrollView, TouchableOpacity } from "react-native";
+import GifPopUp from "../../components/GifPopUp";
 import { styles } from "./styles";
 import * as Progress from "react-native-progress";
 const initialData = [
@@ -11,7 +12,7 @@ const initialData = [
     avaiable: true,
     isCompleted: false,
     text: "Keep going ! Start the Quiz to water and grow your sprout!",
-    stack: "STAGETWO"
+    stack: "STAGEONE"
   },
   {
     id: 2,
@@ -20,7 +21,7 @@ const initialData = [
     isCompleted: false,
     avaiable: false,
     text: "Start the Calculator to water and grow your sprout!",
-    stack: "STAGETHREE"
+    stack: "STAGETWO"
   },
   {
     id: 3,
@@ -30,12 +31,13 @@ const initialData = [
     avaiable: false,
     text:
       "You've completed all the compound interest ! Your tree is full grown.",
-    stack: "STAGECOMPLETE"
+    stack: "STAGETHREE"
   }
 ];
 const ProgressInfo = ({ navigation }) => {
   const [stages, setStages] = useState(initialData);
   const [currentXp, setCurrentXp] = useState(0);
+  const [popUp, setPopUp] = useState(false);
   const [text, setText] = useState(
     "Start the Introduction to water and grow your sprout!"
   );
@@ -51,8 +53,13 @@ const ProgressInfo = ({ navigation }) => {
     setText(newStage[id - 1].text);
     setStages(newStage);
     setCurrentXp(preXp => preXp + xp);
+    setTimeout(() => {
+      setPopUp(true);
+    }, 800);
   };
-
+  handlePopUp = () => {
+    setPopUp(false);
+  };
   return (
     <ScrollView contentContainerStyle={styles.root}>
       {currentXp === 0 ? (
@@ -100,13 +107,13 @@ const ProgressInfo = ({ navigation }) => {
         {stages.map(stage => (
           <TouchableOpacity
             key={stage.id}
-            handleComplete={handleComplete}
-            onPress={() => navigation.navigate(stage.stack)}
-            // onPress={() =>
-            //   stage.isCompleted || !stage.avaiable
-            //     ? null
-            //     : handleComplete(stage.id)
-            // }
+            onPress={() =>
+              stage.isCompleted || !stage.avaiable
+                ? null
+                : navigation.navigate(stage.stack, {
+                    handleComplete: handleComplete
+                  })
+            }
           >
             <View style={styles.container}>
               <View
@@ -137,6 +144,7 @@ const ProgressInfo = ({ navigation }) => {
           </TouchableOpacity>
         ))}
       </View>
+      <GifPopUp openPopUp={popUp} handlePopUp={handlePopUp} />
     </ScrollView>
   );
 };

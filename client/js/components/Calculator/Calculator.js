@@ -13,7 +13,7 @@ import * as Progress from "react-native-progress";
 import Slider from "@react-native-community/slider";
 import theme from "../../config/styles";
 import { styles } from "./styles";
-const Calculator = () => {
+const Calculator = ({ navigation }) => {
   const [principal, setPrincipal] = useState("");
   const [interestRate, setInterestRate] = useState("");
   const [period, setPeriod] = useState(4);
@@ -167,9 +167,14 @@ const Calculator = () => {
       </View>
       <View style={styles.buttonsContainer}>
         <TouchableOpacity
+          onPress={() => {
+            navigation.navigate("STAGECOMPLETE", {
+              handleComplete: navigation.state.params.handleComplete
+            });
+          }}
           style={[styles.burronShadow, styles.orangeButtonContainer]}
         >
-          <Text style={styles.orangeButtonText}>Continue</Text>
+          <Text style={styles.orangeButtonText}>Finish</Text>
         </TouchableOpacity>
       </View>
     </ScrollView>
