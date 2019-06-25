@@ -46,8 +46,7 @@ export const styles = StyleSheet.create({
     fontSize: 15,
     alignItems: "center",
     textAlign: "center",
-    paddingVertical: "2.5%",
-
+    paddingVertical: "2.5%"
   },
   table: {
     flexDirection: "row",
@@ -103,7 +102,7 @@ export const styles = StyleSheet.create({
     justifyContent: "space-between",
     marginLeft: "auto",
     marginRight: "auto",
-    paddingTop: "5%"
+    paddingBottom: "10%"
   },
   orangeButtonContainer: {
     backgroundColor: theme.colors.monikOrange,
@@ -115,7 +114,8 @@ export const styles = StyleSheet.create({
     marginTop: 10
   },
   orangeButtonText: {
-    color: "#fff"
+    color: "#fff",
+    height: 15
   },
   burronShadow: {
     borderRadius: 10,
@@ -128,11 +128,11 @@ export const styles = StyleSheet.create({
   },
   textOne: {
     paddingVertical: "3%",
-   
+
     lineHeight: 20
   },
-  tableContent:{
-    width: "50%" 
+  tableContent: {
+    width: "50%"
   },
   textTwo: {
     paddingTop: 15,
