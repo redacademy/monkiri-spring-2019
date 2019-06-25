@@ -20,13 +20,18 @@ class LessonsProvider extends Component {
     this.setState({ selectedTopics: currentSelected });
   };
 
+  setLessons = selectedTopics => {
+    this.setState({ selectedTopics });
+  };
+
   render() {
     return (
       <LessonsContext.Provider
         value={{
           ...this.state,
           addLesson: this.addLesson,
-          removeLesson: this.removeLesson
+          removeLesson: this.removeLesson,
+          setLessons: this.setLessons
         }}
       >
         {this.props.children}
