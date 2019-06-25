@@ -58,12 +58,12 @@ const ProgressInfo = ({ navigation }) => {
     setTimeout(() => {
       setCurrentXp(preXp => preXp + xp);
     }, 300);
+    value.addXp(xp);
   };
   handlePopUp = () => {
     setTimeout(() => {
       setPopUp(true);
     }, 800);
-    value.addXp(xp);
   };
   handlePopUpClose = () => {
     setPopUp(false);
