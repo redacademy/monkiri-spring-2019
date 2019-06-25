@@ -77,23 +77,15 @@ const Calculator = ({ navigation }) => {
       contentContainerStyle={styles.content}
       ref={scrollRef}
     >
-      <View style={styles.processContainer}>
-        <Text style={styles.title}> Compound Interest Calculator </Text>
-        <Progress.Bar
-          style={styles.processBar}
-          progress={0.65}
-          width={0.7 * width}
-          color={theme.colors.skyBlue}
-        />
-        {/* <Text style={styles.header}> Compound Interest Calculator </Text>
-        <Progress.Bar
-          style={styles.processBar}
-          progress={0.75}
-          width={0.7 * width}
-          color={theme.colors.skyBlue}
-        /> */}
-        <Text style={styles.checkin}>Try it!</Text>
-      </View>
+      <Text style={styles.header}> Compound Interest Calculator </Text>
+      <Progress.Bar
+        style={styles.processBar}
+        progress={0.65}
+        width={0.7 * width}
+        color={theme.colors.skyBlue}
+      />
+      <Text style={styles.checkin}>Try it!</Text>
+
       <View style={styles.principal}>
         <TextInput
           value={principal}
