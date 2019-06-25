@@ -1,13 +1,21 @@
 import React, { Component } from "react";
-import { View, Text } from "react-native";
-import Calculator from "../../components/Calculator";
+import Quests from "./Quests";
 
 class QuestsContainer extends Component {
   static navigationOptions = {
     title: "QUESTS"
   };
+
+  constructor(props) {
+    super(props);
+    this.state = { tabIndex: 0 };
+  }
+
+  switchTab = tabIndex => {
+    this.setState({ tabIndex });
+  };
   render() {
-    return <Calculator />;
+    return <Quests tabIndex={this.state.tabIndex} switchTab={this.switchTab} />;
   }
 }
 
