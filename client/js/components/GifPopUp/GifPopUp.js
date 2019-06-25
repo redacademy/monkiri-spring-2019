@@ -24,7 +24,7 @@ class GifPopUp extends Component {
           <TouchableOpacity
             style={styles.closeButtonContainer}
             onPress={() => {
-              handlePopUp();
+              handlePopUp(false);
               this.toggleModal;
             }}
           >

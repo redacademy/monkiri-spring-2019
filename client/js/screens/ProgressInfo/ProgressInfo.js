@@ -55,12 +55,11 @@ const ProgressInfo = ({ navigation }) => {
     setTimeout(() => {
       setCurrentXp(preXp => preXp + xp);
     }, 300);
-    setTimeout(() => {
-      setPopUp(true);
-    }, 800);
   };
-  handlePopUp = () => {
-    setPopUp(false);
+  handlePopUp = condition => {
+    setTimeout(() => {
+      setPopUp(condition);
+    }, 400);
   };
   return (
     <ScrollView contentContainerStyle={styles.root}>
@@ -113,7 +112,8 @@ const ProgressInfo = ({ navigation }) => {
               stage.isCompleted || !stage.avaiable
                 ? null
                 : navigation.navigate(stage.stack, {
-                    handleComplete: handleComplete
+                    handleComplete: handleComplete,
+                    handlePopUp: handlePopUp
                   })
             }
           >
