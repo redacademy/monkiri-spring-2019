@@ -74,8 +74,8 @@ export const styles = StyleSheet.create({
   },
   progressBar: {
     marginVertical: 5,
-    backgroundColor: theme.colors.seaBlue,
-    borderColor: theme.colors.seaBlue
+    backgroundColor: "#e9fbd4",
+    borderColor: "#e9fbd4"
   },
   userStatsLessonsContainer: {
     flexDirection: "row",

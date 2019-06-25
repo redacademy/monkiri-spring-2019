@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { View, Text, TouchableOpacity, Image } from "react-native";
 import { logOut } from "../../config/models";
 import PropTypes from "prop-types";
@@ -6,10 +6,12 @@ import { styles } from "./styles";
 import theme from "../../config/styles";
 import * as Progress from "react-native-progress";
 import { Gravatar } from "react-native-gravatar";
+import LessonsContext from "../../context";
 
 const Profile = ({ navigation, user }) => {
-  const maxXp = 4000;
-  const currentXp = 600;
+  const value = useContext(LessonsContext);
+  const maxXp = 400;
+  const currentXp = value.xp;
   return (
     <View style={styles.root}>
       <View style={styles.userInfoContainer}>
