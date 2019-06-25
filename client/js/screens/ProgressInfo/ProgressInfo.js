@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import ImageLoader from "../../components/ImageLoader";
 import { View, Text, Image, ScrollView, TouchableOpacity } from "react-native";
 import GifPopUp from "../../components/GifPopUp";
 import { styles } from "./styles";
 import * as Progress from "react-native-progress";
+import LessonsContext from "../../context";
+
 const initialData = [
   {
     id: 1,
@@ -43,6 +45,7 @@ const ProgressInfo = ({ navigation }) => {
   );
   const xp = 20;
   const maxXp = xp * stages.length;
+  const value = useContext(LessonsContext);
 
   handleComplete = id => {
     const newStage = stages
@@ -60,6 +63,7 @@ const ProgressInfo = ({ navigation }) => {
     setTimeout(() => {
       setPopUp(true);
     }, 800);
+    value.addXp(xp);
   };
   handlePopUpClose = () => {
     setPopUp(false);
