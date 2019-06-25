@@ -10,9 +10,17 @@ import PartnersScreen from "../screens/Partners";
 import ProfileScreen from "../screens/Profile";
 import QuestScreen from "../screens/Quests";
 import ProgressScreen from "../screens/ProgressInfo";
-
+import StageTwoScreen from "../components/StageTwo";
+import StageThreeScreen from "../components/Calculator";
+import CompletesStageScreen from "../components/StageComplete";
 const LessonsStack = createStackNavigator(
-  { LESSON: LessonsScreen, PROGRESS: ProgressScreen },
+  {
+    LESSON: LessonsScreen,
+    PROGRESS: ProgressScreen,
+    STAGETWO: StageTwoScreen,
+    STAGETHREE: StageThreeScreen,
+    STAGECOMPLETE: CompletesStageScreen
+  },
   {
     defaultNavigationOptions: ({ navigation }) => ({
       ...sharedNavigationOptions(navigation)

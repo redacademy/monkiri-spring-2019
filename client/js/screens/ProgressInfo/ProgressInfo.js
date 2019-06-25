@@ -10,7 +10,8 @@ const initialData = [
     icon: require("../../assets/images/outlinedIcons/business.png"),
     avaiable: true,
     isCompleted: false,
-    text: "Start the Quiz to water and grow your sprout!"
+    text: "Keep going ! Start the Quiz to water and grow your sprout!",
+    stack: "STAGETWO"
   },
   {
     id: 2,
@@ -18,7 +19,8 @@ const initialData = [
     icon: require("../../assets/images/outlinedIcons/taxes.png"),
     isCompleted: false,
     avaiable: false,
-    text: "Start the Calculator to water and grow your sprout!"
+    text: "Start the Calculator to water and grow your sprout!",
+    stack: "STAGETHREE"
   },
   {
     id: 3,
@@ -27,10 +29,11 @@ const initialData = [
     isCompleted: false,
     avaiable: false,
     text:
-      "You've completed all the compound interest ! Your tree is full grown."
+      "You've completed all the compound interest ! Your tree is full grown.",
+    stack: "STAGECOMPLETE"
   }
 ];
-const ProgressInfo = () => {
+const ProgressInfo = ({ navigation }) => {
   const [stages, setStages] = useState(initialData);
   const [currentXp, setCurrentXp] = useState(0);
   const [text, setText] = useState(
@@ -97,11 +100,13 @@ const ProgressInfo = () => {
         {stages.map(stage => (
           <TouchableOpacity
             key={stage.id}
-            onPress={() =>
-              stage.isCompleted || !stage.avaiable
-                ? null
-                : handleComplete(stage.id)
-            }
+            handleComplete={handleComplete}
+            onPress={() => navigation.navigate(stage.stack)}
+            // onPress={() =>
+            //   stage.isCompleted || !stage.avaiable
+            //     ? null
+            //     : handleComplete(stage.id)
+            // }
           >
             <View style={styles.container}>
               <View

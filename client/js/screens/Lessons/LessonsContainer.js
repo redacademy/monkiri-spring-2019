@@ -72,27 +72,31 @@ class LessonsContainer extends Component {
                 <Text style={styles.buttonColor}>Edit</Text>
               </TouchableOpacity>
             </View>
-            <View style={styles.container}>
-              <View style={[styles.backgroundGreen, styles.iconContainer]}>
-                <Image
-                  style={styles.whiteIcon}
-                  source={require(`../../assets/images/IconsWhite/saving.png`)}
-                />
-              </View>
-
-              <View style={styles.cardContainer}>
-                <Text style={styles.name}>Saving</Text>
-                <View style={styles.bar} />
-              </View>
-              <View style={styles.button}>
-                <TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => this.props.navigation.navigate("PROGRESS")}
+            >
+              <View style={styles.container}>
+                <View style={[styles.backgroundGreen, styles.iconContainer]}>
                   <Image
-                    style={styles.playButton}
-                    source={require(`../../assets/images/Buttons/play_button.png`)}
+                    style={styles.whiteIcon}
+                    source={require(`../../assets/images/IconsWhite/saving.png`)}
                   />
-                </TouchableOpacity>
+                </View>
+
+                <View style={styles.cardContainer}>
+                  <Text style={styles.name}>Saving</Text>
+                  <View style={styles.bar} />
+                </View>
+                <View style={styles.button}>
+                  <TouchableOpacity>
+                    <Image
+                      style={styles.playButton}
+                      source={require(`../../assets/images/Buttons/play_button.png`)}
+                    />
+                  </TouchableOpacity>
+                </View>
               </View>
-            </View>
+            </TouchableOpacity>
             <View style={styles.container}>
               <View style={[styles.backgroundDarkGreen, styles.iconContainer]}>
                 <Image
