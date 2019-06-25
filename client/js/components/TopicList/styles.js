@@ -4,12 +4,12 @@ import { Dimensions } from "react-native";
 const { height, width } = Dimensions.get("window");
 const styles = StyleSheet.create({
   container: {
-    width: width,
+    width: "95%",
     flex: 1,
     flexDirection: "row",
     justifyContent: "flex-start",
     flexWrap: "wrap",
-    marginLeft: "4.5%"
+    marginHorizontal: "5%"
   },
   eachItem: {
     width: "28%",
