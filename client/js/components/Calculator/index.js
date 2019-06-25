@@ -1,3 +1,3 @@
-import CalculatorContainer from "./CalculatorContainer";
+import Calculator from "./Calculator";
 
-export default CalculatorContainer;
+export default Calculator;

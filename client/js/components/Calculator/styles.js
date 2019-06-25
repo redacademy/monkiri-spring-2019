@@ -5,11 +5,22 @@ export const styles = StyleSheet.create({
   processContainer: {
     alignItems: "center"
   },
-  header: {
+  content: {
+    flexGrow: 1,
+    justifyContent: "space-around",
+    alignItems: "center",
+    padding: 10
+  },
+  title: {
     ...theme.fonts.heading,
     padding: 10
   },
   processBar: {
+    margin: 10
+  },
+  checkin: {
+    ...theme.fonts.subheading3,
+    color: theme.colors.sunYellow,
     margin: 10
   },
   input: {

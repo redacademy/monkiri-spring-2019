@@ -78,13 +78,20 @@ const Calculator = ({ navigation }) => {
       ref={scrollRef}
     >
       <View style={styles.processContainer}>
-        <Text style={styles.header}> Compound Interest Calculator </Text>
+        <Text style={styles.title}> Compound Interest Calculator </Text>
+        <Progress.Bar
+          style={styles.processBar}
+          progress={0.65}
+          width={0.7 * width}
+          color={theme.colors.skyBlue}
+        />
+        {/* <Text style={styles.header}> Compound Interest Calculator </Text>
         <Progress.Bar
           style={styles.processBar}
           progress={0.75}
           width={0.7 * width}
           color={theme.colors.skyBlue}
-        />
+        /> */}
         <Text style={styles.checkin}>Try it!</Text>
       </View>
       <View style={styles.principal}>
@@ -180,5 +187,11 @@ const Calculator = ({ navigation }) => {
     </ScrollView>
   );
 };
-
+Calculator.navigationOptions = {
+  title: "Saving",
+  headerTitleStyle: {
+    textAlign: "center",
+    color: "white"
+  }
+};
 export default Calculator;
