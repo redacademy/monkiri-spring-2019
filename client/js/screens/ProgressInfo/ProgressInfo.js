@@ -52,7 +52,9 @@ const ProgressInfo = ({ navigation }) => {
       );
     setText(newStage[id - 1].text);
     setStages(newStage);
-    setCurrentXp(preXp => preXp + xp);
+    setTimeout(() => {
+      setCurrentXp(preXp => preXp + xp);
+    }, 300);
     setTimeout(() => {
       setPopUp(true);
     }, 800);
