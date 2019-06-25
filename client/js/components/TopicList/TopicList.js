@@ -47,7 +47,8 @@ class TopicList extends Component {
                 >
                   <TopicItem
                     topic={topic}
-                    selected={selectedTopics[topic.name]}
+                    selected={!!selectedTopics[topic.name]}
+                    inLessons={!!value.selectedTopics[topic.name]}
                   />
                 </TouchableOpacity>
               ))}
