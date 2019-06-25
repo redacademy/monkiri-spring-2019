@@ -1,5 +1,4 @@
 import React, { createContext, Component } from "react";
-import topics from "../helpers/topics";
 
 const LessonsContext = createContext();
 
