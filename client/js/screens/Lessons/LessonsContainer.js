@@ -177,54 +177,6 @@ class LessonsContainer extends Component {
                 </Text>
               </TouchableOpacity>
             </View>
-<<<<<<< HEAD
-            <TouchableOpacity
-              onPress={() => this.props.navigation.navigate("PROGRESS")}
-            >
-              <View style={styles.container}>
-                <View style={[styles.backgroundGreen, styles.iconContainer]}>
-                  <Image
-                    style={styles.whiteIcon}
-                    source={require(`../../assets/images/IconsWhite/saving.png`)}
-                  />
-                </View>
-
-                <View style={styles.cardContainer}>
-                  <Text style={styles.name}>Saving</Text>
-                  <View style={styles.bar} />
-                </View>
-                <View style={styles.button}>
-                  <TouchableOpacity>
-                    <Image
-                      style={styles.playButton}
-                      source={require(`../../assets/images/Buttons/play_button.png`)}
-                    />
-                  </TouchableOpacity>
-                </View>
-              </View>
-            </TouchableOpacity>
-            <View style={styles.container}>
-              <View style={[styles.backgroundDarkGreen, styles.iconContainer]}>
-                <Image
-                  style={styles.whiteIcon}
-                  source={require(`../../assets/images/IconsWhite/budgeting.png`)}
-                />
-              </View>
-              <View style={styles.cardContainer}>
-                <Text style={styles.name}>Budgeting</Text>
-                <View style={styles.bar} />
-              </View>
-              <View style={styles.button}>
-                <TouchableOpacity>
-                  <Image
-                    style={styles.playButton}
-                    source={require(`../../assets/images/Buttons/play_button.png`)}
-                  />
-                </TouchableOpacity>
-              </View>
-            </View>
-          </View>
-=======
 
             {topics.map(item => {
               if (selectedTopics[item.name])
@@ -276,7 +228,6 @@ class LessonsContainer extends Component {
                 );
             })}
           </ScrollView>
->>>>>>> develop
         )}
         {this.state.tabIndex === 0 ? (
           <TouchableOpacity
