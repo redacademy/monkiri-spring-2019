@@ -1,13 +1,8 @@
 import React from "react";
-import { View, Text, Image, TouchableOpacity, Dimensions } from "react-native";
-import * as Progress from "react-native-progress";
+import { View, Text, Image, TouchableOpacity } from "react-native";
 import styles from "./styles";
-import theme from "../../config/styles";
 
 const StageComplete = ({ navigation }) => {
-  const { width } = Dimensions.get("window");
-
-  const totalStageNum = 4;
   const stage = {
     id: 2,
     type: "complete",
