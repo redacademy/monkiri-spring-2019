@@ -40,6 +40,9 @@ const Calculator = () => {
   };
   const updatePeriod = period => {
     setPeriod(period);
+    setTimeout(() => {
+      scrollRef.current.scrollToEnd({ animated: true });
+    }, 10);
   };
   const calculateInterest = (principal, interestRate, period, time) => {
     setIsSubmit(true);
@@ -47,15 +50,9 @@ const Calculator = () => {
     const result = Number.parseFloat(principal * pow).toFixed(2);
     if (isNaN(result)) {
       setIsError(true);
-      setTimeout(() => {
-        scrollRef.current.scrollToEnd({ animated: true });
-      }, 10);
     } else {
       setIsError(false);
       setTotal(result);
-      setTimeout(() => {
-        scrollRef.current.scrollToEnd({ animated: true });
-      }, 10);
     }
   };
 

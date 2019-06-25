@@ -10,8 +10,11 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     padding: 5,
-    shadowOffset: { width: 0, height: 3 },
+    shadowColor: "#000",
     shadowOpacity: 0.2,
+    shadowColor: "grey",
+    shadowRadius: 2,
+    shadowOffset: { height: 3, width: 0 },
     shadowRadius: 3
   },
   icon: {

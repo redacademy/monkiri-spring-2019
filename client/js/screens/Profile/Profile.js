@@ -13,33 +13,33 @@ const Profile = ({ navigation, user }) => {
   return (
     <View style={styles.root}>
       <View style={styles.userInfoContainer}>
-        <TouchableOpacity style={styles.editButton}>
-          <Text style={styles.editButtonText}>Edit</Text>
-        </TouchableOpacity>
         <Image
           style={styles.backgroundImage}
           source={require("../../assets/images/profile-background.png")}
         />
-        <Image source={{ uri: user.image }} />
-        <Gravatar
-          options={{
-            email: user.email && "example@gmail.com",
-            parameters: { size: "200", d: "mm" },
-            secure: true
-          }}
-          style={styles.userAvatar}
-        />
         <View style={styles.userInfo}>
+          <Gravatar
+            options={{
+              email: user.email && "example@gmail.com",
+              parameters: { size: "200", d: "mm" },
+              secure: true
+            }}
+            style={styles.userAvatar}
+          />
           <Text style={styles.userName}>{user.name}</Text>
           <Text style={styles.userEmail}>{user.email}</Text>
         </View>
       </View>
       <View style={styles.userStatsContainer}>
         <View style={styles.userStatsHeaderContainer}>
+          <Image
+            style={styles.headerImage}
+            source={require("../../assets/images/trophies-banner-left.png")}
+          />
           <Text style={styles.userStatsHeader}>Level 1: NoviceLearner</Text>
           <Image
             style={styles.headerImage}
-            source={require("../../assets/images/trophies-banner.png")}
+            source={require("../../assets/images/trophies-banner-right.png")}
           />
         </View>
 
