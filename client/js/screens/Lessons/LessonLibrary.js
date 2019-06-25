@@ -86,9 +86,7 @@ class LessonLibraryContainer extends Component {
         </View>
 
         <ScrollView style={styles.scrollView}>
-          {/* <View style={styles.topisContainer}> */}
-            <TopicList topics={result} hasButton={false} isLibrary={true} />
-          {/* </View> */}
+          <TopicList topics={result} hasButton={false} isLibrary={true} />
         </ScrollView>
       </View>
     );

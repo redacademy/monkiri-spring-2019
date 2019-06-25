@@ -1,16 +1,20 @@
 import { StyleSheet } from "react-native";
 import theme from "../../config/styles";
+import { Dimensions } from "react-native";
+const { height, width } = Dimensions.get("window");
 const styles = StyleSheet.create({
   container: {
-    width: "100%",
+    width: width,
     flex: 1,
     flexDirection: "row",
-    justifyContent: "space-around",
-    flexWrap: "wrap"
+    justifyContent: "flex-start",
+    flexWrap: "wrap",
+    marginLeft: "4.5%"
   },
   eachItem: {
     width: "28%",
-    paddingBottom: 25
+    paddingBottom: 25,
+    marginRight: "auto"
   },
   button: {
     height: 40,
