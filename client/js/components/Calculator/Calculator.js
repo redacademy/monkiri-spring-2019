@@ -80,7 +80,7 @@ const Calculator = ({ navigation }) => {
       <Text style={styles.header}> Compound Interest Calculator </Text>
       <Progress.Bar
         style={styles.processBar}
-        progress={0.65}
+        progress={1}
         width={0.7 * width}
         color={theme.colors.skyBlue}
       />

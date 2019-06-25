@@ -124,6 +124,7 @@ t=Number of years interest is applied`
               style={[styles.burronShadow, styles.orangeButtonContainer]}
               onPress={() => {
                 this.props.navigation.state.params.handleComplete(1);
+                this.props.navigation.state.params.handlePopUp();
                 this.props.navigation.navigate("PROGRESS");
               }}
             >

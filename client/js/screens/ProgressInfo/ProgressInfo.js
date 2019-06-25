@@ -58,12 +58,14 @@ const ProgressInfo = ({ navigation }) => {
     setTimeout(() => {
       setCurrentXp(preXp => preXp + xp);
     }, 300);
+  };
+  handlePopUp = () => {
     setTimeout(() => {
       setPopUp(true);
     }, 800);
     value.addXp(xp);
   };
-  handlePopUp = () => {
+  handlePopUpClose = () => {
     setPopUp(false);
   };
   return (
@@ -117,7 +119,8 @@ const ProgressInfo = ({ navigation }) => {
               stage.isCompleted || !stage.avaiable
                 ? null
                 : navigation.navigate(stage.stack, {
-                    handleComplete: handleComplete
+                    handleComplete: handleComplete,
+                    handlePopUp: handlePopUp
                   })
             }
           >
@@ -150,7 +153,7 @@ const ProgressInfo = ({ navigation }) => {
           </TouchableOpacity>
         ))}
       </View>
-      <GifPopUp openPopUp={popUp} handlePopUp={handlePopUp} />
+      <GifPopUp openPopUp={popUp} handlePopUp={handlePopUpClose} />
     </ScrollView>
   );
 };
