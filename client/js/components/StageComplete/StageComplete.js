@@ -15,8 +15,8 @@ const StageComplete = ({ navigation }) => {
     icon: require("../../assets/images/outlinedIcons/taxes.png"),
     isCompleted: false,
     avaiable: false,
-    plusPoints: 1500,
-    topicsLearned: ["Virtual Currency", "Security", "Safe Transfers"]
+    plusPoints: 60,
+    topicsLearned: ["Introduction", "Quiz", "Calculator"]
   };
 
   return (
