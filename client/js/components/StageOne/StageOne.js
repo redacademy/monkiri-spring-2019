@@ -6,9 +6,10 @@ import { styles } from "./styles";
 
 class StageOneContainer extends Component {
   static navigationOptions = {
-    title: "Stage 1"
+    title: "Saving"
   };
   render() {
+    console.log(this.props);
     const stage = {
       id: 1,
       type: "2-paragraoh-content",
@@ -121,8 +122,12 @@ t=Number of years interest is applied`
           <View style={styles.buttonsContainer}>
             <TouchableOpacity
               style={[styles.burronShadow, styles.orangeButtonContainer]}
+              onPress={() => {
+                this.props.navigation.state.params.handleComplete(1);
+                this.props.navigation.navigate("PROGRESS");
+              }}
             >
-              <Text style={styles.orangeButtonText}>Next</Text>
+              <Text style={styles.orangeButtonText}>Finish</Text>
             </TouchableOpacity>
           </View>
         </View>

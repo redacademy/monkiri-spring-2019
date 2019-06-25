@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ImageLoader from "../../components/ImageLoader";
 import { View, Text, Image, ScrollView, TouchableOpacity } from "react-native";
+import GifPopUp from "../../components/GifPopUp";
 import { styles } from "./styles";
 import * as Progress from "react-native-progress";
 const initialData = [
@@ -10,7 +11,8 @@ const initialData = [
     icon: require("../../assets/images/outlinedIcons/business.png"),
     avaiable: true,
     isCompleted: false,
-    text: "Start the Quiz to water and grow your sprout!"
+    text: "Keep going ! Start the Quiz to water and grow your sprout!",
+    stack: "STAGEONE"
   },
   {
     id: 2,
@@ -18,7 +20,8 @@ const initialData = [
     icon: require("../../assets/images/outlinedIcons/taxes.png"),
     isCompleted: false,
     avaiable: false,
-    text: "Start the Calculator to water and grow your sprout!"
+    text: "Start the Calculator to water and grow your sprout!",
+    stack: "STAGETWO"
   },
   {
     id: 3,
@@ -27,12 +30,14 @@ const initialData = [
     isCompleted: false,
     avaiable: false,
     text:
-      "You've completed all the compound interest ! Your tree is full grown."
+      "You've completed all the compound interest ! Your tree is full grown.",
+    stack: "STAGETHREE"
   }
 ];
-const ProgressInfo = () => {
+const ProgressInfo = ({ navigation }) => {
   const [stages, setStages] = useState(initialData);
   const [currentXp, setCurrentXp] = useState(0);
+  const [popUp, setPopUp] = useState(false);
   const [text, setText] = useState(
     "Start the Introduction to water and grow your sprout!"
   );
@@ -47,9 +52,16 @@ const ProgressInfo = () => {
       );
     setText(newStage[id - 1].text);
     setStages(newStage);
-    setCurrentXp(preXp => preXp + xp);
+    setTimeout(() => {
+      setCurrentXp(preXp => preXp + xp);
+    }, 300);
+    setTimeout(() => {
+      setPopUp(true);
+    }, 800);
   };
-
+  handlePopUp = () => {
+    setPopUp(false);
+  };
   return (
     <ScrollView contentContainerStyle={styles.root}>
       {currentXp === 0 ? (
@@ -100,7 +112,9 @@ const ProgressInfo = () => {
             onPress={() =>
               stage.isCompleted || !stage.avaiable
                 ? null
-                : handleComplete(stage.id)
+                : navigation.navigate(stage.stack, {
+                    handleComplete: handleComplete
+                  })
             }
           >
             <View style={styles.container}>
@@ -132,6 +146,7 @@ const ProgressInfo = () => {
           </TouchableOpacity>
         ))}
       </View>
+      <GifPopUp openPopUp={popUp} handlePopUp={handlePopUp} />
     </ScrollView>
   );
 };

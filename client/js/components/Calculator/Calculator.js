@@ -13,7 +13,7 @@ import * as Progress from "react-native-progress";
 import Slider from "@react-native-community/slider";
 import theme from "../../config/styles";
 import { styles } from "./styles";
-const Calculator = () => {
+const Calculator = ({ navigation }) => {
   const [principal, setPrincipal] = useState("");
   const [interestRate, setInterestRate] = useState("");
   const [period, setPeriod] = useState(4);
@@ -77,16 +77,15 @@ const Calculator = () => {
       contentContainerStyle={styles.content}
       ref={scrollRef}
     >
-      <View style={styles.processContainer}>
-        <Text style={styles.header}> Compound Interest Calculator </Text>
-        <Progress.Bar
-          style={styles.processBar}
-          progress={0.75}
-          width={0.7 * width}
-          color={theme.colors.skyBlue}
-        />
-        <Text style={styles.checkin}>Try it!</Text>
-      </View>
+      <Text style={styles.header}> Compound Interest Calculator </Text>
+      <Progress.Bar
+        style={styles.processBar}
+        progress={0.65}
+        width={0.7 * width}
+        color={theme.colors.skyBlue}
+      />
+      <Text style={styles.checkin}>Try it!</Text>
+
       <View style={styles.principal}>
         <TextInput
           value={principal}
@@ -167,13 +166,24 @@ const Calculator = () => {
       </View>
       <View style={styles.buttonsContainer}>
         <TouchableOpacity
+          onPress={() => {
+            navigation.navigate("STAGECOMPLETE", {
+              handleComplete: navigation.state.params.handleComplete
+            });
+          }}
           style={[styles.burronShadow, styles.orangeButtonContainer]}
         >
-          <Text style={styles.orangeButtonText}>Continue</Text>
+          <Text style={styles.orangeButtonText}>Finish</Text>
         </TouchableOpacity>
       </View>
     </ScrollView>
   );
 };
-
+Calculator.navigationOptions = {
+  title: "Saving",
+  headerTitleStyle: {
+    textAlign: "center",
+    color: "white"
+  }
+};
 export default Calculator;
