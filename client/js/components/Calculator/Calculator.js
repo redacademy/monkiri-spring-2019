@@ -24,7 +24,7 @@ const Calculator = ({ navigation }) => {
   const [isError, setIsError] = useState(false);
   const focusRef = useRef();
   const scrollRef = useRef();
-  const { width, height } = Dimensions.get("window");
+  const { width } = Dimensions.get("window");
 
   useEffect(() => {
     calculateInterest(principal, interestRate, period, time);

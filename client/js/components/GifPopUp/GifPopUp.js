@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Text, View, TouchableOpacity, Image } from "react-native";
+import { View, TouchableOpacity, Image } from "react-native";
 import Modal from "react-native-modal";
 import styles from "./styles";
 import Ionicons from "react-native-vector-icons/Ionicons";

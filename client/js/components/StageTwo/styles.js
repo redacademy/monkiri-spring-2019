@@ -1,10 +1,10 @@
 import { StyleSheet, Dimensions } from "react-native";
 import theme from "../../config/styles";
-const { width, height } = Dimensions.get("window");
+const { width } = Dimensions.get("window");
 
 const styles = StyleSheet.create({
   content: {
-    flexGrow:1,
+    flexGrow: 1,
     justifyContent: "space-around",
     alignItems: "center",
     padding: 10

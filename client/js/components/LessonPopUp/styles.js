@@ -1,6 +1,6 @@
 import { StyleSheet, Dimensions } from "react-native";
 import theme from "../../config/styles";
-const { width, height } = Dimensions.get("window");
+const { width } = Dimensions.get("window");
 
 const styles = StyleSheet.create({
   root: {
@@ -76,10 +76,10 @@ const styles = StyleSheet.create({
   closeButtonContainer: {
     backgroundColor: theme.colors.skyBlue,
     position: "absolute",
-    right: - 0.05*width,
-    top: - 0.05*width,
-    width: 0.1*width,
-    height: 0.1*width,
+    right: -0.05 * width,
+    top: -0.05 * width,
+    width: 0.1 * width,
+    height: 0.1 * width,
     borderRadius: 50,
     justifyContent: "center",
     alignItems: "center"
