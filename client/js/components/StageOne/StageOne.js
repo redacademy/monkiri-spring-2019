@@ -9,7 +9,6 @@ class StageOneContainer extends Component {
     title: "Saving"
   };
   render() {
-    console.log(this.props);
     const stage = {
       id: 1,
       type: "2-paragraoh-content",

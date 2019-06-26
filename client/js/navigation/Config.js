@@ -1,5 +1,4 @@
 import React from "react";
-import { StyleSheet, View, TouchableOpacity } from "react-native";
 import { Header } from "react-navigation";
 
 export const sharedNavigationOptions = navigation => ({
