@@ -5,7 +5,7 @@ import GifPopUp from "../../components/GifPopUp";
 import { styles } from "./styles";
 import * as Progress from "react-native-progress";
 import LessonsContext from "../../context";
-
+import PropTypes from "prop-types";
 const initialData = [
   {
     id: 1,
@@ -157,5 +157,7 @@ const ProgressInfo = ({ navigation }) => {
     </ScrollView>
   );
 };
-
+ProgressInfo.propTypes = {
+  navigation: PropTypes.object.isRequired
+};
 export default ProgressInfo;
