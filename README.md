@@ -10,15 +10,17 @@ This is the capstone project at RED Academy App Developer Program,where we appli
 
 # Getting Started
 
+```
 - Clone this project.
+
 - Run yarn install in the project directory
+```
 
 # Setup
 
 ## iOS:
 
 ```
-react-native start package
 react-native run-ios
 ```
 
