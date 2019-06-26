@@ -45,6 +45,10 @@ class LessonsProvider extends Component {
       progressbar: 0
     };
   }
+  setProgressbar = maxXp => {
+    let progressXp = this.state.currentXp / maxXp;
+    this.setState({ progressbar: progressXp });
+  };
   setCurrentXp = newXp => {
     let sum = 0;
     sum += this.state.currentXp + newXp;
@@ -92,7 +96,8 @@ class LessonsProvider extends Component {
           setCurrentXp: this.setCurrentXp,
           setStages: this.setStages,
           setText: this.setText,
-          setPopUp: this.setPopUp
+          setPopUp: this.setPopUp,
+          setProgressbar: this.setProgressbar
         }}
       >
         {this.props.children}

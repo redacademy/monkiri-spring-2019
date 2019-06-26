@@ -25,7 +25,9 @@ const ProgressInfo = ({ navigation }) => {
     value.setStages(newStage);
     setTimeout(() => {
       value.setCurrentXp(xp);
+      value.setProgressbar(maxXp);
     }, 300);
+
     value.addXp(xp);
   };
   handlePopUp = () => {
