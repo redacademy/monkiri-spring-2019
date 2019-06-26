@@ -42,7 +42,8 @@ class LessonsProvider extends Component {
       popUp: false,
       text: '"Start the Introduction to water and grow your sprout!"',
       currentXp: 0,
-      progressbar: 0
+      progressbar: 0,
+      completedLesson: 0
     };
   }
   setProgressbar = maxXp => {
@@ -83,6 +84,11 @@ class LessonsProvider extends Component {
     sum += this.state.xp + value;
     this.setState({ xp: sum });
   };
+  countLessonComplete = value => {
+    let count = 0;
+    count += this.state.completedLesson + value;
+    this.setState({ completedLesson: count });
+  };
 
   render() {
     return (
@@ -93,6 +99,7 @@ class LessonsProvider extends Component {
           removeLesson: this.removeLesson,
           setLessons: this.setLessons,
           addXp: this.addXp,
+          countLessonComplete: this.countLessonComplete,
           setCurrentXp: this.setCurrentXp,
           setStages: this.setStages,
           setText: this.setText,
