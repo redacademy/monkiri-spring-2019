@@ -175,61 +175,68 @@ class LessonsContainer extends Component {
                   {topics.map(item => {
                     if (selectedTopics[item.name])
                       return (
-                        <View key={item.name} style={styles.container}>
-                          {this.state.isEditMode ? (
-                            <TouchableOpacity
-                              onPress={() => {
-                                value.removeLesson(item.name);
-                              }}
-                              style={styles.deleteButton}
-                            >
-                              <Ionicons
-                                size={30}
-                                name="ios-close"
-                                color="#fff"
-                              />
-                            </TouchableOpacity>
-                          ) : null}
-
-                          <View
-                            style={[
-                              { backgroundColor: item.background },
-                              styles.iconContainer,
-                              this.state.isEditMode
-                                ? styles.noBorderRadius
-                                : null
-                            ]}
-                          >
-                            <Image
-                              style={styles.whiteIcon}
-                              source={item.icon}
-                            />
-                          </View>
-
-                          <View
-                            style={[
-                              styles.cardContainer,
-                              this.state.isEditMode
-                                ? styles.editModeCardWidth
-                                : null
-                            ]}
-                          >
-                            <Text style={styles.name}>{item.name}</Text>
-                            {this.state.isEditMode ? null : (
-                              <View style={styles.bar} />
-                            )}
-                          </View>
-                          {this.state.isEditMode ? null : (
-                            <View style={styles.button}>
-                              <TouchableOpacity>
-                                <Image
-                                  style={styles.playButton}
-                                  source={require(`../../assets/images/Buttons/play_button.png`)}
+                        <TouchableOpacity
+                          key={item.name}
+                          onPress={() =>
+                            this.props.navigation.navigate("PROGRESS")
+                          }
+                        >
+                          <View key={item.name} style={styles.container}>
+                            {this.state.isEditMode ? (
+                              <TouchableOpacity
+                                onPress={() => {
+                                  value.removeLesson(item.name);
+                                }}
+                                style={styles.deleteButton}
+                              >
+                                <Ionicons
+                                  size={30}
+                                  name="ios-close"
+                                  color="#fff"
                                 />
                               </TouchableOpacity>
+                            ) : null}
+
+                            <View
+                              style={[
+                                { backgroundColor: item.background },
+                                styles.iconContainer,
+                                this.state.isEditMode
+                                  ? styles.noBorderRadius
+                                  : null
+                              ]}
+                            >
+                              <Image
+                                style={styles.whiteIcon}
+                                source={item.icon}
+                              />
                             </View>
-                          )}
-                        </View>
+
+                            <View
+                              style={[
+                                styles.cardContainer,
+                                this.state.isEditMode
+                                  ? styles.editModeCardWidth
+                                  : null
+                              ]}
+                            >
+                              <Text style={styles.name}>{item.name}</Text>
+                              {this.state.isEditMode ? null : (
+                                <View style={styles.bar} />
+                              )}
+                            </View>
+                            {this.state.isEditMode ? null : (
+                              <View style={styles.button}>
+                                <TouchableOpacity>
+                                  <Image
+                                    style={styles.playButton}
+                                    source={require(`../../assets/images/Buttons/play_button.png`)}
+                                  />
+                                </TouchableOpacity>
+                              </View>
+                            )}
+                          </View>
+                        </TouchableOpacity>
                       );
                   })}
                 </ScrollView>

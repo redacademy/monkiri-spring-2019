@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import ImageLoader from "../../components/ImageLoader";
 import { View, Text, Image, ScrollView, TouchableOpacity } from "react-native";
+import GifPopUp from "../../components/GifPopUp";
 import { styles } from "./styles";
 import * as Progress from "react-native-progress";
+import LessonsContext from "../../context";
+
 const initialData = [
   {
     id: 1,
@@ -10,7 +13,8 @@ const initialData = [
     icon: require("../../assets/images/outlinedIcons/business.png"),
     avaiable: true,
     isCompleted: false,
-    text: "Start the Quiz to water and grow your sprout!"
+    text: "Keep going ! Start the Quiz to water and grow your sprout!",
+    stack: "STAGEONE"
   },
   {
     id: 2,
@@ -18,7 +22,8 @@ const initialData = [
     icon: require("../../assets/images/outlinedIcons/taxes.png"),
     isCompleted: false,
     avaiable: false,
-    text: "Start the Calculator to water and grow your sprout!"
+    text: "Start the Calculator to water and grow your sprout!",
+    stack: "STAGETWO"
   },
   {
     id: 3,
@@ -27,17 +32,20 @@ const initialData = [
     isCompleted: false,
     avaiable: false,
     text:
-      "You've completed all the compound interest ! Your tree is full grown."
+      "You've completed all the compound interest ! Your tree is full grown.",
+    stack: "STAGETHREE"
   }
 ];
-const ProgressInfo = () => {
+const ProgressInfo = ({ navigation }) => {
   const [stages, setStages] = useState(initialData);
   const [currentXp, setCurrentXp] = useState(0);
+  const [popUp, setPopUp] = useState(false);
   const [text, setText] = useState(
     "Start the Introduction to water and grow your sprout!"
   );
   const xp = 20;
   const maxXp = xp * stages.length;
+  const value = useContext(LessonsContext);
 
   handleComplete = id => {
     const newStage = stages
@@ -47,9 +55,19 @@ const ProgressInfo = () => {
       );
     setText(newStage[id - 1].text);
     setStages(newStage);
-    setCurrentXp(preXp => preXp + xp);
+    setTimeout(() => {
+      setCurrentXp(preXp => preXp + xp);
+    }, 300);
+    value.addXp(xp);
   };
-
+  handlePopUp = () => {
+    setTimeout(() => {
+      setPopUp(true);
+    }, 800);
+  };
+  handlePopUpClose = () => {
+    setPopUp(false);
+  };
   return (
     <ScrollView contentContainerStyle={styles.root}>
       {currentXp === 0 ? (
@@ -100,7 +118,10 @@ const ProgressInfo = () => {
             onPress={() =>
               stage.isCompleted || !stage.avaiable
                 ? null
-                : handleComplete(stage.id)
+                : navigation.navigate(stage.stack, {
+                    handleComplete: handleComplete,
+                    handlePopUp: handlePopUp
+                  })
             }
           >
             <View style={styles.container}>
@@ -132,6 +153,7 @@ const ProgressInfo = () => {
           </TouchableOpacity>
         ))}
       </View>
+      <GifPopUp openPopUp={popUp} handlePopUp={handlePopUpClose} />
     </ScrollView>
   );
 };

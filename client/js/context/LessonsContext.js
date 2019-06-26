@@ -5,7 +5,7 @@ const LessonsContext = createContext();
 class LessonsProvider extends Component {
   constructor(props) {
     super(props);
-    this.state = { selectedTopics: {} };
+    this.state = { selectedTopics: {}, xp: 0 };
   }
 
   addLesson = lesson => {
@@ -23,6 +23,11 @@ class LessonsProvider extends Component {
   setLessons = selectedTopics => {
     this.setState({ selectedTopics });
   };
+  addXp = value => {
+    let sum = 0;
+    sum += this.state.xp + value;
+    this.setState({ xp: sum });
+  };
 
   render() {
     return (
@@ -31,7 +36,8 @@ class LessonsProvider extends Component {
           ...this.state,
           addLesson: this.addLesson,
           removeLesson: this.removeLesson,
-          setLessons: this.setLessons
+          setLessons: this.setLessons,
+          addXp: this.addXp
         }}
       >
         {this.props.children}

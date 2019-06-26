@@ -12,7 +12,7 @@ class GifPopUp extends Component {
     this.setState({ isModalVisible: !this.state.isModalVisible });
   };
   render() {
-    const { openPopUp } = this.props;
+    const { openPopUp, handlePopUp } = this.props;
     const { isModalVisible } = this.state;
 
     const gifSource = require("../../assets/images/plantGifs/Seed_animation.gif");
@@ -23,7 +23,10 @@ class GifPopUp extends Component {
           <Image style={styles.gif} source={gifSource} />
           <TouchableOpacity
             style={styles.closeButtonContainer}
-            onPress={this.toggleModal}
+            onPress={() => {
+              handlePopUp();
+              this.toggleModal;
+            }}
           >
             <Ionicons size={25} style={styles.closeIcon} name="ios-close" />
           </TouchableOpacity>

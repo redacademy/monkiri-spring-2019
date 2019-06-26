@@ -4,7 +4,7 @@ import * as Progress from "react-native-progress";
 import styles from "./styles";
 import theme from "../../config/styles";
 
-const StageComplete = () => {
+const StageComplete = ({ navigation }) => {
   const { width } = Dimensions.get("window");
 
   const totalStageNum = 4;
@@ -15,24 +15,14 @@ const StageComplete = () => {
     icon: require("../../assets/images/outlinedIcons/taxes.png"),
     isCompleted: false,
     avaiable: false,
-    plusPoints: 1500,
-    topicsLearned: ["Virtual Currency", "Security", "Safe Transfers"]
+    plusPoints: 60,
+    topicsLearned: ["Introduction", "Quiz", "Calculator"]
   };
 
   return (
     <View style={styles.content}>
       <Text style={styles.title}> {stage.lessonName} </Text>
-      <View style={styles.processBarContainer}>
-        <Progress.Bar
-          style={styles.processBar}
-          progress={1}
-          width={0.7 * width}
-          color={theme.colors.skyBlue}
-        />
-        <Text style={styles.processText}>
-          {totalStageNum}/{totalStageNum}
-        </Text>
-      </View>
+
       <Text style={styles.lessonCompleteTitle}>LESSON COMPLETE!</Text>
       <View style={styles.iconContainer}>
         <View style={styles.outline}>
@@ -69,9 +59,13 @@ const StageComplete = () => {
       </View>
       <View style={styles.buttonsContainer}>
         <TouchableOpacity
+          onPress={() => {
+            navigation.state.params.handleComplete(3);
+            navigation.navigate("PROGRESS");
+          }}
           style={[styles.burronShadow, styles.orangeButtonContainer]}
         >
-          <Text style={styles.orangeButtonText}>Continue</Text>
+          <Text style={styles.orangeButtonText}>Complete Lesson</Text>
         </TouchableOpacity>
       </View>
     </View>
