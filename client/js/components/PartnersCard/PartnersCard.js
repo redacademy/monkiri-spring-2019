@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, Image } from "react-native";
 import { styles } from "./styles";
-
+import PropTypes from "prop-types";
 const PartnersCard = ({ data }) => {
   return (
     <View
@@ -19,5 +19,7 @@ const PartnersCard = ({ data }) => {
     </View>
   );
 };
-
+PartnersCard.propTypes = {
+  data: PropTypes.object.isRequired
+};
 export default PartnersCard;

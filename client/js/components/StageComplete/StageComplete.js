@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { View, Text, Image, TouchableOpacity } from "react-native";
 import styles from "./styles";
 import LessonsContext from "../../context";
+import PropTypes from "prop-types";
 const StageComplete = ({ navigation }) => {
   const stage = {
     id: 2,
@@ -69,5 +70,8 @@ const StageComplete = ({ navigation }) => {
       </View>
     </View>
   );
+};
+StageComplete.propTypes = {
+  navigation: PropTypes.object.isRequired
 };
 export default StageComplete;

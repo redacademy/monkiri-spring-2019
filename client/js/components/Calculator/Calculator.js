@@ -9,6 +9,7 @@ import {
   Dimensions,
   Image
 } from "react-native";
+import PropTypes from "prop-types";
 import * as Progress from "react-native-progress";
 import Slider from "@react-native-community/slider";
 import theme from "../../config/styles";
@@ -185,5 +186,8 @@ Calculator.navigationOptions = {
     textAlign: "center",
     color: "white"
   }
+};
+Calculator.propTypes = {
+  navigation: PropTypes.object.isRequired
 };
 export default Calculator;

@@ -36,6 +36,7 @@ class GifPopUp extends Component {
   }
 }
 GifPopUp.propTypes = {
-  openPopUp: PropTypes.bool.isRequired
+  openPopUp: PropTypes.bool.isRequired,
+  handlePopUp: PropTypes.func.isRequired
 };
 export default GifPopUp;

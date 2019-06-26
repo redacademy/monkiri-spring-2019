@@ -1,6 +1,7 @@
 import React from "react";
 import { View, Image, Linking, TouchableOpacity } from "react-native";
 import { styles } from "./styles";
+import PropTypes from "prop-types";
 const PartnersCardExpand = ({ data }) => {
   return data.isOpen ? (
     <View
@@ -23,5 +24,8 @@ const PartnersCardExpand = ({ data }) => {
   ) : (
     <View />
   );
+};
+PartnersCardExpand.propTypes = {
+  data: PropTypes.object.isRequired
 };
 export default PartnersCardExpand;
