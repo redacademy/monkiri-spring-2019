@@ -6,46 +6,14 @@ import { styles } from "./styles";
 import * as Progress from "react-native-progress";
 import LessonsContext from "../../context";
 
-const initialData = [
-  {
-    id: 1,
-    lessonName: "Introduction",
-    icon: require("../../assets/images/outlinedIcons/business.png"),
-    avaiable: true,
-    isCompleted: false,
-    text: "Keep going ! Start the Quiz to water and grow your sprout!",
-    stack: "STAGEONE"
-  },
-  {
-    id: 2,
-    lessonName: "Quiz",
-    icon: require("../../assets/images/outlinedIcons/taxes.png"),
-    isCompleted: false,
-    avaiable: false,
-    text: "Start the Calculator to water and grow your sprout!",
-    stack: "STAGETWO"
-  },
-  {
-    id: 3,
-    lessonName: "Calculator",
-    icon: require("../../assets/images/outlinedIcons/insurance.png"),
-    isCompleted: false,
-    avaiable: false,
-    text:
-      "You've completed all the compound interest ! Your tree is full grown.",
-    stack: "STAGETHREE"
-  }
-];
 const ProgressInfo = ({ navigation }) => {
-  const [stages, setStages] = useState(initialData);
-  const [currentXp, setCurrentXp] = useState(0);
-  const [popUp, setPopUp] = useState(false);
-  const [text, setText] = useState(
-    "Start the Introduction to water and grow your sprout!"
-  );
+  const value = useContext(LessonsContext);
+  const text = value.text;
+  const popUp = value.popUp;
+  const stages = value.stages;
+  const currentXp = value.currentXp;
   const xp = 20;
   const maxXp = xp * stages.length;
-  const value = useContext(LessonsContext);
 
   handleComplete = id => {
     const newStage = stages
@@ -53,20 +21,22 @@ const ProgressInfo = ({ navigation }) => {
       .map(stage =>
         stage.id === id + 1 ? { ...stage, avaiable: true } : stage
       );
-    setText(newStage[id - 1].text);
-    setStages(newStage);
+    value.setText(newStage[id - 1].text);
+    value.setStages(newStage);
     setTimeout(() => {
-      setCurrentXp(preXp => preXp + xp);
+      value.setCurrentXp(xp);
+      value.setProgressbar(maxXp);
     }, 300);
+
     value.addXp(xp);
   };
   handlePopUp = () => {
     setTimeout(() => {
-      setPopUp(true);
+      value.setPopUp(true);
     }, 800);
   };
   handlePopUpClose = () => {
-    setPopUp(false);
+    value.setPopUp(false);
   };
   return (
     <ScrollView contentContainerStyle={styles.root}>
