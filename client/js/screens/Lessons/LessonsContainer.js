@@ -5,6 +5,7 @@ import LessonLibrary from "./LessonLibrary";
 import theme from "../../config/styles";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import LessonsContext from "../../context";
+import * as Progress from "react-native-progress";
 
 class LessonsContainer extends Component {
   constructor(props) {
@@ -222,7 +223,13 @@ class LessonsContainer extends Component {
                             >
                               <Text style={styles.name}>{item.name}</Text>
                               {this.state.isEditMode ? null : (
-                                <View style={styles.bar} />
+                                <Progress.Bar
+                                  progress={value.progressbar}
+                                  width={180}
+                                  height={12}
+                                  color={"#7ed321"}
+                                  borderRadius={10}
+                                />
                               )}
                             </View>
                             {this.state.isEditMode ? null : (

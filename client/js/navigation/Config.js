@@ -3,6 +3,7 @@ import { Header } from "react-navigation";
 
 export const sharedNavigationOptions = navigation => ({
   headerBackTitle: null,
+  headerTintColor: "white",
   header: props => {
     return <Header {...props} />;
   },

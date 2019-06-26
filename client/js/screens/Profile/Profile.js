@@ -12,6 +12,7 @@ const Profile = ({ navigation, user }) => {
   const value = useContext(LessonsContext);
   const maxXp = 400;
   const currentXp = value.xp;
+  const completedLesson = value.completedLesson;
   return (
     <View style={styles.root}>
       <View style={styles.userInfoContainer}>
@@ -63,7 +64,7 @@ const Profile = ({ navigation, user }) => {
         </View>
         <View style={styles.userStatsLessonsContainer}>
           <Text style={styles.userStatsLessonsText}>Lessons Completed:</Text>
-          <Text style={styles.userStatsLessons}>0</Text>
+          <Text style={styles.userStatsLessons}>{completedLesson}</Text>
         </View>
         <TouchableOpacity style={styles.shareButton}>
           <Text style={styles.shareButtonText}>Share your stats</Text>
