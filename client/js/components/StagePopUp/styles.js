@@ -1,6 +1,6 @@
 import { StyleSheet, Dimensions } from "react-native";
 import theme from "../../config/styles";
-const { width, height } = Dimensions.get("window");
+const { width } = Dimensions.get("window");
 
 const styles = StyleSheet.create({
   root: {
@@ -93,11 +93,11 @@ const styles = StyleSheet.create({
     transform: [{ rotate: "180deg" }],
     position: "absolute"
   },
-  blueTitle:{
-    color:theme.colors.skyBlue,
+  blueTitle: {
+    color: theme.colors.skyBlue,
     ...theme.fonts.subheading3
   },
-  process:{
+  process: {
     ...theme.fonts.subheading3
   }
 });
