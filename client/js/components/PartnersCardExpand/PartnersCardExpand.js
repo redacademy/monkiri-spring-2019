@@ -1,6 +1,7 @@
 import React from "react";
-import { View, Image } from "react-native";
+import { View, Image, Linking, TouchableOpacity } from "react-native";
 import { styles } from "./styles";
+import PropTypes from "prop-types";
 const PartnersCardExpand = ({ data }) => {
   return data.isOpen ? (
     <View
@@ -10,11 +11,21 @@ const PartnersCardExpand = ({ data }) => {
       ]}
     >
       {data.partnersIcon.map((icon, index) => (
-        <Image key={index} source={icon} style={styles.icon} />
+        <TouchableOpacity
+          key={index}
+          onPress={() => {
+            Linking.openURL("https://www.pipay.com/");
+          }}
+        >
+          <Image source={icon} style={styles.icon} />
+        </TouchableOpacity>
       ))}
     </View>
   ) : (
     <View />
   );
+};
+PartnersCardExpand.propTypes = {
+  data: PropTypes.object.isRequired
 };
 export default PartnersCardExpand;

@@ -2,14 +2,15 @@ import React from "react";
 import { View, Text, Image } from "react-native";
 import styles from "./styles";
 import PropTypes from "prop-types";
-const TopicItem = ({ topic, selected }) => {
+const TopicItem = ({ topic, selected, inLessons }) => {
+  const backgroundColor = !inLessons ? topic.background : "#bbb";
   return (
     <View style={styles.container}>
       <View
         style={[
-          { backgroundColor: topic.background },
+          { backgroundColor },
           styles.iconContainer,
-          selected ? styles.outlineContainer : null
+          selected || inLessons ? styles.outlineContainer : null
         ]}
       >
         <Image style={styles.icon} source={topic.icon} />
@@ -21,6 +22,8 @@ const TopicItem = ({ topic, selected }) => {
 };
 
 TopicItem.propTypes = {
-  topic: PropTypes.object.isRequired
+  topic: PropTypes.object.isRequired,
+  selected: PropTypes.bool.isRequired,
+  inLessons: PropTypes.bool.isRequired
 };
 export default TopicItem;

@@ -1,4 +1,6 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, Dimensions } from "react-native";
+import theme from "../../config/styles";
+const { width, height } = Dimensions.get("window");
 export const styles = StyleSheet.create({
   iconContainer: {
     width: "20%",
@@ -9,7 +11,7 @@ export const styles = StyleSheet.create({
     borderBottomLeftRadius: 10
   },
   container: {
-    width: "95%",
+    width: 0.95 * width,
     flexDirection: "row",
     shadowColor: "grey",
     shadowRadius: 2,
@@ -23,7 +25,10 @@ export const styles = StyleSheet.create({
     shadowOpacity: 0.2,
     shadowRadius: 3,
     marginBottom: 15,
-    elevation: 212
+    elevation: 212,
+    marginLeft: "auto",
+    marginRight: "auto",
+    justifyContent: "space-between"
   },
   name: {
     textAlign: "left",
@@ -33,6 +38,24 @@ export const styles = StyleSheet.create({
     width: "60%",
     justifyContent: "center",
     paddingLeft: 15
+  },
+  editModeCardWidth: {
+    width: "60%"
+  },
+  deleteButton: {
+    backgroundColor: theme.colors.cherryRed,
+    height: 30,
+    width: 30,
+    borderRadius: 15,
+    justifyContent: "center",
+    alignItems: "center",
+    margin: 10,
+    marginTop: "auto",
+    marginBottom: "auto"
+  },
+  noBorderRadius: {
+    borderTopLeftRadius: 0,
+    borderBottomLeftRadius: 0
   },
   playButton: {
     width: 40,
@@ -97,8 +120,7 @@ export const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: "#f07216",
     borderTopLeftRadius: 10,
-    borderTopRightRadius: 10,
-   
+    borderTopRightRadius: 10
   },
   buttonNotClicked: {
     backgroundColor: "#ffffff",
@@ -119,11 +141,11 @@ export const styles = StyleSheet.create({
     color: "#fff",
     textTransform: "uppercase"
   },
-  editButton: {
+  editButtonContainer: {
     alignItems: "flex-end",
-    width: "100%",
+    width: 0.95 * width,
     marginBottom: 10,
-    marginTop: 5
+    marginTop: 15
   },
   advancedButton: {
     backgroundColor: "#25BDD8",
@@ -132,6 +154,19 @@ export const styles = StyleSheet.create({
     width: "23%",
     right: "5%",
     borderRadius: 20
+  },
+  editButton: {
+    backgroundColor: "#25BDD8",
+    paddingTop: "2%",
+    paddingBottom: "2%",
+    borderRadius: 20,
+    width: 0.2 * width,
+    shadowColor: "#000",
+    shadowOpacity: 0.2,
+    shadowColor: "grey",
+    shadowRadius: 2,
+    shadowOffset: { height: 3, width: 0 },
+    shadowRadius: 3
   },
   buttonColor: {
     textTransform: "uppercase",
@@ -156,10 +191,78 @@ export const styles = StyleSheet.create({
     justifyContent: "flex-end",
     flexDirection: "column"
   },
-  backgroundGreen: {
-    backgroundColor: "#99c355"
+  //library
+  libraryBtn: {
+    fontSize: 16,
+    height: 25
   },
-  backgroundDarkGreen: {
-    backgroundColor: "#50A255"
+  libraryButtons: {
+    flexDirection: "row",
+    alignItems: "center",
+    width: "80%",
+    marginBottom: "10%",
+    justifyContent: "space-around",
+    marginLeft: "auto",
+    marginRight: "auto"
+  },
+  selectButtonClicked: {
+    backgroundColor: "#25BDD8",
+    width: "45%",
+    borderRadius: 20,
+    borderWidth: 2,
+    borderColor: "#25BDD8",
+    justifyContent: "center",
+    alignItems: "center",
+    padding: 5
+  },
+  selectButtonNotClicked: {
+    backgroundColor: "#ffff",
+    width: "45%",
+    borderRadius: 20,
+    borderWidth: 2,
+    borderColor: "#25BDD8",
+    justifyContent: "center",
+    alignItems: "center",
+    padding: 5
+  },
+  selectButtonTextClicked: {
+    color: "white"
+  },
+  selectButtonTextNotClicked: {
+    color: "#25BDD8"
+  },
+  searchBar: {
+    paddingTop: "5%",
+    borderRadius: 20,
+    width: "80%",
+    marginLeft: "auto",
+    marginRight: "auto"
+  },
+  libraryContainer: {
+    width: "100%",
+    marginLeft: "auto",
+    marginRight: "auto",
+    flex: 1,
+    justifyContent: "space-between"
+  },
+  scrollView: {
+    width: "100%",
+    height: 0.48 * height
+  },
+  searchBarContainerStyle: {
+    backgroundColor: "white",
+    borderRadius: 10,
+    shadowColor: "#000",
+    shadowOpacity: 0.2,
+    shadowColor: "grey",
+    shadowRadius: 2,
+    shadowOffset: { height: 3, width: 0 },
+    shadowRadius: 3
+  },
+  topisContainer: {
+    paddingBottom: "20%"
+  },
+  dashboard: {
+    height: 0.18 * height
   }
 });

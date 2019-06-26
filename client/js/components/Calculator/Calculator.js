@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import {
   View,
   Text,
@@ -9,11 +9,12 @@ import {
   Dimensions,
   Image
 } from "react-native";
+import PropTypes from "prop-types";
 import * as Progress from "react-native-progress";
 import Slider from "@react-native-community/slider";
 import theme from "../../config/styles";
 import { styles } from "./styles";
-const Calculator = () => {
+const Calculator = ({ navigation }) => {
   const [principal, setPrincipal] = useState("");
   const [interestRate, setInterestRate] = useState("");
   const [period, setPeriod] = useState(4);
@@ -23,8 +24,11 @@ const Calculator = () => {
   const [isError, setIsError] = useState(false);
   const focusRef = useRef();
   const scrollRef = useRef();
-  const { width, height } = Dimensions.get("window");
+  const { width } = Dimensions.get("window");
 
+  useEffect(() => {
+    calculateInterest(principal, interestRate, period, time);
+  });
   const updateTime = time => {
     const intTime = Math.floor(time);
     setTime(intTime);
@@ -37,6 +41,9 @@ const Calculator = () => {
   };
   const updatePeriod = period => {
     setPeriod(period);
+    setTimeout(() => {
+      scrollRef.current.scrollToEnd({ animated: true });
+    }, 10);
   };
   const calculateInterest = (principal, interestRate, period, time) => {
     setIsSubmit(true);
@@ -44,15 +51,9 @@ const Calculator = () => {
     const result = Number.parseFloat(principal * pow).toFixed(2);
     if (isNaN(result)) {
       setIsError(true);
-      setTimeout(() => {
-        scrollRef.current.scrollToEnd({ animated: true });
-      }, 10);
     } else {
       setIsError(false);
       setTotal(result);
-      setTimeout(() => {
-        scrollRef.current.scrollToEnd({ animated: true });
-      }, 10);
     }
   };
 
@@ -77,16 +78,15 @@ const Calculator = () => {
       contentContainerStyle={styles.content}
       ref={scrollRef}
     >
-      <View style={styles.processContainer}>
-        <Text style={styles.header}> Compound Interest Calculator </Text>
-        <Progress.Bar
-          style={styles.processBar}
-          progress={0.75}
-          width={0.7 * width}
-          color={theme.colors.skyBlue}
-        />
-        <Text style={styles.checkin}>Try it!</Text>
-      </View>
+      <Text style={styles.header}> Compound Interest Calculator </Text>
+      <Progress.Bar
+        style={styles.processBar}
+        progress={1}
+        width={0.7 * width}
+        color={theme.colors.skyBlue}
+      />
+      <Text style={styles.checkin}>Try it!</Text>
+
       <View style={styles.principal}>
         <TextInput
           value={principal}
@@ -129,13 +129,15 @@ const Calculator = () => {
         </Picker>
       </View>
       <View style={styles.sliderContainer}>
-        <Text style={styles.title}>Years to grow: </Text>
-        <Text style={styles.sliderTitle}>Year:{time}</Text>
+        <Text style={styles.title}>
+          {time}
+          {time <= 1 ? " year " : " years "}to grow:{" "}
+        </Text>
         <View style={styles.sliderContent}>
-          <Text>0</Text>
+          <Text>1</Text>
           <Slider
             style={styles.slider}
-            minimumValue={0}
+            minimumValue={1}
             maximumValue={50}
             maximumTrackTintColor={theme.colors.seaBlue}
             onValueChange={updateTime}
@@ -145,17 +147,10 @@ const Calculator = () => {
         </View>
       </View>
       <View style={styles.result}>
-        <TouchableOpacity
-          onPress={() =>
-            calculateInterest(principal, interestRate, period, time)
-          }
-        >
-          <Text style={styles.button}>Calculate</Text>
-        </TouchableOpacity>
         {isSumbit && !isError ? (
           <View>
-            <Text style={styles.title}>
-              RESULT: Your initial investment of
+            <Text style={styles.result}>
+              Your initial investment of
               <Text style={styles.highlight}> ${principal}</Text> at an
               annualized interest rate of
               <Text style={styles.highlight}> {interestRate}%</Text>
@@ -165,20 +160,34 @@ const Calculator = () => {
               compounded
               <Text style={styles.highlight}> {convertPeriod(period)}</Text>.
             </Text>
-            <View style={styles.buttonsContainer}>
-              <TouchableOpacity
-                style={[styles.burronShadow, styles.orangeButtonContainer]}
-              >
-                <Text style={styles.orangeButtonText}>Continue</Text>
-              </TouchableOpacity>
-            </View>
           </View>
         ) : isError ? (
-          <Text style={styles.title}>Invalid Input!</Text>
+          <Text style={styles.error}>Invalid Input!</Text>
         ) : null}
+      </View>
+      <View style={styles.buttonsContainer}>
+        <TouchableOpacity
+          onPress={() => {
+            navigation.navigate("STAGECOMPLETE", {
+              handleComplete: navigation.state.params.handleComplete
+            });
+          }}
+          style={[styles.burronShadow, styles.orangeButtonContainer]}
+        >
+          <Text style={styles.orangeButtonText}>Finish</Text>
+        </TouchableOpacity>
       </View>
     </ScrollView>
   );
 };
-
+Calculator.navigationOptions = {
+  title: "Saving",
+  headerTitleStyle: {
+    textAlign: "center",
+    color: "white"
+  }
+};
+Calculator.propTypes = {
+  navigation: PropTypes.object.isRequired
+};
 export default Calculator;

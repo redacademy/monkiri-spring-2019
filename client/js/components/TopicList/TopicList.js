@@ -5,6 +5,8 @@ import styles from "./styles";
 import PropTypes from "prop-types";
 import { withNavigation } from "react-navigation";
 import LessonPopUp from "../LessonPopUp";
+import LessonsContext from "../../context";
+
 class TopicList extends Component {
   constructor(props) {
     super(props);
@@ -31,32 +33,43 @@ class TopicList extends Component {
     const { topics, hasButton, navigation, isLibrary } = this.props;
     const { selectedTopics, openPopUp, currentTopic } = this.state;
     return (
-      <View>
-        <View style={styles.container}>
-          {topics.map((topic, index) => (
-            <TouchableOpacity
-              key={topic.name + index}
-              style={styles.eachItem}
-              onPress={() =>
-                !!isLibrary ? this.toggleModal(topic) : this.toggle(topic)
-              }
-            >
-              <TopicItem topic={topic} selected={selectedTopics[topic.name]} />
-            </TouchableOpacity>
-          ))}
-        </View>
-        {hasButton ? (
-          <View style={styles.buttonContainer}>
-            <TouchableOpacity
-              style={styles.button}
-              onPress={() => navigation.navigate("LESSON", { selectedTopics })}
-            >
-              <Text style={styles.buttonText}>Continue</Text>
-            </TouchableOpacity>
+      <LessonsContext.Consumer>
+        {value => (
+          <View>
+            <View style={styles.container}>
+              {topics.map((topic, index) => (
+                <TouchableOpacity
+                  key={topic.name + index}
+                  style={styles.eachItem}
+                  onPress={() =>
+                    !!isLibrary ? this.toggleModal(topic) : this.toggle(topic)
+                  }
+                >
+                  <TopicItem
+                    topic={topic}
+                    selected={!!selectedTopics[topic.name]}
+                    inLessons={!!value.selectedTopics[topic.name]}
+                  />
+                </TouchableOpacity>
+              ))}
+            </View>
+            {hasButton ? (
+              <View style={styles.buttonContainer}>
+                <TouchableOpacity
+                  style={styles.button}
+                  onPress={() => {
+                    value.setLessons(selectedTopics);
+                    navigation.navigate("LESSON");
+                  }}
+                >
+                  <Text style={styles.buttonText}>Continue</Text>
+                </TouchableOpacity>
+              </View>
+            ) : null}
+            <LessonPopUp topic={currentTopic} openPopUp={openPopUp} />
           </View>
-        ) : null}
-        <LessonPopUp topic={currentTopic} openPopUp={openPopUp} />
-      </View>
+        )}
+      </LessonsContext.Consumer>
     );
   }
 }

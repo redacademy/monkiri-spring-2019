@@ -1,36 +1,48 @@
-import React from "react";
+import React, { useContext } from "react";
 import { View, Text, TouchableOpacity, Image } from "react-native";
 import { logOut } from "../../config/models";
 import PropTypes from "prop-types";
 import { styles } from "./styles";
 import theme from "../../config/styles";
 import * as Progress from "react-native-progress";
+import { Gravatar } from "react-native-gravatar";
+import LessonsContext from "../../context";
 
 const Profile = ({ navigation, user }) => {
-  const maxXp = 4000;
-  const currentXp = 600;
+  const value = useContext(LessonsContext);
+  const maxXp = 400;
+  const currentXp = value.xp;
+  const completedLesson = value.completedLesson;
   return (
     <View style={styles.root}>
       <View style={styles.userInfoContainer}>
-        <TouchableOpacity style={styles.editButton}>
-          <Text style={styles.editButtonText}>Edit</Text>
-        </TouchableOpacity>
         <Image
           style={styles.backgroundImage}
           source={require("../../assets/images/profile-background.png")}
         />
-        <Image style={styles.userAvatar} source={{ uri: user.image }} />
         <View style={styles.userInfo}>
+          <Gravatar
+            options={{
+              email: user.email && "example@gmail.com",
+              parameters: { size: "200", d: "mm" },
+              secure: true
+            }}
+            style={styles.userAvatar}
+          />
           <Text style={styles.userName}>{user.name}</Text>
           <Text style={styles.userEmail}>{user.email}</Text>
         </View>
       </View>
       <View style={styles.userStatsContainer}>
         <View style={styles.userStatsHeaderContainer}>
+          <Image
+            style={styles.headerImage}
+            source={require("../../assets/images/trophies-banner-left.png")}
+          />
           <Text style={styles.userStatsHeader}>Level 1: NoviceLearner</Text>
           <Image
             style={styles.headerImage}
-            source={require("../../assets/images/trophies-banner.png")}
+            source={require("../../assets/images/trophies-banner-right.png")}
           />
         </View>
 
@@ -52,7 +64,7 @@ const Profile = ({ navigation, user }) => {
         </View>
         <View style={styles.userStatsLessonsContainer}>
           <Text style={styles.userStatsLessonsText}>Lessons Completed:</Text>
-          <Text style={styles.userStatsLessons}>0</Text>
+          <Text style={styles.userStatsLessons}>{completedLesson}</Text>
         </View>
         <TouchableOpacity style={styles.shareButton}>
           <Text style={styles.shareButtonText}>Share your stats</Text>

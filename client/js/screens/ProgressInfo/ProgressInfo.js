@@ -1,41 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import ImageLoader from "../../components/ImageLoader";
 import { View, Text, Image, ScrollView, TouchableOpacity } from "react-native";
+import GifPopUp from "../../components/GifPopUp";
 import { styles } from "./styles";
 import * as Progress from "react-native-progress";
-const initialData = [
-  {
-    id: 1,
-    lessonName: "Introduction",
-    icon: require("../../assets/images/outlinedIcons/business.png"),
-    avaiable: true,
-    isCompleted: false,
-    text: "Start the Quiz to water and grow your sprout!"
-  },
-  {
-    id: 2,
-    lessonName: "Quiz",
-    icon: require("../../assets/images/outlinedIcons/taxes.png"),
-    isCompleted: false,
-    avaiable: false,
-    text: "Start the Calculator to water and grow your sprout!"
-  },
-  {
-    id: 3,
-    lessonName: "Calculator",
-    icon: require("../../assets/images/outlinedIcons/insurance.png"),
-    isCompleted: false,
-    avaiable: false,
-    text:
-      "You've completed all the compound interest ! Your tree is full grown."
-  }
-];
-const ProgressInfo = () => {
-  const [stages, setStages] = useState(initialData);
-  const [currentXp, setCurrentXp] = useState(0);
-  const [text, setText] = useState(
-    "Start the Introduction to water and grow your sprout!"
-  );
+import LessonsContext from "../../context";
+import PropTypes from "prop-types";
+const ProgressInfo = ({ navigation }) => {
+  const value = useContext(LessonsContext);
+  const text = value.text;
+  const popUp = value.popUp;
+  const stages = value.stages;
+  const currentXp = value.currentXp;
   const xp = 20;
   const maxXp = xp * stages.length;
 
@@ -45,11 +21,23 @@ const ProgressInfo = () => {
       .map(stage =>
         stage.id === id + 1 ? { ...stage, avaiable: true } : stage
       );
-    setText(newStage[id - 1].text);
-    setStages(newStage);
-    setCurrentXp(preXp => preXp + xp);
-  };
+    value.setText(newStage[id - 1].text);
+    value.setStages(newStage);
+    setTimeout(() => {
+      value.setCurrentXp(xp);
+      value.setProgressbar(maxXp);
+    }, 300);
 
+    value.addXp(xp);
+  };
+  handlePopUp = () => {
+    setTimeout(() => {
+      value.setPopUp(true);
+    }, 800);
+  };
+  handlePopUpClose = () => {
+    value.setPopUp(false);
+  };
   return (
     <ScrollView contentContainerStyle={styles.root}>
       {currentXp === 0 ? (
@@ -100,7 +88,10 @@ const ProgressInfo = () => {
             onPress={() =>
               stage.isCompleted || !stage.avaiable
                 ? null
-                : handleComplete(stage.id)
+                : navigation.navigate(stage.stack, {
+                    handleComplete: handleComplete,
+                    handlePopUp: handlePopUp
+                  })
             }
           >
             <View style={styles.container}>
@@ -132,8 +123,11 @@ const ProgressInfo = () => {
           </TouchableOpacity>
         ))}
       </View>
+      <GifPopUp openPopUp={popUp} handlePopUp={handlePopUpClose} />
     </ScrollView>
   );
 };
-
+ProgressInfo.propTypes = {
+  navigation: PropTypes.object.isRequired
+};
 export default ProgressInfo;

@@ -1,15 +1,26 @@
 import { StyleSheet, Dimensions } from "react-native";
 import theme from "../../config/styles";
-const { width, height } = Dimensions.get("window");
+const { width } = Dimensions.get("window");
 export const styles = StyleSheet.create({
   processContainer: {
     alignItems: "center"
+  },
+  content: {
+    flexGrow: 1,
+    justifyContent: "space-around",
+    alignItems: "center",
+    padding: 10
   },
   header: {
     ...theme.fonts.heading,
     padding: 10
   },
   processBar: {
+    margin: 10
+  },
+  checkin: {
+    ...theme.fonts.subheading3,
+    color: theme.colors.sunYellow,
     margin: 10
   },
   input: {
@@ -24,7 +35,7 @@ export const styles = StyleSheet.create({
     textAlign: "center"
   },
   highlight: {
-    color: "#ee7f33"
+    color: theme.colors.skyBlue
   },
   sliderContent: {
     flexDirection: "row",
@@ -43,6 +54,14 @@ export const styles = StyleSheet.create({
     color: theme.colors.skyBlue,
     textAlign: "center",
     margin: 5
+  },
+  result: {
+    margin: 5,
+    ...theme.fonts.subheading2
+  },
+  error: {
+    ...theme.fonts.heading,
+    color: "#cc3300"
   },
   principal: {
     flexDirection: "row",
@@ -87,14 +106,20 @@ export const styles = StyleSheet.create({
     color: theme.colors.sunYellow,
     margin: 10
   },
+  buttonsContainer: {
+    width: width,
+    justifyContent: "center",
+    alignItems: "center"
+  },
   orangeButtonContainer: {
     backgroundColor: theme.colors.monikOrange,
     borderRadius: 50,
-    width: "100%",
+    width: width * 0.6,
     padding: 10,
     justifyContent: "center",
     alignItems: "center",
-    marginTop: 0.1 * width
+    marginTop: 0.1 * width,
+    marginBottom: 0.1 * width
   },
   orangeButtonText: {
     color: "#fff"
