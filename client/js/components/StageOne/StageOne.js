@@ -1,5 +1,12 @@
 import React, { Component } from "react";
-import { View, Text, Image, TouchableOpacity, ScrollView } from "react-native";
+import {
+  View,
+  Text,
+  Image,
+  TouchableOpacity,
+  ScrollView,
+  Dimensions
+} from "react-native";
 import * as Progress from "react-native-progress";
 import theme from "../../config/styles";
 import { styles } from "./styles";
@@ -9,6 +16,7 @@ class StageOneContainer extends Component {
     title: "Saving"
   };
   render() {
+    const { width } = Dimensions.get("window");
     const stage = {
       id: 1,
       type: "2-paragraoh-content",
@@ -49,7 +57,7 @@ t=Number of years interest is applied`
         <Progress.Bar
           style={styles.progressBar}
           progress={0.3}
-          width={200}
+          width={0.7 * width}
           color={theme.colors.skyBlue}
         />
 
