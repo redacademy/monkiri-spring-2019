@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Onboarding from "./Onboarding";
 import { getOnboardStatus, setOnboardStatus } from "../../config/models";
 import Loader from "../../components/Loader";
-
+import PropTypes from "prop-types";
 class OnboardingContainer extends Component {
   constructor(props) {
     super(props);
@@ -33,5 +33,7 @@ class OnboardingContainer extends Component {
     );
   }
 }
-
+OnboardingContainer.propTypes = {
+  navigation: PropTypes.object.isRequired
+};
 export default OnboardingContainer;

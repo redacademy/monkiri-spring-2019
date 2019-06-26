@@ -8,7 +8,7 @@ import {
 import PartnersCard from "../../components/PartnersCard";
 import PartnersCardExpand from "../../components/PartnersCardExpand";
 import { styles } from "./styles";
-
+import PropTypes from "prop-types";
 const Partners = ({ InitailData }) => {
   const [Partners, setPartners] = useState(InitailData);
 
@@ -36,5 +36,7 @@ const Partners = ({ InitailData }) => {
     </ScrollView>
   );
 };
-
+Partners.propTypes = {
+  InitailData: PropTypes.array.isRequired
+};
 export default Partners;

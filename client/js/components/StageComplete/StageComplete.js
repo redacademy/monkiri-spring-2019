@@ -3,7 +3,7 @@ import { View, Text, Image, TouchableOpacity, Dimensions } from "react-native";
 import * as Progress from "react-native-progress";
 import styles from "./styles";
 import theme from "../../config/styles";
-
+import PropTypes from "prop-types";
 const StageComplete = ({ navigation }) => {
   const { width } = Dimensions.get("window");
 
@@ -70,5 +70,8 @@ const StageComplete = ({ navigation }) => {
       </View>
     </View>
   );
+};
+StageComplete.propTypes = {
+  navigation: PropTypes.object.isRequired
 };
 export default StageComplete;

@@ -1,6 +1,7 @@
 import React from "react";
 import { View, Text, Image } from "react-native";
 import { styles } from "./styles";
+import PropTypes from "prop-types";
 const OnboardingIntro = ({ introData }) => {
   return (
     <View style={styles.Container}>
@@ -16,5 +17,7 @@ const OnboardingIntro = ({ introData }) => {
     </View>
   );
 };
-
+OnboardingIntro.propTypes = {
+  introData: PropTypes.array.isRequired
+};
 export default OnboardingIntro;

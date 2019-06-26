@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, Image, TouchableOpacity } from "react-native";
 import { styles } from "./styles";
-
+import PropTypes from "prop-types";
 const OnboardingAuth = ({ navigation }) => {
   const handleReisterClick = () => {
     navigation.navigate("SignUp");
@@ -43,5 +43,7 @@ const OnboardingAuth = ({ navigation }) => {
     </View>
   );
 };
-
+OnboardingAuth.propTypes = {
+  navigation: PropTypes.object.isRequired
+};
 export default OnboardingAuth;
