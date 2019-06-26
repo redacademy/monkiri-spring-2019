@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useContext } from "react";
 import { View, Text, Image, TouchableOpacity } from "react-native";
 import styles from "./styles";
-
+import LessonsContext from "../../context";
 const StageComplete = ({ navigation }) => {
   const stage = {
     id: 2,
@@ -13,7 +13,10 @@ const StageComplete = ({ navigation }) => {
     plusPoints: 60,
     topicsLearned: ["Introduction", "Quiz", "Calculator"]
   };
-
+  const handleComplete = () => {
+    value.countLessonComplete(1);
+  };
+  const value = useContext(LessonsContext);
   return (
     <View style={styles.content}>
       <Text style={styles.title}> {stage.lessonName} </Text>
@@ -55,6 +58,7 @@ const StageComplete = ({ navigation }) => {
       <View style={styles.buttonsContainer}>
         <TouchableOpacity
           onPress={() => {
+            handleComplete();
             navigation.state.params.handleComplete(3);
             navigation.navigate("PROGRESS");
           }}
