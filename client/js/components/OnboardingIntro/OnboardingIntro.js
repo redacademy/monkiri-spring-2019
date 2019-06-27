@@ -18,6 +18,6 @@ const OnboardingIntro = ({ introData }) => {
   );
 };
 OnboardingIntro.propTypes = {
-  introData: PropTypes.array.isRequired
+  introData: PropTypes.object.isRequired
 };
 export default OnboardingIntro;
